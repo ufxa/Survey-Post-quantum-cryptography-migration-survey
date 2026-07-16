@@ -214,7 +214,11 @@ TLS~\cite{stebila2020postquantum}, or blockchain~\cite{fernandezcarames2020revie
 To our knowledge, no single prior survey simultaneously:
 \begin{enumerate}
   \item Systematically covers all six critical infrastructure domains under a common framework;
-  \item Applies PRISMA~2020 rigor to a migration-focused research question;
+  \item Follows PRISMA~2020 reporting principles (transparent selection criteria,
+  documented exclusion rationale, corpus composition diagram) for a
+  migration-focused research question, while explicitly acknowledging that
+  database search execution against indexed repositories remains a planned
+  future step (Section~\ref{sec:methodology});
   \item Introduces a structured migration readiness rubric applicable across sectors;
   \item Maps global regulatory divergence with implementation implications;
   \item Identifies AI/ML acceleration opportunities for migration planning.
@@ -240,8 +244,13 @@ Liu \emph{et al.}~\cite{liu2021pqc} & 2021 & 63 & No & IoT only & No & No & No &
 Stebila \& Mosca~\cite{stebila2020postquantum} & 2020 & 55 & No & TLS only & No & No & No & -- \\
 Fernandez-Carames~\cite{fernandezcarames2020review} & 2020 & 47 & No & BCN only & No & No & No & IEEE Access (3.9) \\
 \midrule
-\textbf{This Survey} & \textbf{2026} & \textbf{120} & \textbf{Yes} & \textbf{Yes (6)} & \textbf{Yes (MRC)} & \textbf{Yes (4 reg.)} & \textbf{Yes} & \textbf{IEEE CS\&T (35.6)} \\
+Yang \emph{et al.}~\cite{yang2024survey} & 2024 & 98 & No & Partial & No & No & No & IEEE COMST \\
+Gharavi \emph{et al.}~\cite{gharavi2024postquantum} & 2024 & 84 & No & Partial & No & No & No & IEEE COMST \\
+\midrule
+\textbf{This Survey} & \textbf{2026} & \textbf{146} & \textbf{Partial$^\dagger$} & \textbf{Yes (6)} & \textbf{Yes (MRC)} & \textbf{Yes (4 reg.)} & \textbf{Yes} & \textbf{IEEE CS\&T (35.6)} \\
 \bottomrule
+\multicolumn{9}{l}{\footnotesize $^\dagger$PRISMA~2020 reporting principles followed (documented selection/exclusion criteria, corpus composition diagram); systematic} \\
+\multicolumn{9}{l}{\footnotesize \phantom{$^\dagger$}database retrieval not yet executed against indexed repositories (planned future work).} \\
 \end{tabular}
 \end{table*}
 
@@ -257,10 +266,13 @@ This survey makes the following specific contributions:
   publications and 39 normative documents (2016--2026), with documented
   inclusion criteria, de-duplication log, and quality assessment
   (Section~\ref{sec:methodology}).
-  \item \textbf{Migration Readiness Classification (MRC) framework}: a novel
-  quantitative instrument scoring systems across four tiers using three weighted
-  dimensions, with mathematical formulation and pseudocode implementation
-  (Section~\ref{sec:mrc}).
+  \item \textbf{Migration Readiness Classification (MRC) framework}: a proposed
+  heuristic scoring rubric that classifies legacy systems across four readiness
+  tiers using three weighted dimensions (cryptographic exposure, upgrade
+  feasibility, regulatory deadline proximity), with mathematical formulation,
+  pseudocode implementation, and a weight-sensitivity analysis
+  (Section~\ref{sec:mrc}). Expert validation via Delphi+AHP is planned as
+  future work.
   \item \textbf{Cross-regulatory gap analysis} comparing NIST, NSA CNSA~2.0,
   ENISA, GDPR, and LGPD requirements with a sector-specific compliance
   timeline (Section~\ref{sec:regulatory}).
@@ -400,7 +412,7 @@ The assembled corpus consists of \textbf{107 peer-reviewed publications} and
 de-duplication of 9 redundant entries from the initial 120-record working list.
 The separation between peer-reviewed and normative sources is maintained
 throughout this survey: counts, figures, and tables derived from the scientific
-evidence base refer to the 72-paper peer-reviewed corpus; regulatory and
+evidence base refer to the 107-paper peer-reviewed corpus; regulatory and
 standards claims cite the normative corpus separately.
 
 \textbf{Normative corpus}: standards (FIPS~203/204/205), NIST reports (NISTIR
@@ -428,10 +440,46 @@ publications by sub-theme.
   \centering
   \includegraphics[width=\columnwidth]{figures/temporal_distribution.pdf}
   \caption{Temporal distribution of peer-reviewed publications (2016--2026)
-  by sub-theme. Stacked bars show observed counts from the 72-paper corpus.
+  by sub-theme. Stacked bars show observed counts from the 107-paper corpus.
   Shading indicates the NIST standardization phase.}
   \label{fig:temporal}
 \end{figure}
+
+\subsection{Survey Limitations}
+\label{sec:limitations}
+
+This survey has four methodological limitations that readers should consider
+when interpreting findings and applying the MRC framework.
+
+\textbf{L1 -- Corpus boundary effects.} The 107 peer-reviewed papers were
+assembled through a structured narrative process rather than exhaustive
+database retrieval. Systematic execution of the search strings in
+Table~\ref{tab:search_strings} against IEEE Xplore, ACM DL, Scopus, and
+Web of Science is planned as future work and may surface additional evidence
+that modifies or refines the domain-level findings reported here.
+
+\textbf{L2 -- Heuristic MRC weights.} The MRC formula weights
+($w_E=0.45$, $w_F=0.35$, $w_D=0.20$) were assigned by the authors based
+on expert judgment. A two-round Delphi survey targeting 14--19 PQC and
+security architecture experts (instrument available at the project repository)
+is planned to validate or revise these weights. Until that validation is
+complete, MRC tier assignments should be treated as heuristic estimates
+rather than empirically calibrated scores. A weight-sensitivity analysis
+showing how tier assignments change under alternative weight distributions
+is provided in Section~\ref{sec:mrc}.
+
+\textbf{L3 -- MRC parameter assignment.} The E, F, and D values for each
+domain were assigned by the authors through literature synthesis, not
+derived from primary measurement studies. Domain-level scores represent
+the authors' expert reading of the reviewed corpus and carry the associated
+subjectivity inherent to structured narrative synthesis.
+
+\textbf{L4 -- Geographic scope of regulatory analysis.} The regulatory
+comparison covers the United States (NIST/NSA/OMB), the European Union
+(ENISA/NIS2/GDPR), and Brazil (LGPD/MCTI). Other major regulatory
+jurisdictions (China, UK, Canada, Japan, India) are referenced but not
+systematically analyzed. Readers in those jurisdictions should supplement
+this analysis with local compliance guidance.
 
 % =============================================================================
 % SECTION III: BACKGROUND
