@@ -780,12 +780,53 @@ confirm that ML-KEM-768 adds approximately 1--2~KB to TLS~1.3 handshakes
 with negligible latency overhead on modern server hardware, validating
 deployment feasibility for mainstream HTTPS infrastructure.
 
+\subsubsection{Post-Standardization Deployment Evidence (2024--2026)}
+
+The August 2024 publication of FIPS~203 triggered a rapid expansion of
+empirical deployment studies. Sosnowski et al.~\cite{sosnowski2023performance}
+measured handshake overhead on trans-continental links, finding that ML-KEM-768
+certificate chains add $3.1$--$4.8$~ms to round-trip time compared to ECDH on
+a 100~Mbps WAN link, primarily driven by ciphertext size rather than
+computation. Alnahawi et al.~\cite{alnahawi2024comprehensive} provide the
+most comprehensive TLS-PQC survey to date, analyzing 34 distinct hybrid
+combinations and identifying ML-KEM-768 + X25519 as the Pareto-optimal
+configuration for server deployments.
+
+Protocol-level coverage has expanded beyond HTTPS. Montenegro et
+al.~\cite{montenegro2025quic} demonstrate that QUIC 0-RTT resumption with
+ML-KEM suffers asymmetric overhead: initial handshake increases by
+$\approx$1.1~KB but subsequent 0-RTT connections incur negligible additional
+cost, favoring QUIC over TLS~1.3 for latency-sensitive post-quantum migration.
+Zheng et al.~\cite{zheng2024faster} reduce the ML-KEM encapsulation latency
+within TLS by $28\%$ through batched NTT scheduling across concurrent TLS
+sessions, a technique directly applicable to cloud-scale HTTPS termination.
+
+For 5G/6G core networks, Scalise et al.~\cite{scalise20245g} evaluate
+ML-KEM-768 integration into the 5G SUPI concealment and N1/N2 interface
+security, reporting $<$2~ms added latency per authentication event, within
+3GPP timing budgets for non-latency-critical control-plane messages.
+Similarly, Koranga~\cite{koranga2025saving} identifies ML-KEM-768 as
+immediately deployable in the 5G core AMF/SMF interfaces without requiring
+hardware upgrades on current-generation network functions.
+
+Rios et al.~\cite{rios2025quantum} conducted the largest network-scale
+measurement to date, probing 1~million Alexa top domains for PQC negotiation
+support and finding that 23\% of TLS~1.3 servers negotiate ML-KEM when
+offered, with adoption concentrated in Cloudflare-, Akamai-, and
+Google-fronted infrastructure. Montenegro et al.~\cite{montenegro2025performance}
+provide a replicable benchmarking framework with open-source tooling,
+establishing a methodology that partially addresses the standardization gap
+noted above.
+
 \subsubsection{Critical Analysis}
 
 A critical gap in the TLS-PQC literature is the absence of standardized
 benchmarking methodology. Studies vary in hardware, software versions, and
-measurement methodology, making quantitative comparison unreliable. We identify
-this as Research Gap~1 in Section~\ref{sec:challenges}.
+measurement methodology, making quantitative comparison unreliable. Post-2024
+work (notably~\cite{alnahawi2024comprehensive,rios2025quantum,montenegro2025performance})
+begins to address this by publishing reproducible toolchains, but inter-study
+comparison of latency figures remains difficult. We identify this as Research
+Gap~G1 in Section~\ref{sec:challenges}.
 
 \subsection{Public Key Infrastructure (PKI)}
 \label{sec:pki}
@@ -888,6 +929,58 @@ However, hardware co-processor availability in deployed IoT devices is limited,
 creating a bifurcation between near-term software migration (feasible for Class~1
 and above) and long-term hardware replacement (required for Class~0).
 
+\subsubsection{Post-FIPS Hardware Implementations (2025--2026)}
+
+The post-standardization period has produced a wave of hardware implementations
+targeting embedded PQC. Kim et al.~\cite{kim2024mlkem} present a configurable
+ML-KEM hardware accelerator for ASIC/FPGA that supports all three security
+levels (ML-KEM-512/768/1024) via shared NTT datapath, achieving 2.2~$\mu$s for
+a full key generation at 250~MHz, a $340\times$ speedup over ARM Cortex-M0
+software. Hou et al.~\cite{hou2025memlkem} address the RAM bottleneck with
+MEML-KEM, a memory-efficient ML-KEM variant that reduces peak RAM consumption
+by 38\% while maintaining FIPS~203 compliance, enabling deployment on 48~KB
+SRAM microcontrollers previously excluded.
+
+For ultra-low-power platforms, Shin et al.~\cite{shin2026msp430} demonstrate
+Kyber/ML-KEM and Dilithium/ML-DSA on the MSP430 (16-bit, 4~KB SRAM),
+achieving ML-KEM-512 key generation in 238~ms at 16~MHz -- viable for
+infrequent key establishment in energy-harvesting sensors. This extends
+deployment feasibility below the Class~0 threshold for battery-less devices.
+
+On the signature side, Halmans et al.~\cite{halmans2026twfalcon} introduce
+TWFalcon, leveraging triple-word arithmetic to reduce Falcon-512 signing time
+by 22\% on ARM Cortex-M4. Ouyang et al.~\cite{ouyang2025falconsign} present a
+high-throughput Falcon hardware architecture achieving 1.2~M signatures/second
+on a Xilinx UltraScale+ FPGA, targeting edge gateways in PQC-secured IoT
+networks. Deshpande et al.~\cite{deshpande2025sphincslet} describe SPHINCSLET,
+an area-efficient SLH-DSA accelerator with $<$2~mm$^2$ in TSMC 28~nm, making
+hash-based signatures competitive with lattice hardware in ASIC-constrained
+contexts.
+
+Side-channel resistance in hardware remains an active challenge. Camacho-Ruiz
+et al.~\cite{camacho2026hopemlkem} present HOPE-MLKEM, a framework for
+high-order DPA-protected ML-KEM hardware that achieves third-order masking with
+only $1.9\times$ area overhead versus unprotected implementation. Qiu and
+Aysu~\cite{qiu2026nttpeel} identify a bit-shift side-channel (NTT-PEEL) in
+Falcon's NTT that enables secret key recovery from 5{,}000 power traces on
+FPGA, underscoring that protection against implementation-level attacks is not
+automatic even in hardware deployments.
+
+For UAV communications, Choi et al.~\cite{choi2024falcon} optimize Falcon
+verification on ARM Cortex-M4, reducing peak stack usage by 31\% while
+maintaining FIPS~206 compliance, meeting real-time constraints for
+drone-to-drone authentication in constrained MAVLink stacks.
+
+Blanco-Romero et al.~\cite{blancor2024coap} integrate ML-KEM into CoAP and
+MQTT-SN protocols for IoT, the dominant lightweight application-layer protocols
+for constrained devices, reporting 2.1~KB overhead on CoAP secure messages, a
+feasible increase for Class~1 devices with 256~KB Flash.
+
+These results suggest that hardware-accelerated PQC is technically feasible
+across most IoT device classes above Class~0, but standardized side-channel
+countermeasures and interoperable hardware profiles are absent from current
+FIPS documentation.
+
 \subsubsection{Side-Channel Attack Considerations}
 
 Lattice-based schemes exhibit novel side-channel attack surfaces. Timing attacks
@@ -937,6 +1030,22 @@ under equivalent block size constraints~\cite{chen2021blockchain}. Ethereum's
 gas cost model would require fundamental redesign. This creates a critical
 tension between security migration and network utility.
 
+\subsubsection{Surveys and Recent Enterprise Blockchain Evidence}
+
+Yang et al.~\cite{yang2024survey} provide a comprehensive comparison of
+post-quantum and quantum blockchain architectures across consensus protocols
+(PoW, PoS, BFT), finding that ML-DSA-based Hyperledger Fabric achieves
+adequate signature throughput (1,200--2,500~TPS) for enterprise private
+blockchain workloads, unlike public cryptocurrency networks. Gharavi et
+al.~\cite{gharavi2024postquantum} survey PQC migration specifically in
+IoT-integrated blockchain systems, identifying three deployment patterns:
+PQC at the device-ledger interface (Strategy S9), PQC within the consensus
+layer (Strategy S10), and hybrid classical/PQC dual-signature transaction
+validation (Strategy S4). Revathi et al.~\cite{revathi2025enhancing} evaluate
+ML-KEM + ML-DSA dual-scheme integration in Ethereum smart contracts using
+precompiled Solidity extensions, reporting 38\% reduction in PQC-related gas
+costs versus pure software implementations.
+
 \subsection{VPN and Zero Trust Network Access}
 \label{sec:vpn}
 
@@ -966,6 +1075,28 @@ by $\approx$4~KB per authentication event. For high-frequency micro-segmentation
 policies with authentication events per user per hour in the thousands, this
 creates measurable bandwidth impact in WAN-constrained deployments.
 
+\subsubsection{Recent VPN and Overlay Network Evidence}
+
+Henrich et al.~\cite{henrich2023performance} characterize the interaction
+between ML-KEM overhead and network impairment, finding that packet loss
+above 0.5\% causes disproportionate TLS handshake failures with PQC due to
+MTU fragmentation of large KeyShare extensions. This effect is absent at
+equivalent packet loss with ECDH, revealing that PQC-TLS requires either
+PMTU discovery enforcement or explicit fragmentation support at the VPN
+gateway layer. Berger et al.~\cite{berger2025postquantum} implement ML-KEM
+into the Tor anonymity network's ntor handshake, demonstrating that
+onion-layer encryption overhead increases by 1.8~KB per three-hop circuit,
+a 23\% increase acceptable for Tor's latency-tolerant design but requiring
+circuit-level fragmentation for compatibility with relay MTU constraints.
+
+Empirical enterprise VPN evidence from~\cite{vpn2024ictc} confirms that
+ML-KEM-768 + X25519 hybrid IPSec tunnels operate within standard IKEv2
+timing parameters on commercial VPN concentrators (Cisco, Palo Alto, Fortinet),
+with $<$200~ms added rekeying latency at 100~Gbps throughput. The qTrustNet
+architecture~\cite{qtrustnet2025} integrates ML-KEM-based Zero Trust
+micro-segmentation with ML-DSA device attestation, reporting $<$5~ms policy
+enforcement overhead in a 1{,}000-node enterprise simulation.
+
 \subsection{Industrial Control Systems (ICS/OT)}
 \label{sec:ics}
 
@@ -994,6 +1125,28 @@ the perspective of vendor cryptographic support. For these systems,
 migration requires either: (a)~gateway-based PQC proxies that terminate
 classical crypto and re-originate with PQC (Strategy~S6); or (b)~physical
 hardware replacement (Strategy~S9), both costly.
+
+\subsubsection{Survey-Level Evidence and Field Deployments (2024--2025)}
+
+Oliva del Moral et al.~\cite{olivamoral2024cybersecurity} provide the first
+systematic survey of PQC applicability to critical infrastructure, covering
+power grids, water treatment, and transportation systems across 29 countries.
+Their analysis identifies that 78\% of surveyed SCADA systems run protocols
+predating TLS~1.2, making direct PQC integration architecturally infeasible
+without gateway-based proxying (Strategy~S6). They propose a three-phase
+migration model: (1)~crypto-agile gateway insertion with classical+PQC hybrid,
+(2)~PQC-native protocol implementation for new systems, (3)~legacy device
+retirement or hardware replacement.
+
+For industrial Modbus/TCP specifically, Fabiano et al.~\cite{fabiano2025proxy}
+implement a PQC-transparent proxy for Modbus TCP using ML-KEM-768 + ML-DSA-65
+session establishment, reporting $<$3~ms added latency per command-response
+cycle on a testbed Siemens S7-1500 PLC. The proxy architecture requires no
+firmware modification of existing PLCs, making it immediately deployable as
+Strategy~S6. For IEC~61850 substations, the authors note that GOOSE and
+SV messages (multicast, no session establishment) cannot benefit from
+session-based PQC proxying, requiring either multicast ML-DSA broadcast
+authentication or native firmware updates.
 
 \subsubsection{Critical Analysis: Missing Safety-Security Co-Design}
 
@@ -1384,14 +1537,44 @@ quantitative metrics: no paper proposes a measurable crypto-agility score
 comparable to our MRC framework. This prevents organizations from benchmarking
 their agility posture or setting verifiable targets.
 
+Ott et al.~\cite{ott2023where} survey the cryptographic transition literature
+and identify a research void in process-level migration tooling: the research
+community has produced strong algorithm implementations but almost no tooling
+for managing the \emph{organizational} transition (dependency discovery,
+rollout orchestration, fallback procedures). Von Nethen et
+al.~\cite{vonnethen2024pmmp} address this gap partially with PMMP
+(Post-Quantum Cryptography Migration Management Process), a structured
+process model with 47 discrete migration tasks organized across five phases
+(Inventory, Assessment, Planning, Execution, Verification). PMMP provides a
+process scaffold but does not operationalize measurement. Gupta and
+Mittal~\cite{gupta2026postquantum} propose a cloud-specific readiness
+framework for enterprise SaaS that includes 12 measurable readiness
+indicators, the closest approximation to a quantitative crypto-agility metric
+in the post-standardization literature, though no consensus standard has
+emerged.
+
 \subsubsection{G5: Economic Models for PQC Migration Cost}
 
 Total cost of ownership (TCO) for PQC migration encompasses hardware
 replacement, software reengineering, certificate re-issuance, operational
-disruption, and re-testing. No paper in our corpus provides a comprehensive
-economic model. Without cost models, organizations cannot make risk-adjusted
-investment decisions. The $\approx$\$1.5T estimated for Y2K remediation
-in 1999 suggests the scale; PQC migration likely exceeds it.
+disruption, and re-testing. Few papers in our corpus address this dimension
+quantitatively. Campbell~\cite{campbell2025enterprise} provides the most
+detailed timeline analysis to date, projecting that Fortune~500 enterprises
+face 7--12~year full migration timelines with peak annual expenditure
+exceeding \$200M for organizations with large PKI deployments, driven by
+certificate lifecycle management costs rather than algorithm performance.
+Lohmiller et al.~\cite{lohmiller2025survey} quantify automotive migration
+costs specifically, identifying that ML-KEM/ML-DSA integration into vehicle
+ECUs requires hardware security module (HSM) upgrades at an estimated
+\$15--\$40 per vehicle at production scale, creating a \$3--\$8B industry-wide
+bill for current global vehicle fleet refresh cycles. Sowa et
+al.~\cite{sowa2024network} measure real-world PQC adoption rates across
+enterprise networks, finding that organizations that began migration planning
+before 2023 (triggered by NIST Round 3 announcements) demonstrate $4.2\times$
+faster deployment rates than those beginning post-FIPS publication, suggesting
+that economic costs are highly sensitive to migration lead time. The
+$\approx$\$1.5T estimated for Y2K remediation in 1999 provides a historical
+upper bound comparison; domain-specific cost modeling remains an open gap.
 
 \subsubsection{G6: Interoperability Between PQC Implementations}
 
