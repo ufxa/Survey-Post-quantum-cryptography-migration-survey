@@ -69,14 +69,20 @@
 Standards, Threat Models, Implementation Challenges, and\\
 Regulatory Roadmaps for Legacy Systems}
 
-\author{[Author Names Anonymized for Review]%
-% NOTE TO CAMERA-READY: restore funding acknowledgment (FAPESPA, PRODEPA, RNP, INCT iAmazonia)
-\thanks{Manuscript submitted July 15, 2026. Funding information withheld for double-blind review; will be disclosed upon acceptance.}%
-\thanks{Author affiliations and contact details are anonymized for double-blind peer review per IEEE CST submission guidelines.}
+\author{Allan~Douglas~Costa,~\IEEEmembership{Member,~IEEE}%
+\thanks{Manuscript received July 15, 2026.}%
+\thanks{A.~D.~Costa is with the Institute of Cyberspace (ICIBE),
+Federal Rural University of the Amazon (UFRA), Bel\'{e}m, PA, Brazil.
+E-mail: allan.costa@ufra.edu.br.
+ORCID: \href{https://orcid.org/0000-0002-7068-8889}{0000-0002-7068-8889}.}%
+\thanks{This work was supported by the Amazon Foundation for the
+Support of Studies and Research (FAPESPA), the Information and
+Communication Technology Company of the State of Par\'{a} (PRODEPA),
+and the National Education and Research Network (RNP).}%
 }
 
 \markboth{IEEE Communications Surveys \& Tutorials,~Vol.~XX, No.~XX, 2026}%
-{Author \MakeLowercase{\textit{et al.}}: PQC Migration Survey}
+{A.~D.~Costa: Post-Quantum Cryptography Migration Survey}
 
 \maketitle
 
@@ -488,7 +494,7 @@ Web of Science is planned as future work and may surface additional evidence
 that modifies or refines the domain-level findings reported here.
 
 \textbf{L2 -- Heuristic MRC weights.} The MRC formula weights
-($w_E=0.45$, $w_F=0.35$, $w_D=0.20$) were assigned by the authors based
+($w_E=0.45$, $w_F=0.35$, $w_D=0.20$) were assigned by the author based
 on expert judgment. A two-round Delphi survey targeting 14--19 PQC and
 security architecture experts (instrument available at the project repository)
 is planned to validate or revise these weights. Until that validation is
@@ -498,9 +504,9 @@ showing how tier assignments change under alternative weight distributions
 is provided in Section~\ref{sec:mrc}.
 
 \textbf{L3 -- MRC parameter assignment.} The E, F, and D values for each
-domain were assigned by the authors through literature synthesis, not
+domain were assigned by the author through literature synthesis, not
 derived from primary measurement studies. Domain-level scores represent
-the authors' expert reading of the reviewed corpus and carry the associated
+the author's expert reading of the reviewed corpus and carry the associated
 subjectivity inherent to structured narrative synthesis.
 
 \textbf{L4 -- Geographic scope of regulatory analysis.} The regulatory
@@ -838,7 +844,7 @@ against RSA and ECDH across three deployment contexts.
   Kannwischer et al.\ \cite{kannwischer2019pqm4} (pqm4, ARM Cortex-M4) and
   Seo et al.\ \cite{seo2020crystals}. Mobile estimates are extrapolated from
   server benchmarks scaled by reported Cortex-A55 vs.\ Cortex-M4 throughput
-  ratios; no independent mobile benchmark was conducted by the authors.
+  ratios; no independent mobile benchmark was conducted by the author.
   Metrics: key generation, encapsulation, and decapsulation latency ($\mu$s).
   Ciphertext sizes are deterministic and independent of platform.}
   \label{fig:performance}
@@ -1277,7 +1283,7 @@ implement a PQC-transparent proxy for Modbus TCP using ML-KEM-768 + ML-DSA-65
 session establishment, reporting $<$3~ms added latency per command-response
 cycle on a testbed Siemens S7-1500 PLC. The proxy architecture requires no
 firmware modification of existing PLCs, making it immediately deployable as
-Strategy~S6. For IEC~61850 substations, the authors note that GOOSE and
+Strategy~S6. For IEC~61850 substations, the author notes that GOOSE and
 SV messages (multicast, no session establishment) cannot benefit from
 session-based PQC proxying, requiring either multicast ML-DSA broadcast
 authentication or native firmware updates.
@@ -1608,7 +1614,7 @@ asset migration; (c)~adopt FIPS~203/204/205 as available.
 
 Two significant U.S. regulatory instruments were issued in mid-2026 as this survey
 was finalized. Readers should consult the official texts cited below for authoritative
-requirements; the summaries that follow are the authors' interpretations of the
+requirements; the summaries that follow are the author's interpretations of the
 published documents.
 
 \textbf{Executive Order 14412} (``Securing the Nation Against Advanced Cryptographic
@@ -2076,11 +2082,11 @@ engineering mandate of the present.
 % =============================================================================
 \section*{AI Usage Disclosure}
 
-The authors acknowledge the use of large language model (LLM) assistance for
+The author acknowledges the use of large language model (LLM) assistance for
 grammar refinement, bibliography formatting, and manuscript preparation support
 in the preparation of this manuscript, in accordance with IEEE's Authorship and
 AI Policy. All scientific content, survey design, methodology choices, data
-analysis, and conclusions are the sole responsibility of the human authors.
+analysis, and conclusions are the sole responsibility of the author.
 Benchmark data are derived from publicly available open-source implementations
 (OQS liboqs~\cite{oqs2024} and pqm4~\cite{kannwischer2019pqm4}).
 
@@ -2094,7 +2100,7 @@ Benchmark data are derived from publicly available open-source implementations
 % For double-blind submission, replace the paragraph below with:
 %   [Anonymized for peer review.]
 
-The authors acknowledge the Amazon Foundation for the Support of Studies and
+The author acknowledges the Amazon Foundation for the Support of Studies and
 Research (FAPESPA), the Information and Communication Technology Company of
 the State of Pará (PRODEPA), the Government of the State of Pará, and the
 Federal Government of Brazil for their institutional and financial support.
@@ -2103,7 +2109,7 @@ interinstitutional collaborations, and computational resources that made this
 work possible. Special thanks are extended to the SEC365 project (UFPA/UFRA)
 and to the Laboratory of Informatics and Computing of the Amazon (LICA/UFRA),
 whose teams contributed decisively to the technical validation and implementation
-of the accompanying analysis toolkit. The authors also express their gratitude
+of the accompanying analysis toolkit. The author also expresses gratitude
 to the High-Performance Computing and Artificial Intelligence Center
 (CCAD-IA/UFPA) and to the National Education and Research Network (RNP) for
 providing high-performance computing resources and continuous technical
