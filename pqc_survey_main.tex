@@ -1718,25 +1718,21 @@ they operate exclusively at the source-code level and require
 language-specific parsers.
 
 ML-based approaches extend coverage to compiled artifacts and
-heterogeneous codebases. Neural networks trained on function-level binary
-features can classify cryptographic routines with greater than 90\%
-accuracy across stripped ELF binaries~\cite{david2020neural}, outperforming
-signature-based disassemblers on obfuscated code. More recently,
-transformer-based models pretrained on large corpora of assembly code have
-been applied to identify lattice-based and hash-based subroutines
-introduced during early PQC migration~\cite{xu2024binarynlp}. Natural
-language processing (NLP) pipelines applied to source repositories
-complement binary analysis: named-entity recognition models fine-tuned on
-cryptographic nomenclature extract algorithm identifiers, key-size
-constants, and protocol references from comments and configuration
-files~\cite{rahman2023nlpcrypto}.
+heterogeneous codebases. Large language models fine-tuned on assembly code
+corpora can identify cryptographic routines in stripped ELF binaries with
+substantially higher coverage than signature-based disassemblers, including
+lattice-based and hash-based subroutines introduced during
+PQC~migration~\cite{shang2025foc}. Complementing binary analysis, LLM-based
+tools applied to source repositories can detect cryptographic API misuse
+through semantic understanding of algorithm identifiers, key-size constants,
+and protocol references~\cite{baek2024cryptollm}.
 
-Software composition analysis (SCA) toolchains are beginning to
-integrate ML-assisted CBOM generation, enabling continuous inventory
-updates triggered by CI/CD pipeline events rather than point-in-time
-audits~\cite{feist2023sbom}. This shift from batch to streaming inventory
-is essential for organizations that deploy software at high cadence and
-cannot afford cryptographic drift between audit cycles.
+Software composition analysis (SCA) toolchains are beginning to integrate
+automated CBOM generation, enabling continuous inventory updates triggered
+by CI/CD pipeline events rather than point-in-time audits~\cite{owasp2023cbom}.
+This shift from batch to streaming inventory is essential for organizations
+that deploy software at high cadence and cannot afford cryptographic drift
+between audit cycles.
 
 \subsection{ML-Assisted Algorithm Selection and Parameter Tuning}
 \label{subsec:selection}
@@ -1749,26 +1745,18 @@ maximum post-quantum security margin. Hardware availability, latency
 budgets, energy envelopes, and regulatory requirements interact in ways
 that resist rule-based heuristics.
 
-Supervised learning approaches train on empirical benchmarks gathered
-from heterogeneous hardware platforms to predict algorithm performance
-profiles for unseen deployments~\cite{chen2024mlpqc,zhang2023platformpredict}.
-Feature vectors encode micro-architectural characteristics (cache sizes,
-vector unit availability, clock frequency), workload patterns (signature
-rate, key-encapsulation frequency), and target security level.
-Gradient-boosted trees have shown strong generalization on this task due
-to the mixed numeric-categorical nature of the feature
-space~\cite{li2024treepqc}.
-
-Reinforcement learning (RL) provides a natural framework for
-crypto-agility management, where an agent must balance migration progress
-against service availability. \citet{park2024rlagility} formulate PQC
-rollout as a Markov decision process in which the agent selects which
-services to migrate at each time step, receiving rewards for reduced
-classical-cipher exposure and penalties for service-level-agreement (SLA)
-violations. Experiments on synthetic enterprise topologies show that RL
-policies reduce total migration time by up to 30\% compared to greedy
-priority schedules, while maintaining equivalent SLA compliance.
-Table~\ref{tab:ml_approaches} summarizes representative ML approaches
+Supervised learning trained on empirical PQC benchmarks is a natural
+candidate for predicting algorithm performance profiles across heterogeneous
+hardware: feature vectors encoding micro-architectural characteristics
+(cache sizes, vector unit availability, clock frequency), workload patterns,
+and target security level could guide automated parameter selection.
+Similarly, reinforcement learning provides a natural framework for
+crypto-agility management, where an agent balances migration progress
+against service-level-agreement (SLA) constraints. However, to our
+knowledge no published peer-reviewed evaluation has demonstrated these
+techniques on real-world enterprise PQC deployments at scale; the
+application remains an open and high-value research direction.
+Table~\ref{tab:ml_approaches} summarizes current and emerging ML approaches
 across the migration lifecycle.
 
 \begin{table}[!t]
@@ -1781,13 +1769,13 @@ across the migration lifecycle.
 \toprule
 \textbf{Stage} & \textbf{ML Technique} & \textbf{Target} & \textbf{Key Ref.} \\
 \midrule
-Inventory       & CNN on binary        & Crypto routine ID    & \cite{david2020neural}        \\
-Inventory       & Transformer / NLP    & Source / config      & \cite{xu2024binarynlp}        \\
-Selection       & Gradient-boosted     & Platform predict.    & \cite{li2024treepqc}          \\
-Selection       & Reinforcement learn. & Rollout scheduling   & \cite{park2024rlagility}      \\
-Side-channel    & CNN on power traces  & Attack detection     & \cite{kim2023powercnn}        \\
-Side-channel    & LSTM / autoencoder   & Timing anomaly       & \cite{wu2024timingml}         \\
-Compliance      & Explainable ML       & Audit reporting      & \cite{chen2024mlpqc}          \\
+Inventory       & LLM on binary        & Crypto routine ID    & \cite{shang2025foc}           \\
+Inventory       & LLM / NLP            & Source / config      & \cite{baek2024cryptollm}      \\
+Selection       & Supervised ML        & Platform predict.    & [open challenge]              \\
+Selection       & Reinforcement learn. & Rollout scheduling   & [open challenge]              \\
+Side-channel    & CNN on power traces  & SCA on Kyber/ML-KEM  & \cite{ravi2023mlsca}          \\
+Side-channel    & Anomaly detection    & Timing / power       & [open challenge]              \\
+Compliance      & Explainable ML       & Audit reporting      & \cite{arrieta2020xai}         \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1803,21 +1791,22 @@ sound~\cite{ravi2020sidechannel,ngo2021riscv}. ML-based detection
 complements formal masking and constant-time implementations by
 providing a run-time tripwire against active probing.
 
-CNNs applied to raw power traces collected during ML-KEM key generation
-and decapsulation achieve high classification accuracy in distinguishing
-normal operation from simple and correlation power analysis
-probing~\cite{kim2023powercnn}. Recurrent architectures (LSTMs) have
-demonstrated comparable performance on variable-length timing
-measurements, where the adversary exploits branch-dependent execution
-paths in polynomial rejection sampling~\cite{wu2024timingml}.
+CNNs applied to raw power traces have been used to mount blind SCA against
+ML-KEM (Kyber) key generation and decapsulation, demonstrating that
+lattice-based KEMs are not immune to profiling attacks despite their
+mathematical hardness~\cite{ravi2023mlsca}. This result motivates a
+complementary research agenda: using ML to \emph{detect} rather than
+\emph{mount} such attacks, enabling real-time protection on deployed
+hardware.
 
-Unsupervised anomaly detection is particularly attractive in deployment
-scenarios where labeled attack traces are unavailable. Autoencoders
-trained exclusively on benign execution profiles reconstruct normal
-behavior with high fidelity; deviations in reconstruction error serve as
-an alarm signal~\cite{wu2024timingml}. This approach is well suited to
-ICS and medical device environments where diverse workloads make
-supervised labeling impractical.
+Unsupervised anomaly detection is particularly attractive where labeled
+attack traces are unavailable. Autoencoders trained on benign execution
+profiles can flag deviations in reconstruction error as a side-channel
+alarm, making them well suited to ICS and medical device environments
+where supervised labeling is impractical. To our knowledge, published
+evaluations of ML-based SCA detection (as distinct from ML-based SCA
+attacks) on PQC implementations remain limited, representing a promising
+open challenge.
 
 \subsection{Limitations of AI/ML in PQC Contexts}
 \label{subsec:aiml_limits}
