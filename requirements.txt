@@ -1,0 +1,12 @@
+# PQC Migration Survey — Python Dependencies
+# Install with: python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt
+# On macOS with PEP668, use a venv (see COMPILE_INSTRUCTIONS.md)
+
+numpy>=1.24.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+networkx>=3.1
+scipy>=1.10.0
+pandas>=2.0.0
+plotly>=5.14.0        # optional: for interactive Gantt chart
+kaleido>=0.2.1         # optional: plotly export to PDF

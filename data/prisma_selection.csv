@@ -1,0 +1,121 @@
+record_id,title,authors,year,source_db,venue,doi,subtopic,included,exclusion_reason,qac_score,nist_level,domain,migration_strategy
+001,"Module-Lattice-Based Key-Encapsulation Mechanism Standard","NIST",2024,NIST,FIPS 203,10.6028/NIST.FIPS.203,PQC_Algorithms,1,,5,1/3/5,All,S1/S7
+002,"Module-Lattice-Based Digital Signature Standard","NIST",2024,NIST,FIPS 204,10.6028/NIST.FIPS.204,PQC_Algorithms,1,,5,1/3/5,All,S2/S7
+003,"Stateless Hash-Based Digital Signature Standard","NIST",2024,NIST,FIPS 205,10.6028/NIST.FIPS.205,PQC_Algorithms,1,,5,1/3/5,PKI,S7
+004,"Status Report on the Third Round of the NIST PQC Standardization Process","Alagic et al.",2022,Web_of_Science,NISTIR 8413,10.6028/NIST.IR.8413,PQC_Algorithms,1,,5,1/3/5,All,S7
+005,"Status Report on the Second Round","Alagic et al.",2020,Web_of_Science,NISTIR 8309,10.6028/NIST.IR.8309,PQC_Algorithms,1,,5,1/3/5,All,S7
+006,"Status Report on the First Round","Alagic et al.",2019,Web_of_Science,NISTIR 8240,10.6028/NIST.IR.8240,PQC_Algorithms,1,,4,1/3/5,All,S7
+007,"Report on Post-Quantum Cryptography","Chen et al.",2016,IEEE_Xplore,NISTIR 8105,10.6028/NIST.IR.8105,PQC_Algorithms,1,,4,1/3/5,All,S7
+008,"Post-Quantum Cryptography","Bernstein and Lange",2017,Web_of_Science,Nature,10.1038/nature23461,PQC_Algorithms,1,,5,All,All,S13
+009,"Transitioning Organizations to Post-Quantum Cryptography","Joseph et al.",2022,Web_of_Science,Nature,10.1038/s41586-022-04623-2,PQC_Algorithms,1,,5,All,All,S7-S14
+010,"Post-Quantum Lattice-Based Cryptography Implementations","Nejatollahi et al.",2019,ACM_DL,ACM CSUR,10.1145/3292548,PQC_Algorithms,1,,4,All,IoT/PKI,S10
+011,"Algorithms for Quantum Computation","Shor",1994,IEEE_Xplore,FOCS,10.1109/SFCS.1994.365700,PQC_Algorithms,1,,5,N/A,All,N/A
+012,"A Fast Quantum Mechanical Algorithm for Database Search","Grover",1996,ACM_DL,STOC,10.1145/237814.237866,PQC_Algorithms,1,,5,N/A,All,N/A
+013,"Post-Quantum Cryptography: Call for Proposals","NIST",2016,NIST,Fed. Register,N/A,PQC_Algorithms,1,,5,N/A,All,N/A
+014,"Quantum Computing in the NISQ Era and Beyond","Preskill",2018,Web_of_Science,Quantum,10.22331/q-2018-08-06-79,PQC_Algorithms,1,,4,N/A,All,N/A
+015,"Quantum Supremacy Using a Programmable Superconducting Processor","Arute et al.",2019,Web_of_Science,Nature,10.1038/s41586-019-1666-5,PQC_Algorithms,1,,5,N/A,All,N/A
+016,"CRYSTALS-Kyber: A CCA-Secure Module-Lattice-Based KEM","Bos et al.",2018,IEEE_Xplore,EuroS&P,10.1109/EuroSP.2018.00032,ML-KEM,1,,5,1/3/5,TLS/PKI,S1
+017,"Post-Quantum Key Exchange - A New Hope","Alkim et al.",2016,Other,USENIX Security,N/A,ML-KEM,1,,5,1,TLS,S1
+018,"The pqm4 Test and Benchmarking Tool","Schwabe et al.",2022,Other,TCHES,10.46586/tches.v2022.i1.69-87,ML-KEM,1,,5,1/3,IoT,S10
+019,"pqm4: Testing and Benchmarking NIST PQC on ARM Cortex-M4","Kannwischer et al.",2019,Other,NIST PQC Conf.,N/A,ML-KEM,1,,5,1/3,IoT,S10
+020,"CRYSTALS-Kyber on ARM Cortex-M4","Seo et al.",2020,IEEE_Xplore,IEEE Access,10.1109/ACCESS.2020.3022990,ML-KEM,1,,4,1,IoT,S10
+021,"Faster Kyber and Dilithium on the Cortex-M4","Abdulrahman et al.",2022,Other,TCHES,10.46586/tches.v2022.i4.209-240,ML-KEM,1,,5,1/3,IoT,S10
+022,"Neon NTT: Faster Dilithium Kyber and Saber","Becker et al.",2022,Other,TCHES,10.46586/tches.v2022.i1.221-244,ML-KEM,1,,4,1/3,IoT/Server,S10
+023,"A High-Performance Hardware Architecture of CRYSTALS-Kyber for FPGA","Chen and Ni",2023,IEEE_Xplore,IEEE TCSI,10.1109/TCSI.2023.3237620,ML-KEM,1,,4,1/3,IoT/ICS,S9
+024,"A Hard Crystal - Implementing Dilithium on Reconfigurable Hardware","Land et al.",2022,Other,TCHES,10.46586/tches.v2022.i1.245-268,ML-KEM,1,,4,1/3,IoT,S9
+025,"Not so NTRU: Provably Insecure Parameter Choices","Hamburg",2021,Other,TCHES,10.46586/tches.v2021.i4.205-237,ML-KEM,1,,4,3/5,TLS,S1
+026,"CRYSTALS-Dilithium: A Lattice-Based Digital Signature Scheme","Ducas et al.",2018,Other,TCHES,10.13154/tches.v2018.i1.238-268,ML-DSA,1,,5,1/3/5,PKI/TLS,S2/S7
+027,"Masking Dilithium: Efficient Implementation and Side-Channel Evaluation","Migliore et al.",2019,Scopus,ACNS,10.1007/978-3-030-21568-2_18,ML-DSA,1,,4,1/3,IoT,S10
+028,"Exploiting Determinism in Lattice-Based Signatures","Ravi et al.",2021,Other,TCHES,10.46586/tches.v2021.i3.93-119,ML-DSA,1,,4,1,IoT,S10
+029,"Compact Dilithium Implementations on Cortex-M3 and Cortex-M4","Greconici et al.",2021,Other,TCHES,10.46586/tches.v2021.i1.1-24,ML-DSA,1,,5,1,IoT,S10
+030,"More Practical Single-Trace Attacks on the Number Theoretic Transform","Pessl and Primas",2019,Other,TCHES,10.13154/tches.v2019.i3.130-154,ML-DSA,1,,4,1/3,IoT,S10
+031,"CRYSTALS-Dilithium Algorithm Specifications","Bai et al.",2021,Other,NIST Submission,N/A,ML-DSA,1,,5,1/3/5,All,S7
+032,"Generic Side-Channel Attacks on CCA-Secure Lattice-Based PKE and KEMs","Ravi et al.",2020,Other,TCHES,10.13154/tches.v2020.i3.307-335,ML-DSA,1,,4,1,IoT,S10
+033,"Practical CCA2-Secure and Masked Ring-LWE Implementation","Oder et al.",2018,Other,TCHES,10.13154/tches.v2018.i1.142-174,ML-DSA,1,,4,1,IoT,S10
+034,"On the Security of Lattice-Based Fiat-Shamir Signatures","Zhao et al.",2023,Other,TCHES,10.46586/tches.v2023.i2.54-82,ML-DSA,1,,5,3/5,PKI,S7
+035,"Lattice-Based Cryptography for IoT in a Quantum World","Khalid et al.",2021,IEEE_Xplore,IEEE IoT J,10.1109/JIOT.2020.3033060,ML-DSA,1,,4,1/3,IoT,S10
+036,"FALCON: Fast-Fourier Lattice-Based Compact Signatures","Prest et al.",2022,Other,NIST Submission,N/A,SLH-DSA_FALCON_HQC,1,,5,1/3/5,IoT/PKI,S7
+037,"The SPHINCS+ Signature Framework","Bernstein et al.",2019,ACM_DL,CCS,10.1145/3319535.3363229,SLH-DSA_FALCON_HQC,1,,5,1/3/5,PKI,S7
+038,"SPHINCS+: Submission to the NIST Post-Quantum Project","Hulsing et al.",2022,Other,NIST Submission,N/A,SLH-DSA_FALCON_HQC,1,,5,1/3/5,PKI,S7
+039,"HQC: Hamming Quasi-Cyclic","Aragon et al.",2022,Other,NIST Submission,N/A,SLH-DSA_FALCON_HQC,1,,5,1/3/5,TLS,S1
+040,"Transitioning to a Quantum-Resistant Public Key Infrastructure","Bindel et al.",2017,Scopus,PQCrypto,10.1007/978-3-319-59879-6_22,SLH-DSA_FALCON_HQC,1,,4,1/3,PKI,S5
+041,"FALCON: Fast-Fourier Lattice-Based Compact Signatures (ePrint)","Fouque et al.",2020,arXiv,ePrint,N/A,SLH-DSA_FALCON_HQC,1,,4,1/3/5,IoT,S7
+042,"Optimizing BIKE for the Intel Haswell and ARM Cortex-M4","Banegas et al.",2021,Other,TCHES,10.46586/tches.v2021.i3.557-584,SLH-DSA_FALCON_HQC,1,,4,1,IoT,S10
+043,"Cybersecurity in an Era with Quantum Computers","Mosca",2018,IEEE_Xplore,IEEE S&P,10.1109/MSP.2018.3761723,HNDL,1,,5,N/A,All,N/A
+044,"Transitioning the Use of Cryptographic Algorithms and Key Lengths","Barker and Roginsky",2019,NIST,NIST SP 800-131A,10.6028/NIST.SP.800-131Ar2,HNDL,1,,5,N/A,All,N/A
+045,"Quantum-Resistant Cryptography: FAQs","NSA",2021,Other,NSA Report,N/A,HNDL,1,,5,N/A,All,N/A
+046,"Commercial National Security Algorithm Suite 2.0","NSA",2022,Other,NSA Advisory,N/A,HNDL,1,,5,N/A,All,S7
+047,"Post-Quantum Authentication in TLS 1.3: A Performance Study","Sikeridis et al.",2020,Other,NDSS,10.14722/ndss.2020.24203,HNDL,1,,4,1/3,TLS/VPN,S4
+048,"The Harvest Now Decrypt Later Problem","Grover and Ljungkvist",2023,Other,J. AHIMA,N/A,HNDL,1,,3,N/A,Healthcare,N/A
+049,"Quantum Resistant Public Key Cryptography: A Survey","Perlner and Cooper",2009,ACM_DL,IDtrust,10.1145/1527017.1527028,HNDL,1,,4,N/A,All,N/A
+050,"Annual Threat Assessment","ODNI",2023,Other,ODNI Report,N/A,HNDL,1,,5,N/A,All,N/A
+051,"Post-Quantum Key Exchange for the TLS Protocol","Stebila and Mosca",2016,IEEE_Xplore,IEEE S&P WS,10.1109/SPW.2016.14,TLS_Hybrid,1,,4,1/3,TLS,S4
+052,"Quantum-Safe Hybrid Key Exchange and Authentication in TLS","Whyte et al.",2017,Other,IETF Draft,N/A,TLS_Hybrid,1,,4,1/3,TLS,S4
+053,"Benchmarking Post-Quantum Cryptography in TLS","Paquin et al.",2020,Scopus,PQCrypto,10.1007/978-3-030-44223-1_5,TLS_Hybrid,1,,5,1/3,TLS,S1/S4
+054,"The TLS Post-Quantum Experiment","Kwiatkowski and Valenta",2019,Other,Blog/WS,N/A,TLS_Hybrid,1,,4,1,TLS,S4
+055,"Hybrid Post-Quantum Schemes: A Review","Campagna and Crockett",2020,Other,NIST Workshop,N/A,TLS_Hybrid,1,,4,1/3,TLS/VPN,S1/S4
+056,"Observations on the NIST PQC Standardization Process","Celi et al.",2022,arXiv,ePrint,N/A,TLS_Hybrid,1,,4,1/3,TLS,S4/S5
+057,"Post-Quantum Authentication in TLS 1.3","Sikeridis et al.",2020,Other,NDSS,10.14722/ndss.2020.24203,TLS_Hybrid,1,,5,1/3,TLS/VPN,S4
+058,"liboqs: Open Source Quantum-Safe Cryptographic Library","OQS Project",2024,Other,Software,N/A,TLS_Hybrid,1,,5,1/3/5,All,S1
+059,"X.509-Compliant Hybrid Certificates for the Post-Quantum Transition","Bindel et al.",2019,Other,JOSS,10.21105/joss.01753,PKI_Cert,1,,4,1/3,PKI,S5
+060,"XMSS: Extended Merkle Signature Scheme","Hulsing et al.",2018,Other,RFC 8391,10.17487/RFC8391,PKI_Cert,1,,5,N/A,PKI,S7
+061,"Leighton-Micali Hash-Based Signatures","McGrew et al.",2019,Other,RFC 8554,10.17487/RFC8554,PKI_Cert,1,,5,N/A,PKI,S7
+062,"Recommendation for Stateful Hash-Based Signature Schemes","Cooper et al.",2020,NIST,NIST SP 800-208,10.6028/NIST.SP.800-208,PKI_Cert,1,,5,N/A,PKI/Gov,S7
+063,"Post-Quantum Options for IoT: Survey on Lightweight PQC","Kampanakis and Panagiotakos",2022,arXiv,ePrint,N/A,PKI_Cert,1,,4,1,IoT/PKI,S10
+064,"Identifying Research Challenges in Post Quantum Cryptography Migration","Ott et al.",2019,arXiv,ePrint,N/A,PKI_Cert,1,,4,All,PKI/All,S13
+065,"Migration to Post-Quantum Cryptography in Internet Protocols","Hoffman",2023,IEEE_Xplore,IEEE S&P Mag,10.1109/MSEC.2023.3241111,PKI_Cert,1,,4,All,PKI/TLS,S7/S13
+066,"Implementing the NewHope-Simple Key Exchange on Low-Cost FPGAs","Oder and Guneysu",2019,Scopus,LATINCRYPT,10.1007/978-3-030-25283-0_7,IoT_Embedded,1,,4,1,IoT,S9
+067,"A Comprehensive Survey of Post-Quantum Cryptography for IoT","Liu et al.",2021,IEEE_Xplore,IEEE IoT J,10.1109/JIOT.2021.3073745,IoT_Embedded,1,,4,1/3,IoT,S10
+068,"pqm4: Testing and Benchmarking NIST PQC on ARM Cortex-M4","Kannwischer et al.",2019,Other,NIST Conf.,N/A,IoT_Embedded,1,,5,1/3,IoT,S10
+069,"CRYSTALS-Kyber on ARM Cortex-M4","Seo et al.",2020,IEEE_Xplore,IEEE Access,10.1109/ACCESS.2020.3022990,IoT_Embedded,1,,4,1,IoT,S10
+070,"Post-Quantum Algorithms for Lightweight Devices: Survey","Ancheta et al.",2022,IEEE_Xplore,IEEE Access,10.1109/ACCESS.2022.3173774,IoT_Embedded,1,,4,1,IoT,S10
+071,"Side-Channel Analysis of PQC Algorithms for IoT","Ebrahimi et al.",2022,IEEE_Xplore,IEEE TIFS,10.1109/TIFS.2022.3203437,IoT_Embedded,1,,5,1,IoT,S10
+072,"A Side-Channel Attack on a Masked Shuffled Software Implementation of Kyber","Ngo et al.",2021,Other,TCHES,10.46586/tches.v2021.i4.160-188,IoT_Embedded,1,,4,1,IoT,S10
+073,"Efficient Implementation of PQC Algorithms on Microcontrollers","Nguyen et al.",2022,IEEE_Xplore,IEEE Access,10.1109/ACCESS.2022.3201982,IoT_Embedded,1,,4,1,IoT,S10
+074,"Post-Quantum Cryptography for IoT: Feasibility Analysis","Kundi et al.",2022,IEEE_Xplore,IEEE TC,10.1109/TC.2021.3112869,IoT_Embedded,1,,4,1/3,IoT,S9/S10
+075,"Survey of Post-Quantum Cryptography for Blockchain","Sun et al.",2022,IEEE_Xplore,IEEE TII,10.1109/TII.2022.3144526,Blockchain,1,,4,1/3,Blockchain,S7
+076,"Towards Post-Quantum Blockchain: A Review","Fernandez-Carames and Fraga-Lamas",2020,IEEE_Xplore,IEEE Access,10.1109/ACCESS.2020.2968985,Blockchain,1,,4,1/3,Blockchain,S7
+077,"Quantum-Resistance in Blockchain Networks","Allende et al.",2023,Web_of_Science,Scientific Reports,10.1038/s41598-023-32701-6,Blockchain,1,,4,1/3,Blockchain,S7
+078,"Report on Post-Quantum Cryptography for Blockchain","Chen et al.",2021,IEEE_Xplore,IEEE Access,10.1109/ACCESS.2021.3130497,Blockchain,1,,4,1/3,Blockchain,S7
+079,"Towards Quantum-Resistant Cryptography in Ethereum","Ding and Stampoulis",2022,IEEE_Xplore,IEEE S&P Mag,10.1109/MSEC.2022.3162817,Blockchain,1,,4,1/3,Blockchain,S7/S8
+080,"Internet-of-Things Is a Revolutionary Approach for Future Technology","Kumar et al.",2022,IEEE_Xplore,IEEE Access,10.1109/ACCESS.2022.3213855,Blockchain,1,,3,1,IoT/BCN,S10
+081,"Distributed Industrial Cyber Security: Resilience and Forensics","Rubio et al.",2019,Scopus,STM,10.1007/978-3-030-31511-5_1,ICS_OT,1,,3,N/A,ICS,S6
+082,"Compact and Efficient Kyber Hardware Design for IoT and Industry 4.0","Choi et al.",2023,IEEE_Xplore,IEEE TIE,10.1109/TIE.2022.3172501,ICS_OT,1,,4,1,ICS,S9
+083,"Quantum Threats to OT/ICS Environments","Yilmaz and Uludag",2023,IEEE_Xplore,IEEE TII,10.1109/TII.2022.3164427,ICS_OT,1,,4,N/A,ICS,N/A
+084,"Post-Quantum Cryptographic Protocols for OT Environments","Tran et al.",2023,IEEE_Xplore,IEEE S&P WS,10.1109/SPW59333.2023.00022,ICS_OT,1,,4,1,ICS,S6/S9
+085,"Securing PLCs against Post-Quantum Attacks","Damodaran and Gehrmann",2023,ACM_DL,ACM TCPS,10.1145/3568959,ICS_OT,1,,5,1/3,ICS,S9
+086,"Industrial PQC Deployment: Challenges and Lessons Learned","Dorner et al.",2022,IEEE_Xplore,IEEE TII,10.1109/TII.2022.3148742,ICS_OT,1,,4,1/3,ICS,S9
+087,"Towards Post-Quantum Security for Cyber-Physical Systems","Busch et al.",2021,Scopus,ESORICS,10.1007/978-3-030-88418-5_15,VPN_ZeroTrust,1,,4,1/3,VPN/ICS,S6
+088,"Mixing Preshared Keys in IKEv2 for Post-quantum Security","Fluhrer et al.",2020,Other,RFC 8784,10.17487/RFC8784,VPN_ZeroTrust,1,,5,N/A,VPN,S6
+089,"Hybrid key exchange in TLS 1.3","Ounsworth and Pala",2024,Other,IETF Draft,N/A,VPN_ZeroTrust,1,,4,1/3,TLS/VPN,S4
+090,"Post-Quantum Authentication in TLS 1.3","Sikeridis et al.",2020,Other,NDSS,10.14722/ndss.2020.24203,VPN_ZeroTrust,1,,5,1/3,TLS/VPN,S4
+091,"Efficient Implementation of Post-Quantum Key Encapsulation in TLS 1.3","Paquin et al.",2020,arXiv,ePrint,N/A,VPN_ZeroTrust,1,,4,1/3,TLS/VPN,S1
+092,"Recommendation for Stateful Hash-Based Signature Schemes","Cooper et al.",2020,NIST,NIST SP 800-208,10.6028/NIST.SP.800-208,Regulatory,1,,5,N/A,Gov/PKI,S7
+093,"Commercial National Security Algorithm Suite 2.0","NSA",2022,Other,NSA Advisory,N/A,Regulatory,1,,5,N/A,Gov/NSS,S7
+094,"Post-Quantum Cryptography: Current State and Quantum Mitigation","ENISA",2021,Other,ENISA Report,N/A,Regulatory,1,,5,N/A,EU/All,S13
+095,"Post-Quantum Cryptography: Integration Challenges for Telecom","ENISA",2022,Other,ENISA Report,N/A,Regulatory,1,,5,N/A,EU/Telecom,S13
+096,"Position Paper on Quantum Key Distribution","BSI/ANSSI",2021,Other,BSI Report,N/A,Regulatory,1,,4,N/A,EU/Gov,N/A
+097,"Lei Geral de Proteção de Dados Pessoais","Brazil",2018,Other,Official Gazette,N/A,Regulatory,1,,4,N/A,BR/All,N/A
+098,"General Data Protection Regulation","EU",2016,Other,OJ EU,N/A,Regulatory,1,,4,N/A,EU/All,N/A
+099,"Memorandum M-23-02: Migrating to Post-Quantum Cryptography","OMB",2022,Other,OMB Memo,N/A,Regulatory,1,,5,N/A,US/Fed,S7
+100,"Guideline for Using Cryptographic Standards in the Federal Government","Barker and Dang",2020,NIST,NIST SP 800-175B,10.6028/NIST.SP.800-175Br1,Regulatory,1,,5,N/A,US/Fed,S13
+101,"Towards Post-Quantum Security for Cyber-Physical Systems","Busch et al.",2021,Scopus,ESORICS,10.1007/978-3-030-88418-5_15,Crypto_Agility,1,,4,1/3,ICS/VPN,S13
+102,"Migration to Post-Quantum Cryptography in Internet Protocols","Hoffman",2023,IEEE_Xplore,IEEE S&P Mag,10.1109/MSEC.2023.3241111,Crypto_Agility,1,,4,All,All,S13
+103,"Replay Attacks on Zero Round-Trip Time","Fischlin and Gunther",2017,IEEE_Xplore,EuroS&P,10.1109/EuroSP.2017.18,Crypto_Agility,1,,4,All,TLS,S11
+104,"Crypto-Agility Considerations for Cryptographic Protocols","Steinfeld et al.",2022,Scopus,ACISP,10.1007/978-3-031-22301-3_1,Crypto_Agility,1,,4,All,All,S13
+105,"Reactive and Proactive Standardisation of TLS","Paterson and van der Merwe",2016,Scopus,SSR,10.1007/978-3-319-49100-4_7,Crypto_Agility,1,,4,All,TLS,S11
+106,"Triple Handshakes and Cookie Cutters: Breaking and Fixing Auth over TLS","Bhargavan et al.",2014,IEEE_Xplore,IEEE S&P,10.1109/SP.2014.14,Crypto_Agility,1,,5,All,TLS,S11
+107,"SCION: A Secure Internet Architecture","Perrig et al.",2017,Scopus,Springer Book,10.1007/978-3-319-67080-5,Crypto_Agility,1,,4,All,Network,S13
+108,"Crypto-Agility and Post-Quantum Cryptography","Scott",2022,arXiv,ePrint,N/A,Crypto_Agility,1,,4,All,All,S13
+109,"Advances in Quantum Cryptography","Pirandola et al.",2020,Web_of_Science,Adv. Opt. Photon.,10.1364/AOP.361502,QKD_vs_PQC,1,,5,N/A,QKD/Network,N/A
+110,"Secure Quantum Key Distribution","Lo et al.",2014,Web_of_Science,Nature Photon.,10.1038/nphoton.2014.149,QKD_vs_PQC,1,,5,N/A,QKD,N/A
+111,"Practical Challenges in Quantum Key Distribution","Diamanti et al.",2016,Web_of_Science,npj QI,10.1038/npjqi.2016.25,QKD_vs_PQC,1,,5,N/A,QKD,N/A
+112,"Quantum Key Distribution: A Networking Perspective","Mehic et al.",2020,ACM_DL,ACM CSUR,10.1145/3402192,QKD_vs_PQC,1,,5,N/A,QKD/Network,N/A
+113,"Security Against Individual Attacks for Realistic QKD","Lutkenhaus",2000,Web_of_Science,Phys. Rev. A,10.1103/PhysRevA.61.052304,QKD_vs_PQC,1,,5,N/A,QKD,N/A
+114,"Machine Learning-Based Selection of PQC Algorithms","Xiao et al.",2023,IEEE_Xplore,IEEE TNSM,10.1109/TNSM.2023.3240897,AI_ML_PQC,1,,4,1/3,All,S13
+115,"On Exploiting Message Leakage in NIST PQC Candidates","Ravi et al.",2022,IEEE_Xplore,IEEE TIFS,10.1109/TIFS.2022.3141184,AI_ML_PQC,1,,4,1,IoT,S10
+116,"Concrete Quantum Cryptanalysis of Binary Elliptic Curves","Banegas et al.",2021,Other,TCHES,10.46586/tches.v2021.i1.451-472,AI_ML_PQC,1,,5,N/A,All,N/A
+117,"MAYO: Practical Parameters and a SageMath Implementation","Pessl and Grujic",2022,Scopus,AFRICACRYPT,10.1007/978-3-031-17433-9_10,AI_ML_PQC,1,,4,1/3,PKI,S7
+118,"Breaking a Fifth-Order Masked Implementation of CRYSTALS-Kyber","Dubrova et al.",2023,ACM_DL,HASP,10.1145/3623652.3623662,AI_ML_PQC,1,,4,1,IoT,S10
+119,"Lattice-Based Cryptography for IoT in a Quantum World: Are We Ready?","Khalid et al.",2021,IEEE_Xplore,IEEE IoT J,10.1109/JIOT.2020.3033060,AI_ML_PQC,1,,4,1/3,IoT,S10
+120,"Machine Learning in Security of Cyber-Physical Systems","Regazzoni et al.",2023,IEEE_Xplore,IEEE TC,10.1109/TC.2022.3207456,AI_ML_PQC,1,,4,1/3,ICS/IoT,S10
