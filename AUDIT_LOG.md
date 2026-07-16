@@ -293,3 +293,54 @@ pdflatex not available in current shell PATH. PDF in repository (`pqc_survey_mai
 |---|---|---|---|
 | R13 | Placeholders | **DONE** | AI disclosure no longer generic; GitHub URL present at line 272 |
 | R15 | Reproducibility | PARTIAL | README.md added; unit tests still pending |
+
+---
+
+## Session 6 — Bloco 2 Corpus Expansion (2026-07-16)
+
+### Actions
+1. **corpus_peer_reviewed.csv**: Added 35 new peer-reviewed papers (records 121-155)
+   - verified by web search agents across 4 domains
+   - 33 with confirmed DOIs; 3 with DOI_UNVERIFIED (records 129, 130, 151)
+2. **pqc_survey.bib**: Added 35 new BibTeX entries (total: 180 @entries)
+3. **pqc_survey_main.tex**: Updated all corpus count references
+   - "72 peer-reviewed" -> "107 peer-reviewed" (lines 105, 256, 398, 1464)
+   - "111 total" -> "146 total" (line 671)
+4. **data/search_protocol.md**: Updated Section 8 corpus status
+5. **data/mrc_delphi_instrument.md**: No change (instrument complete from Session 5)
+
+### New Corpus Counts
+| Corpus type | Count |
+|---|---|
+| Peer-reviewed | 107 |
+| Normative | 39 |
+| **Total** | **146** |
+
+### Papers Added (Session 6) — by Domain
+| Domain | Count | BibTeX keys (first author + year) |
+|---|---|---|
+| TLS/QUIC | 8 | sosnowski2023, alnahawi2024, montenegro2025performance, rios2025, montenegro2025quic, astrizi2024, souvatzidaki2025, zheng2024 |
+| VPN/Tor | 4 | vpn2024ictc, qtrustnet2025, henrich2023, berger2025 |
+| Blockchain | 3 | yang2024, gharavi2024, revathi2025 |
+| Crypto-Agility | 5 | vonnethen2024, ott2023, campbell2025, gupta2026, sowa2024 |
+| 5G/Automotive | 3 | scalise2024, lohmiller2025, koranga2025 |
+| IoT embedded | 8 | halmans2026, ouyang2025, camacho2026, kim2024, shin2026, deshpande2025, blancor2024, choi2024 |
+| ICS/OT | 2 | olivamoral2024, fabiano2025 |
+| IoT general | 2 | hou2025, qiu2026 |
+
+### DOI Verification Flags
+- Record 129 (vpn2024ictc): authors not extracted; IEEE Xplore doc 10827179 confirmed
+- Record 130 (qtrustnet2025): authors not extracted; IEEE Access confirmed
+- Record 151 (blancor2024): DOI not extracted; IEEE Xplore doc 10733716 confirmed
+- Record 155 (qiu2026): PARCIAL -- single source confirmation
+
+### Bloco Status Summary
+| Bloco | Status |
+|---|---|
+| B1 Search protocol | DONE (execution pending institutional DB access) |
+| B2 Corpus expansion | IN PROGRESS -- 107 papers (+35); target 150+ |
+| B3 Delphi instrument | DONE (execution requires external expert recruitment) |
+| B4 Bibliography cleanup | DONE |
+| B5 PDF recompile | BLOCKED (pdflatex not in shell PATH) |
+| B6 Content expansion | NOT STARTED (awaiting B2 completion) |
+
