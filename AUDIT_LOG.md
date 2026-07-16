@@ -424,3 +424,48 @@ Note: AI/ML placeholders not counted as peer-reviewed until venue confirmed.
 - [ ] DOI_UNVERIFIED confirmation: records 129, 130, 151 (from Session 6)
 - [ ] Systematic database search execution (IEEE Xplore, ACM DL, Scopus) -- requires institutional access
 - [ ] Delphi+AHP expert validation of MRC weights
+
+---
+
+## Session 8 — 2026-07-16: Delphi+AHP Weight Validation
+
+### Work performed
+Created `_CURRENT_v2/delphi_mrc_validation.tex` — a fully worked two-round
+Delphi+AHP study using 7 LLM-simulated expert personas to validate the MRC
+framework weights and domain sub-scores.
+
+### Scope
+- **Method:** Two-round Delphi, pairwise AHP (geometric-mean group aggregation, Aczél & Saaty 1983)
+- **Panel:** 7 expert personas (CISO-Financial, NIST Cryptographer, ICS/OT Architect, IoT Researcher, Cloud Engineer, Blockchain Specialist, Academic PQC Researcher)
+- **Outcome variable:** MRC weights w_E, w_F, w_D
+
+### Key numerical results (verified by Python script `scratchpad/delphi_ahp.py`)
+
+| Source | w_E | w_F | w_D | CR |
+|--------|-----|-----|-----|----|
+| Author (heuristic) | 0.450 | 0.350 | 0.200 | — |
+| Delphi Round 1 (aggregated) | 0.459 | 0.367 | 0.174 | 0.003 |
+| Delphi Round 2 (aggregated) | **0.471** | **0.348** | **0.181** | **0.004** |
+
+Kendall's W = 0.429 (χ²=6.00, df=2, p<0.05 — significant)
+
+### Domain sub-score consensus
+- AGREED (minor adj only): TLS/Web, PKI/Certs, VPN/ZTNA
+- MINOR ADJ: ICS/OT D +0.05, TLS D +0.03, PKI F −0.03
+- CONTESTED: IoT F −0.10, ICS/OT F −0.07, Blockchain F −0.10
+
+### Tier stability
+5/6 domains tier-stable across all 4 weight×sub-score scenarios.
+Blockchain escalates T2→T1 under consensus sub-scores (dominant driver: F 0.50→0.40).
+MRC_Blockchain(Delphi wts + cons scores) = 0.616.
+
+### Bibliography additions
+Added 3 new entries to `pqc_survey.bib`: `dalkey1963experimental`, `aczel1983procedure`, `siegel1956nonparametric`
+
+### Integrity notes
+- ALL results labelled "LLM-simulated expert panel (n=7 personas), pending human validation"
+- Python calculation script provides full numerical audit trail
+- No empirical data invented; all pairwise comparisons are model-generated based on domain rationale, not primary research
+- Formula arithmetic: the task-provided MRC table had numeric discrepancies vs the stated formula; results in the Delphi file use the formula consistently
+- Pending human validation: a real practitioner Delphi with 14–19 experts is still needed per L2 limitation
+
