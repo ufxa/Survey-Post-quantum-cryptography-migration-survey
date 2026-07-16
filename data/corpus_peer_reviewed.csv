@@ -120,3 +120,31 @@ record_id,title,authors,year,source_db,venue,doi,subtopic,included,exclusion_rea
 167,Post-Quantum Cryptography Migration for Agentic AI Systems,Westerholt et al.,2025,Other,Computers MDPI vol.15 no.7,10.3390/computers15070434,Crypto_Agility,1,,3,All,All,S7/S14,peer_reviewed,Yes,
 168,Drop by Drop: Bleeding the DPA Resistance Out of Kyber Using X25519 as a Ladder,Ravi et al.,2020,Other,IACR ePrint 2020/1191,DOI_UNVERIFIED,PQC_Algorithms,1,,4,1,IoT,S9,peer_reviewed,No,[IACR ePrint only -- not peer-reviewed journal/conf; keep as supplementary]
 169,CrySL: An Extensible Approach to Validating Correct Usage of Cryptographic APIs,Kruger et al.,2019,ACM_DL,ECOOP 2019 LIPIcs,10.4230/LIPIcs.ECOOP.2019.10,Crypto_Agility,1,,4,All,All,S14,peer_reviewed,Yes,
+170,A Differentiated Approach for Post-Quantum DNSSEC,Muller et al.,2025,ACM_DL,ACM AsiaCCS 2025,10.1145/3779208.3805967,DNS_PQC,1,,4,3/5,TLS,S6/S9,peer_reviewed,Yes,
+171,Security Considerations for PQ Signatures in DNSSEC via Request-Based Fragmentation,unknown,2025,ACM_DL,ACM WWW 2025 Companion,10.1145/3701716.3715585,DNS_PQC,1,,3,3/5,TLS,S6,peer_reviewed,Yes,[Authors TBC from ACM DL]
+172,Implementing and Evaluating Post-Quantum DNSSEC in CoreDNS,unknown,2025,IEEE_Xplore,IEEE Conference 2025,DOI_UNVERIFIED,DNS_PQC,1,,3,3/5,TLS,S6,peer_reviewed,Yes,[IEEE Xplore doc 11308970]
+173,Securing Post-Quantum DNSSEC Against Fragmentation Mis-Association Threat,unknown,2024,IEEE_Xplore,IEEE Conference 2024,DOI_UNVERIFIED,DNS_PQC,1,,3,3/5,TLS,S6,peer_reviewed,Yes,[IEEE Xplore doc 10622607]
+174,Retrofitting Post-Quantum Cryptography in Internet Protocols: A Case Study of DNSSEC,Fregly et al.,2020,ACM_DL,ACM SIGCOMM CCR vol.50 no.4,10.1145/3431832.3431838,DNS_PQC,1,,4,All,TLS,S6,peer_reviewed,Yes,
+175,Post-Quantum Cryptographic Analysis of SSH,Bencina et al.,2025,IEEE_Xplore,IEEE S&P 2025,DOI_UNVERIFIED,SSH_PQC,1,,5,3/5,VPN,S5,peer_reviewed,Yes,[IEEE Xplore doc 11023457; IACR ePrint 2025/684]
+176,Quantum-Resistant End-to-End Secure Messaging and Email Communication,unknown,2023,ACM_DL,ACM ARES 2023,10.1145/3600160.3605049,Email_PQC,1,,3,3/5,PKI,S7,peer_reviewed,Yes,[Authors TBC from ACM DL]
+177,A Highly Hardware Efficient ML-KEM Accelerator with Optimised Architectural Layers,Ni et al.,2025,ACM_DL,ACM TECS,10.1145/3708469,FPGA_ASIC,1,,4,1,IoT,S9,peer_reviewed,Yes,
+178,Hardware Acceleration for High-Volume Operations of CRYSTALS-Kyber and CRYSTALS-Dilithium,unknown,2024,ACM_DL,ACM TRETS,10.1145/3675172,FPGA_ASIC,1,,4,1,IoT,S9,peer_reviewed,Yes,[Authors TBC from ACM DL]
+179,HPKA: A High-Performance CRYSTALS-Kyber Accelerator Exploring Efficient Pipelining,unknown,2023,IEEE_Xplore,IEEE Transactions on Computers vol.72,10.1109/TC.2023.3296899,FPGA_ASIC,1,,4,1,IoT,S9,peer_reviewed,Yes,
+180,High-Performance NTT Hardware Accelerator to Support ML-KEM and ML-DSA,unknown,2024,ACM_DL,ACM ASHES 2024,10.1145/3689939.3695785,FPGA_ASIC,1,,3,1,IoT,S9,peer_reviewed,Yes,
+181,A Lightweight Unified Keccak Module for Efficient Hashing in ML-KEM and ML-DSA,unknown,2025,ACM_DL,ACM QSP 2025,10.1145/3733825.3765279,FPGA_ASIC,1,,3,1,IoT,S9,peer_reviewed,Yes,
+182,FPGA Implementation of Compact Hardware Accelerators for Ring-Binary-LWE-based PQC,unknown,2023,ACM_DL,ACM TRETS,10.1145/3569457,FPGA_ASIC,1,,4,1,IoT,S9,peer_reviewed,Yes,
+183,KNightCore: Ultra-Lightweight NTT-Based Polynomial Multiplier for ML-KEM,unknown,2025,ACM_DL,ACM QRCS 2025,10.1145/3733820.3764684,FPGA_ASIC,1,,3,1,IoT,S9,peer_reviewed,Yes,
+184,FPGA-Based Design and Implementation of a Code-Based Post-Quantum KEM,unknown,2024,Scopus,Springer LNCS,10.1007/978-3-031-51500-2_3,FPGA_ASIC,1,,4,1,IoT,S9,peer_reviewed,Yes,
+185,Hardware Accelerator for FIPS 202 Hash Functions in Post-Quantum Ready SoCs,unknown,2024,IEEE_Xplore,IEEE Conference 2024,DOI_UNVERIFIED,FPGA_ASIC,1,,3,1,IoT,S9,peer_reviewed,Yes,[IEEE Xplore doc 10616067]
+186,Post-Quantum Secure Lattice-Based 5G-AKA Protocol with Perfect Forward Secrecy,unknown,2025,IEEE_Xplore,IEEE Conference 2025,DOI_UNVERIFIED,5G_Auth,1,,4,3/5,5G,S7,peer_reviewed,Yes,[IEEE Xplore doc 11194958]
+187,Post-Quantum Key Exchange and ID Encryption Analyses for 5G Mobile Networking,unknown,2025,IEEE_Xplore,IEEE/IFIP NOMS 2025,DOI_UNVERIFIED,5G_Auth,1,,3,3/5,5G,S7,peer_reviewed,Yes,[IEEE Xplore doc 11073683]
+188,Authentication of QKD Classical Channel through PQC in Multi-Site 5G/6G Network,unknown,2024,IEEE_Xplore,IEEE Conference 2024,DOI_UNVERIFIED,5G_Auth,1,,3,3/5,5G,S7,peer_reviewed,Yes,[IEEE Xplore doc 11000183]
+189,Enhancing the 5G-AKA Protocol with Post-Quantum Digital Signature Method,Rossi Figlarz et al.,2024,Scopus,Springer LNCS,10.1007/978-3-031-57916-5_9,5G_Auth,1,,4,3/5,5G,S7,peer_reviewed,Yes,
+190,Post-Quantum Key Exchange and Subscriber Identity Encryption in 5G Using ML-KEM,unknown,2025,Other,MDPI Information vol.16 no.7,10.3390/info16070617,5G_Auth,1,,3,3/5,5G,S7,peer_reviewed,Yes,
+191,On Post-Quantum Identification in 5G,unknown,2022,ACM_DL,ACM WiSec 2022,10.1145/3507657.3529657,5G_Auth,1,,4,3/5,5G,S7,peer_reviewed,Yes,
+192,A Post-Quantum Secure Subscription Concealed Identifier for 6G,unknown,2022,ACM_DL,ACM WiSec 2022,10.1145/3507657.3528540,5G_Auth,1,,4,3/5,5G,S7,peer_reviewed,Yes,
+193,Post-Quantum Blockchain Security for the Internet of Things: Survey and Research Directions,Fernandez-Carames and Fraga-Lamas,2024,IEEE_Xplore,IEEE COMST vol.26,10.1109/COMST.2024.3355222,Supply_Chain,1,,5,All,Blockchain,S7/S14,peer_reviewed,Yes,
+194,A Survey and Comparison of Post-Quantum and Quantum Blockchains,Yang et al.,2023,IEEE_Xplore,IEEE COMST vol.26 no.2 pp.967-1002,10.1109/COMST.2023.3325761,Supply_Chain,1,,5,All,Blockchain,S7/S14,peer_reviewed,Yes,
+195,Comparative Analysis of Post-Quantum Handshake Performance in QUIC and TLS Protocols,unknown,2025,Scopus,Elsevier Computer Networks,10.1016/j.comnet.2025.111516,Hybrid,1,,4,3/5,TLS,S5,peer_reviewed,Yes,[DOI approximated from Elsevier PII -- verify]
+196,A Framework for Migrating to Post-Quantum Cryptography: Security Dependency Analysis,unknown,2024,IEEE_Xplore,IEEE Access vol.12,10.1109/ACCESS.2024.3360412,Post_Std,1,,4,All,All,S14,peer_reviewed,Yes,
+197,Enterprise Migration to Post-Quantum Cryptography: Timeline Analysis and Strategic Frameworks,unknown,2026,Other,MDPI Computers vol.15 no.1 p.9,10.3390/computers15010009,Post_Std,1,,4,All,All,S14,peer_reviewed,Yes,

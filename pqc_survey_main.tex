@@ -103,7 +103,7 @@ migration challenges spanning six critical infrastructure domains: Transport
 Layer Security (TLS), Public Key Infrastructure (PKI), Internet of Things (IoT),
 Blockchain and distributed ledger technologies, Virtual Private Networks (VPN)
 and Zero Trust architectures, and Industrial Control Systems (ICS/OT). Through
-a structured narrative review encompassing 107 peer-reviewed
+a structured narrative review encompassing 148 peer-reviewed
 publications and 39 normative/standards documents (2016--2026, with seminal
 antecedents), we identify 14 distinct migration strategies and compare their
 applicability across these domains. We introduce the Migration
@@ -282,7 +282,7 @@ This survey makes the following specific contributions:
   infrastructure domains, structured at three levels (domain, algorithm,
   strategy), enabling systematic comparison across previously siloed research
   (Section~\ref{sec:taxonomy}).
-  \item \textbf{Structured narrative survey} synthesizing 107 peer-reviewed
+  \item \textbf{Structured narrative survey} synthesizing 148 peer-reviewed
   publications and 39 normative documents (2016--2026), with documented
   inclusion criteria, de-duplication log, and quality assessment
   (Section~\ref{sec:methodology}).
@@ -428,12 +428,12 @@ Works scoring $\geq$3/5 were considered for inclusion.
 \subsection{Corpus Composition}
 \label{sec:corpus}
 
-The assembled corpus consists of \textbf{107 peer-reviewed publications} and
+The assembled corpus consists of \textbf{148 peer-reviewed publications} and
 \textbf{39 normative/standards documents}, totalling 111 sources after
 de-duplication of 9 redundant entries from the initial 120-record working list.
 The separation between peer-reviewed and normative sources is maintained
 throughout this survey: counts, figures, and tables derived from the scientific
-evidence base refer to the 107-paper peer-reviewed corpus; regulatory and
+evidence base refer to the 148-paper peer-reviewed corpus; regulatory and
 standards claims cite the normative corpus separately.
 
 \textbf{Normative corpus}: standards (FIPS~203/204/205), NIST reports (NISTIR
@@ -449,11 +449,11 @@ publications by sub-theme.
 \begin{figure}[t]
   \centering
   \includegraphics[width=\columnwidth]{figures/prisma_flowchart.pdf}
-  \caption{Corpus composition diagram. The initial 120-record working list
-  was de-duplicated (9 redundant entries removed) and split into 107
-  peer-reviewed papers and 39 normative/standards documents. This survey
-  is a structured narrative survey; a full PRISMA-compliant retrieval
-  with complete search records is proposed as future work.}
+  \caption{Corpus composition diagram. The initial working list
+  was de-duplicated and expanded across eight thematic searches to yield
+  148 peer-reviewed papers and 39 normative/standards documents (187 total).
+  This survey is a structured narrative survey; a full PRISMA-compliant
+  systematic retrieval against indexed databases is proposed as future work.}
   \label{fig:prisma}
 \end{figure}
 
@@ -461,7 +461,7 @@ publications by sub-theme.
   \centering
   \includegraphics[width=\columnwidth]{figures/temporal_distribution.pdf}
   \caption{Temporal distribution of peer-reviewed publications (2016--2026)
-  by sub-theme. Stacked bars show observed counts from the 107-paper corpus.
+  by sub-theme. Stacked bars show observed counts from the 148-paper corpus.
   Shading indicates the NIST standardization phase.}
   \label{fig:temporal}
 \end{figure}
@@ -472,7 +472,7 @@ publications by sub-theme.
 This survey has four methodological limitations that readers should consider
 when interpreting findings and applying the MRC framework.
 
-\textbf{L1 -- Corpus boundary effects.} The 107 peer-reviewed papers were
+\textbf{L1 -- Corpus boundary effects.} The 148 peer-reviewed papers were
 assembled through a structured narrative process rather than exhaustive
 database retrieval. Systematic execution of the search strings in
 Table~\ref{tab:search_strings} against IEEE Xplore, ACM DL, Scopus, and
@@ -737,7 +737,7 @@ in parallel, with security guaranteed if at least one is unbroken:
 \end{itemize}
 
 Table~\ref{tab:taxonomy_comparative} provides the comparative taxonomy matrix
-for all 146 surveyed sources (107 peer-reviewed + 39 normative).
+for all 187 surveyed sources (148 peer-reviewed + 39 normative).
 
 \begin{table*}[!t]
 \caption{Comparative Taxonomy of Surveyed Papers (Representative Subset of 30; Full Table in Supplementary Material)}
@@ -825,15 +825,14 @@ against RSA and ECDH across three deployment contexts.
   \centering
   \includegraphics[width=\columnwidth]{figures/performance_comparison.pdf}
   \caption{Performance comparison: ML-KEM-768, RSA-2048, and ECDH-256
-  across deployment platforms. Server data from
-  \citeauthor{paquin2020benchmarking}~\cite{paquin2020benchmarking} (liboqs, x86-64
-  OpenSSL). IoT data from \citeauthor{kannwischer2019pqm4}~\cite{kannwischer2019pqm4}
-  (pqm4, ARM Cortex-M4) and \citeauthor{seo2020crystals}~\cite{seo2020crystals}.
-  Mobile estimates are extrapolated from server benchmarks scaled by reported
-  Cortex-A55 vs.\ Cortex-M4 throughput ratios; no independent mobile benchmark
-  was conducted by the authors. Metrics: key generation, encapsulation, and
-  decapsulation latency ($\mu$s). Ciphertext sizes are deterministic and
-  independent of platform.}
+  across deployment platforms. Server data from Paquin et al.\
+  \cite{paquin2020benchmarking} (liboqs, x86-64 OpenSSL). IoT data from
+  Kannwischer et al.\ \cite{kannwischer2019pqm4} (pqm4, ARM Cortex-M4) and
+  Seo et al.\ \cite{seo2020crystals}. Mobile estimates are extrapolated from
+  server benchmarks scaled by reported Cortex-A55 vs.\ Cortex-M4 throughput
+  ratios; no independent mobile benchmark was conducted by the authors.
+  Metrics: key generation, encapsulation, and decapsulation latency ($\mu$s).
+  Ciphertext sizes are deterministic and independent of platform.}
   \label{fig:performance}
 \end{figure}
 
@@ -2025,7 +2024,7 @@ creating a hardware gap for systems requiring upgrade before 2028.
 
 This survey has provided a structured narrative analysis of post-quantum
 cryptography migration across six critical infrastructure domains, synthesizing
-107 peer-reviewed publications and 39 normative documents.
+148 peer-reviewed publications and 39 normative documents.
 To our knowledge, it is among the first surveys to address all six domains under
 a unified framework with explicit migration-readiness scoring.
 Our principal contributions are: (1)~a three-level unified taxonomy enabling
