@@ -89,9 +89,13 @@ This is a **structured narrative survey**, not a PRISMA systematic review.
 - HQC (selected March 2025 for standardization)
 - EO 14412 (June 22, 2026) and OMB M-26-15 (June 24, 2026)
 
+## Acknowledgments
+
+This work was supported by FAPESPA, PRODEPA, the Government of the State of Pará, and the Federal Government of Brazil. Additional support was provided by the SEC365 project (UFPA/UFRA), LICA/UFRA, CCAD-IA/UFPA, RNP, and INCT iAmazonia.
+
 ## AI Usage Disclosure
 
-LLM assistance was used for grammar refinement, bibliography formatting, and manuscript preparation support, in accordance with IEEE's Authorship and AI Policy. All scientific content and conclusions are the sole responsibility of the human authors. Benchmark data are from OQS liboqs and pqm4.
+LLM assistance was used for grammar refinement, bibliography formatting, and manuscript preparation support, in accordance with IEEE's Authorship and AI Policy. All scientific content, survey design, methodology choices, data analysis, and conclusions are the sole responsibility of the human authors. Benchmark data are derived from publicly available open-source implementations (OQS liboqs and pqm4).
 
 ## License
 
