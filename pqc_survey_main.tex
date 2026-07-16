@@ -290,9 +290,10 @@ This survey makes the following specific contributions:
   heuristic scoring rubric that classifies legacy systems across four readiness
   tiers using three weighted dimensions (cryptographic exposure, upgrade
   feasibility, regulatory deadline proximity), with mathematical formulation,
-  pseudocode implementation, and a weight-sensitivity analysis
-  (Section~\ref{sec:mrc}). Expert validation via Delphi+AHP is planned as
-  future work.
+  pseudocode implementation, weight-sensitivity analysis, and a two-round
+  Delphi+AHP weight validation study using LLM-simulated expert personas
+  (Section~\ref{sec:mrc}). Full human-panel validation is identified as
+  future work (Section~\ref{sec:challenges}).
   \item \textbf{Cross-regulatory gap analysis} comparing NIST, NSA CNSA~2.0,
   ENISA, GDPR, and LGPD requirements with a sector-specific compliance
   timeline (Section~\ref{sec:regulatory}).
@@ -1384,7 +1385,11 @@ rationale:
 
 These weights have \emph{not} been derived from expert elicitation, AHP,
 Delphi, or any other formal method. No consistency ratio is claimed.
-Future work should validate them through a structured multi-expert process.
+A two-round Delphi study using LLM-simulated expert personas is described
+in Section~\ref{sec:mrc_delphi} below, providing a structured heuristic
+validation pending future human-panel replication.
+
+\input{delphi_mrc_validation}
 
 \textbf{Sensitivity analysis}: Table~\ref{tab:mrc_sensitivity} shows MRC
 scores and tier assignments for the six reference profiles under five

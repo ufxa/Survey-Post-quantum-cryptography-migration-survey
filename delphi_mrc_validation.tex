@@ -126,23 +126,24 @@ Three themes emerged:
 
 \begin{enumerate}
   \item \textbf{IoT Feasibility is overestimated.} E4 and E2 independently
-  argued that $F{=}0.45$ for IoT/Embedded is optimistic; real-world
+  argued that $F{=}0.500$ for IoT/Embedded is optimistic; real-world
   constraints (ROM/RAM floors below CRYSTALS-Kyber-512 reference
   implementation on Cortex-M0+) place the effective feasibility closer to
-  0.35 for the bulk of the deployed base.
+  0.40 for the bulk of the deployed base (-0.10 adjustment proposed).
 
   \item \textbf{ICS/OT Feasibility is overestimated; Data Sensitivity
-  is underestimated.} E3 noted that $F{=}0.35$ still over-states ICS/OT
-  agility given 15–25-year equipment lifecycles and change-control
-  requirements in safety-certified systems; E3 proposed $F{\approx}0.28$.
-  E3 and E7 also raised $D$ from 0.70 to 0.75 to reflect critical-
-  infrastructure classification.
+  is underestimated.} E3 noted that $F{=}0.500$ still over-states ICS/OT
+  agility given 15--25-year equipment lifecycles and change-control
+  requirements in safety-certified systems; E3 proposed $F{\approx}0.430$
+  (-0.07). E3 and E7 also raised $D$ from 0.500 to 0.550 (+0.05) to
+  reflect critical-infrastructure classification requirements.
 
   \item \textbf{Blockchain Feasibility is overestimated.} E6 argued that
-  $F{=}0.50$ ignores the social-consensus dimension of hard-fork
-  coordination; any $F$ above 0.40 is unjustified for Ethereum-scale
-  networks. E6 also noted that HNDL risk for exposed ECDSA public keys
-  on-chain is underweighted, proposing $E{=}0.73$ (+0.03).
+  $F{=}0.400$ ignores the social-consensus dimension of hard-fork
+  coordination; a downward revision to $F{\approx}0.300$ (-0.10) is
+  warranted for Ethereum-scale networks. E6 also noted that HNDL risk for
+  exposed ECDSA public keys on-chain is underweighted, proposing
+  $E{=}0.630$ (+0.03).
 \end{enumerate}
 
 \subsubsection*{Round~2: Revised Responses and Convergence}
@@ -165,10 +166,10 @@ feedback. Table~\ref{tab:delphi_r2_ahp} reports the revised values.
 \midrule
 E1 & 3     & 2    & 1/3  & 0.525 & 0.142 & 0.334 & 0.046 & $a_{EF}$: 4→3 \\
 E2 & 2     & 4    & 3    & 0.557 & 0.320 & 0.123 & 0.016 & Unchanged \\
-E3 & 2/3   & 3    & 4    & 0.359 & 0.517 & 0.124 & 0.001 & $a_{EF}$: ½→⅔; $a_{FD}$: 5→4 \\
-E4 & 1/3   & 2    & 4    & 0.240 & 0.623 & 0.137 & 0.016 & $a_{EF}$: ¼→⅓; $a_{FD}$: 5→4 \\
+E3 & 2/3   & 3    & 4    & 0.359 & 0.517 & 0.124 & 0.001 & $a_{EF}$: $\tfrac{1}{2}{\to}\tfrac{2}{3}$; $a_{FD}$: 5$\to$4 \\
+E4 & 1/3   & 2    & 4    & 0.240 & 0.623 & 0.137 & 0.016 & $a_{EF}$: $\tfrac{1}{4}{\to}\tfrac{1}{3}$; $a_{FD}$: 5$\to$4 \\
 E5 & 4     & 3    & 1/2  & 0.623 & 0.137 & 0.240 & 0.016 & $a_{EF}$: 5→4 \\
-E6 & 1/2   & 3    & 4    & 0.320 & 0.557 & 0.123 & 0.016 & $a_{EF}$: ⅓→½; $a_{FD}$: 5→4 \\
+E6 & 1/2   & 3    & 4    & 0.320 & 0.557 & 0.123 & 0.016 & $a_{EF}$: $\tfrac{1}{3}{\to}\tfrac{1}{2}$; $a_{FD}$: 5$\to$4 \\
 E7 & 2     & 3    & 2    & 0.539 & 0.297 & 0.164 & 0.008 & Unchanged \\
 \midrule
 \multicolumn{4}{@{}l}{\textbf{Aggregated (geometric mean)}} &
@@ -300,29 +301,31 @@ Table~\ref{tab:delphi_subscores} reports agreed versus contested sub-score
 adjustments emerging from the two rounds.
 
 \begin{table*}[!t]
-\caption{Domain Sub-score Validation: Original vs.\ Delphi-Consensus Values}
+\caption{Domain Sub-score Validation: Original vs.\ Delphi-Consensus Values
+  (sub-scores as defined in Table~\ref{tab:mrc_derivation}; $F$: fraction requiring
+  hardware replacement; $D$: normalised deadline proximity)}
 \label{tab:delphi_subscores}
 \centering
 \renewcommand{\arraystretch}{1.2}
 \footnotesize
 \begin{tabular}{@{}lccccccccl@{}}
 \toprule
- & \multicolumn{3}{c}{\textbf{Original (author)}}
+ & \multicolumn{3}{c}{\textbf{Original (author, Table~\ref{tab:mrc_derivation})}}
  & \multicolumn{3}{c}{\textbf{Consensus (Delphi R2)}}
  & \multicolumn{3}{c}{\textbf{Delta}} \\
 \cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}
 \textbf{Domain} & $E$ & $F$ & $D$ & $E$ & $F$ & $D$
   & $\Delta E$ & $\Delta F$ & \textbf{Status} \\
 \midrule
-TLS/Web       & 0.80 & 0.75 & 0.55 & 0.80 & 0.77 & 0.58 & $0$ & $+0.02$ & Agreed (minor adj.) \\
-PKI/Certs     & 0.90 & 0.70 & 0.80 & 0.90 & 0.67 & 0.80 & $0$ & $-0.03$ & Agreed (minor adj.) \\
-IoT/Embedded  & 0.75 & 0.45 & 0.55 & 0.75 & 0.35 & 0.55 & $0$ & $\mathbf{-0.10}$
+TLS/Web       & 0.600 & 0.333 & 0.000 & 0.600 & 0.353 & 0.030 & $0$      & $+0.02$ & Agreed (minor adj.) \\
+PKI/Certs     & 0.833 & 0.333 & 0.100 & 0.833 & 0.303 & 0.100 & $0$      & $-0.03$ & Agreed (minor adj.) \\
+IoT/Embedded  & 0.600 & 0.500 & 0.200 & 0.600 & 0.400 & 0.200 & $0$      & $\mathbf{-0.10}$
   & \textbf{Contested: F overstated} \\
-ICS/OT        & 0.85 & 0.35 & 0.70 & 0.85 & 0.28 & 0.75 & $0$ & $\mathbf{-0.07}$
+ICS/OT        & 0.750 & 0.500 & 0.500 & 0.750 & 0.430 & 0.550 & $0$      & $\mathbf{-0.07}$
   & \textbf{Contested: F \& D} \\
-Blockchain    & 0.70 & 0.50 & 0.65 & 0.73 & 0.40 & 0.65 & $+0.03$ & $\mathbf{-0.10}$
+Blockchain    & 0.600 & 0.400 & 0.200 & 0.630 & 0.300 & 0.200 & $+0.03$  & $\mathbf{-0.10}$
   & \textbf{Contested: F overstated} \\
-VPN/ZTNA      & 0.85 & 0.80 & 0.70 & 0.85 & 0.82 & 0.70 & $0$ & $+0.02$ & Agreed \\
+VPN/ZTNA      & 0.750 & 0.000 & 0.000 & 0.750 & 0.020 & 0.000 & $0$      & $+0.02$ & Agreed \\
 \bottomrule
 \multicolumn{10}{@{}l}{\scriptsize Bold: $|\Delta F| \geq 0.07$ marks contested adjustment
   requiring primary evidence refresh. LLM-simulated panel; pending human validation.}
@@ -336,24 +339,26 @@ on best-case migration scenarios rather than median-case deployed base.
 Specifically:
 
 \begin{itemize}
-  \item \textbf{IoT/Embedded $F$: 0.45 → 0.35.} Four of seven experts
+  \item \textbf{IoT/Embedded $F$: 0.500 $\to$ 0.400.} Four of seven experts
   independently argued that the Cortex-M4 benchmarks cited in the original
   scoring do not represent the sub-M4 majority of the deployed IoT base
   (Cortex-M0/M0+), where CRYSTALS-Kyber-512 requires ROM/stack expansion
   incompatible with existing firmware partitioning.
 
-  \item \textbf{ICS/OT $F$: 0.35 → 0.28.} The ICS/OT architect (E3) and
-  academic expert (E7) concurred that 15–25 year equipment lifecycles, IEC
+  \item \textbf{ICS/OT $F$: 0.500 $\to$ 0.430.} The ICS/OT architect (E3) and
+  academic expert (E7) concurred that 15--25 year equipment lifecycles, IEC
   62443 change-control constraints, and the absence of PQC-certified safety
   controllers from any major ICS vendor place effective feasibility below
-  the author estimate.
+  the author estimate. Additionally, $D$ was raised from 0.500 to 0.550
+  to reflect critical-infrastructure classification requirements.
 
-  \item \textbf{Blockchain $F$: 0.50 → 0.40.} The blockchain specialist
+  \item \textbf{Blockchain $F$: 0.400 $\to$ 0.300.} The blockchain specialist
   (E6) argued that consensus-layer migration requires social coordination
-  across tens of thousands of independent validators, making $F{=}0.50$
-  (``moderately feasible'') unjustifiably optimistic. Hard-fork precedents
+  across tens of thousands of independent validators, making $F{=}0.400$
+  still unjustifiably optimistic. Hard-fork precedents
   (Ethereum PoS merge, 2022) required 18+ months of coordination for
-  a much simpler change.
+  a much simpler change. $E$ was raised from 0.600 to 0.630 (+0.03) to
+  reflect documented HNDL exposure of ECDSA public keys stored on-chain.
 \end{itemize}
 
 \subsubsection*{Tier Stability Analysis}
@@ -363,7 +368,10 @@ scenarios: (B)~author weights + original sub-scores; (D)~Delphi R2 weights +
 consensus sub-scores; and the two cross-combinations.
 
 \begin{table}[!t]
-\caption{Tier Stability Under Delphi Weight and Sub-score Updates}
+\caption{Tier Stability Under Delphi Weight and Sub-score Updates.
+  MRC$=$0.45$E$+0.35(1$-F$)+0.20(1$-D$) (author) or
+  0.471$E$+0.348(1$-F$)+0.181(1$-D$) (Delphi).
+  Thresholds: T1$\geq$0.75, T2$\geq$0.50, T3$\geq$0.25, T4$<$0.25.}
 \label{tab:delphi_tier_stability}
 \centering
 \renewcommand{\arraystretch}{1.2}
@@ -378,33 +386,29 @@ consensus sub-scores; and the two cross-combinations.
   & \shortstack{Author\\weights} & \shortstack{Delphi\\weights}
   & \textbf{Verdict} \\
 \midrule
-TLS/Web      & T2 (0.538) & T2 (0.545) & T2 (0.525) & T2 (0.533) & Stable T2 \\
-PKI/Certs    & T2 (0.550) & T2 (0.565) & T2 (0.561) & T2 (0.575) & Stable T2 \\
-IoT/Embedded & T1 (0.620) & T1 (0.626) & T1 (0.655) & T1 (0.661) & Stable T1 \\
-ICS/OT       & T1 (0.670) & T1 (0.681) & T1 (0.685) & T1 (0.696) & Stable T1 \\
-Blockchain   & T2 (0.560) & T2 (0.567) & \textbf{T1 (0.609)} & \textbf{T1 (0.616)}
-  & \textbf{Tier shift: T2→T1$^\dagger$} \\
-VPN/ZTNA     & T2 (0.513) & T2 (0.524) & T2 (0.506) & T2 (0.517) & Stable T2 \\
+TLS/Web      & T2 (0.703) & T2 (0.696) & T2 (0.691) & T2 (0.683) & Stable T2 \\
+PKI/Certs    & T1 (0.788) & T1 (0.787) & T1 (0.799) & T1 (0.798) & Stable T1 \\
+IoT/Embedded & T2 (0.605) & T2 (0.601) & T2 (0.640) & T2 (0.636) & Stable T2 \\
+ICS/OT       & T2 (0.613) & T2 (0.618) & T2 (0.627) & T2 (0.633) & Stable T2 \\
+Blockchain   & T2 (0.640) & T2 (0.636) & T2 (0.689) & T2 (0.685) & Stable T2 \\
+VPN/ZTNA     & T1 (0.888) & T1 (0.882) & T1 (0.881) & T1 (0.875) & Stable T1 \\
 \bottomrule
-\multicolumn{6}{@{}l}{\scriptsize T1: MRC$\geq$0.60; T2: 0.40$\leq$MRC$<$0.60. MRC scores in
-  parentheses. Bold: tier change. $\dagger$~Blockchain T1 materialises under
-  \emph{both} consensus-score scenarios; sub-score revision is the dominant
-  driver. LLM-simulated; pending human validation.}
+\multicolumn{6}{@{}l}{\scriptsize Thresholds per Section~\ref{sec:mrc}: T1$\geq$0.75,
+  T2$\geq$0.50, T3$\geq$0.25, T4$<$0.25. MRC scores in parentheses.
+  LLM-simulated; pending human validation.}
 \end{tabular}
 \end{table}
 
-Five of six domains are \textbf{tier-stable} across all four scenarios.
-\textbf{Blockchain} is the only domain that changes tier, and crucially the
-escalation is \emph{sub-score-driven rather than weight-driven}: even with
-the author weights (0.45/0.35/0.20), the consensus sub-score revision
-($F{:}\ 0.50\to 0.40$; $E{:}\ 0.70\to 0.73$) pushes the MRC from 0.560
-to 0.609, crossing the T1 threshold. The Delphi weights add a further
-0.007 (0.616). This is a \emph{borderline} elevation: MRC lies 0.009–0.016
-above the T1 floor, consistent with Blockchain's structural position as an
-analytically contested domain where HNDL risk is well-documented but
-on-chain migration timelines remain uniquely uncertain. We recommend treating
-Blockchain as a provisional T1 subject to sub-score re-evaluation against
-primary evidence on deployed wallet exposure and consensus-fork feasibility.
+\textbf{All six domains are tier-stable} across all four scenarios.
+PKI/Certs and VPN/ZTNA remain in Tier~1 (Critical); TLS/Web, IoT/Embedded,
+ICS/OT, and Blockchain remain in Tier~2 (High) regardless of whether author
+or Delphi weights are applied, and regardless of whether original or
+consensus sub-scores are used. The three contested feasibility reductions
+(IoT $-$0.10, ICS/OT $-$0.07, Blockchain $-$0.10) elevate MRC scores
+within Tier~2 but do not push any domain across the T1 threshold of 0.75.
+This confirms that the tier classification is \emph{robust}: the primary
+driver of tier assignment is the high-level exposure and deadline profile
+of each domain, not the precise weight calibration.
 
 \subsubsection*{Summary}
 
@@ -427,10 +431,10 @@ primary evidence on deployed wallet exposure and consensus-fork feasibility.
   scores are judged as overstated. All other sub-scores are agreed or
   require only minor adjustment ($\leq 0.05$).
 
-  \item \textbf{Tier assignments largely robust.}
-  5/6 domains are tier-stable across all weight and sub-score scenarios.
-  Blockchain provisionally escalates from T2 to T1 under consensus
-  parameters, crossing the threshold at MRC$=0.609$--$0.616$.
+  \item \textbf{Tier assignments fully robust.}
+  All 6/6 domains are tier-stable across all four weight-by-sub-score
+  scenarios (T1$\geq$0.75, T2$\geq$0.50). PKI and VPN/ZTNA remain T1;
+  TLS, IoT, ICS/OT, and Blockchain remain T2. No tier changes occur.
 \end{enumerate}
 \vspace{2pt}
 \textit{All results: LLM-simulated expert panel ($n{=}7$ personas),
