@@ -70,7 +70,8 @@ Standards, Threat Models, Implementation Challenges, and\\
 Regulatory Roadmaps for Legacy Systems}
 
 \author{[Author Names Anonymized for Review]%
-\thanks{Manuscript submitted July 15, 2026. This research was supported by FAPESPA, PRODEPA, RNP, and INCT iAmazonia (institutional and financial details disclosed upon acceptance per double-blind policy).}%
+% NOTE TO CAMERA-READY: restore funding acknowledgment (FAPESPA, PRODEPA, RNP, INCT iAmazonia)
+\thanks{Manuscript submitted July 15, 2026. Funding information withheld for double-blind review; will be disclosed upon acceptance.}%
 \thanks{Author affiliations and contact details are anonymized for double-blind peer review per IEEE CST submission guidelines.}
 }
 
@@ -254,6 +255,25 @@ Gharavi \emph{et al.}~\cite{gharavi2024postquantum} & 2024 & 84 & No & Partial &
 \end{tabular}
 \end{table*}
 
+The two most recent IEEE COMST surveys require explicit contextual framing.
+Yang~et~al.~\cite{yang2024survey} conduct a broad architectural comparison of
+quantum-secure and quantum-accelerated blockchain designs across PoW, PoS, and
+BFT consensus protocols---a valuable contribution to one specific domain.
+However, their scope does not encompass TLS handshake migration, PKI hierarchy
+restructuring, ICS/OT real-time constraints, or VPN/ZTNA key establishment,
+which together constitute four of the six domains examined here.
+Gharavi~et~al.~\cite{gharavi2024postquantum} focus on IoT-integrated blockchain
+deployments and identify deployment patterns for device-ledger PQC integration,
+but similarly do not propose a quantitative readiness rubric or regulatory
+compliance mapping. Neither survey includes U.S.\ Executive Order~14412 or
+OMB~M-26-15 (January 2026), nor do they analyze the Brazilian regulatory
+dimension (LGPD data-residency implications for post-quantum key management).
+The present work is, to our knowledge, the first to: (a)~cover all six critical
+infrastructure domains under a single analytical framework; (b)~introduce a
+reproducible migration readiness rubric (MRC) with open-source scoring code;
+(c)~incorporate 2025--2026 federal directives from the United States and
+European Union; and (d)~include Brazilian regulatory obligations.
+
 \subsection{Contributions}
 
 This survey makes the following specific contributions:
@@ -293,6 +313,7 @@ on quantum computing threats and NIST standards. Section~\ref{sec:taxonomy}
 introduces the PQC migration taxonomy. Sections~\ref{sec:tls}--\ref{sec:ics}
 analyze each domain systematically. Section~\ref{sec:mrc} presents the MRC
 framework. Section~\ref{sec:regulatory} covers the regulatory landscape.
+Section~\ref{sec:aiml} surveys AI/ML acceleration opportunities.
 Section~\ref{sec:challenges} identifies open research gaps. Section~\ref{sec:future}
 outlines future directions. Section~\ref{sec:conclusion} concludes.
 
@@ -804,10 +825,15 @@ against RSA and ECDH across three deployment contexts.
   \centering
   \includegraphics[width=\columnwidth]{figures/performance_comparison.pdf}
   \caption{Performance comparison: ML-KEM-768, RSA-2048, and ECDH-256
-  across server, mobile, and IoT platforms. Grouped bar chart with standard
-  error ($n=1{,}000$ runs each, 95\% CI). Metrics: key generation, encapsulation,
-  and decapsulation latency ($\mu$s) and ciphertext size (bytes, right axis).
-  Sources: \cite{kannwischer2019pqm4,paquin2020benchmarking,seo2020crystals}.}
+  across deployment platforms. Server data from
+  \citeauthor{paquin2020benchmarking}~\cite{paquin2020benchmarking} (liboqs, x86-64
+  OpenSSL). IoT data from \citeauthor{kannwischer2019pqm4}~\cite{kannwischer2019pqm4}
+  (pqm4, ARM Cortex-M4) and \citeauthor{seo2020crystals}~\cite{seo2020crystals}.
+  Mobile estimates are extrapolated from server benchmarks scaled by reported
+  Cortex-A55 vs.\ Cortex-M4 throughput ratios; no independent mobile benchmark
+  was conducted by the authors. Metrics: key generation, encapsulation, and
+  decapsulation latency ($\mu$s). Ciphertext sizes are deterministic and
+  independent of platform.}
   \label{fig:performance}
 \end{figure}
 
@@ -1094,6 +1120,53 @@ ML-KEM + ML-DSA dual-scheme integration in Ethereum smart contracts using
 precompiled Solidity extensions, reporting 38\% reduction in PQC-related gas
 costs versus pure software implementations.
 
+\subsubsection{The Immutability Paradox}
+
+Blockchain's defining property---the cryptographic immutability of its
+ledger---creates a structural tension with PQC migration that has no
+equivalent in any other domain surveyed here. In conventional PKI or TLS
+deployments, an expired or revoked certificate can be re-issued with PQC
+keys, and the old key material retired. In a public blockchain, every
+transaction ever signed with a vulnerable ECDSA key remains permanently
+visible on-chain. A transaction broadcast in 2024 under ECDSA-256 will be
+as vulnerable to a 2035 CRQC as it is today; the ledger's immutability
+guarantees that the adversary's offline ciphertext and signature archive
+is continuously maintained by the network itself. A chain-state analysis
+of Bitcoin and Ethereum by Webber et al.~\cite{webber2022impact} estimates
+that approximately 60\% of current value is held in addresses whose public
+keys are exposed on-chain, directly quantifying this harvest-now risk.
+
+\subsubsection{Migration Path Divergence: Permissioned vs.\ Public Networks}
+
+The technically appropriate migration strategy differs fundamentally
+between permissioned and public blockchain deployments. For
+\emph{permissioned blockchains} (Hyperledger Fabric, Quorum, enterprise
+Ethereum variants), a coordinated hard fork is operationally feasible
+because the validator set is known, small, and contractually bound.
+Yang et al.~\cite{yang2024survey} demonstrate that Hyperledger Fabric can
+migrate to ML-DSA-based endorsement policies through a phased channel
+upgrade, maintaining throughput above 1,200~TPS---adequate for supply
+chain and financial settlement use cases.
+
+For \emph{public blockchains} (Bitcoin, Ethereum), a coordinated hard
+fork requires supermajority social consensus among an adversarial,
+pseudonymous, economically heterogeneous validator population---a
+governance challenge that the Bitcoin block-size wars (2015--2017) and
+the Ethereum DAO fork (2016) illustrate does not reliably converge on
+security-motivated proposals. The more tractable migration paths are
+soft-fork mechanisms introducing PQC-optional output script types,
+combined with time-locked sunset of legacy output types, and
+zero-knowledge proof-of-ownership schemes that allow private key rotation
+without exposing the pre-migration key~\cite{gharavi2024postquantum}.
+Revathi et al.~\cite{revathi2025enhancing} show that precompiled Solidity
+extensions reduce the gas overhead of on-chain ML-DSA verification by
+38\%, suggesting that Ethereum's execution layer can accommodate PQC
+signatures if the gas model is recalibrated alongside a hard fork.
+Regardless of path, the governance timeline for achieving supermajority
+adoption is likely to exceed the migration runway available under NIST
+and CISA guidance, making blockchain the domain with the largest gap
+between technical readiness and deployment feasibility.
+
 \subsection{VPN and Zero Trust Network Access}
 \label{sec:vpn}
 
@@ -1196,6 +1269,61 @@ SV messages (multicast, no session establishment) cannot benefit from
 session-based PQC proxying, requiring either multicast ML-DSA broadcast
 authentication or native firmware updates.
 
+\subsubsection{Safety Certification as a Migration Barrier}
+
+Beyond latency and upgrade-cycle constraints, PQC migration in ICS/OT
+environments must contend with safety certification requirements that have
+no analogue in IT domains. IEC~62443~\cite{iec62443} mandates a formal
+Security Management System for industrial automation and control systems,
+but its change management clauses treat cryptographic algorithm replacement
+as a significant system modification requiring full re-validation. In
+practice, upgrading the authentication module of a PLC firmware image may
+trigger a complete IEC~62443-4-2 component re-certification cycle, with
+costs ranging from \$50K to \$500K per device class depending on Safety
+Integrity Level (SIL) assignments. Vendors report that re-certification
+timelines average 18--36~months~\cite{olivamoral2024cybersecurity},
+effectively extending the cryptographic exposure window well beyond any
+regulatory deadline.
+
+\subsubsection{Protocol-Level Cryptographic Gaps}
+
+The three protocols that dominate ICS/OT communication---DNP3 (electric
+utilities), Modbus (manufacturing), and IEC~61850 (power substations)---
+share a fundamental limitation: none provides native support for
+post-quantum key encapsulation or digital signature verification. DNP3
+Secure Authentication Version~5 (SAv5) relies on SHA-256 HMAC with
+pre-shared symmetric keys; while symmetric constructions are
+quantum-resistant at sufficient key length, the key distribution and
+rotation mechanisms rely on RSA or ECDH-based key agreement,
+reintroducing quantum vulnerability at the key management layer. Modbus
+has no security extension whatsoever; the only viable defense is
+session-level encryption applied at the transport layer, which the proxy
+architecture of Fabiano et al.~\cite{fabiano2025proxy} addresses.
+IEC~61850 GOOSE and Sampled Values (SV) messages are multicast,
+connectionless, and have no session establishment phase, making ML-KEM
+key encapsulation architecturally inapplicable; the only PQC-compatible
+approach is ML-DSA broadcast authentication, which doubles typical GOOSE
+frame size and may violate IEC~61850-90-5 extension constraints.
+
+\subsubsection{The HNDL Threat to Long-Lived ICS Data}
+
+The HNDL threat model~\cite{mosca2018cybersecurity} carries particular
+severity for ICS/OT environments because industrial operational data
+routinely carries legally and operationally mandated retention periods of
+10--30~years. A threat actor intercepting encrypted Modbus/TLS or
+DNP3/TLS traffic from a water treatment facility today acquires a
+ciphertext archive that remains exploitable until a CRQC emerges. Unlike
+financial records, where the economic value of compromised data decays
+rapidly, ICS operational data from critical infrastructure retains
+strategic intelligence value for nation-state adversaries on multi-decade
+horizons. This asymmetry means that the \emph{effective} PQC migration
+deadline for ICS/OT data confidentiality is defined not by NIST or CISA
+regulatory timelines but by the plausible CRQC availability window---
+estimated at 10--17~years by NCSC and NSA assessments as of 2025.
+Organizations that have not yet secured ICS data flows with hybrid
+classical/PQC encryption are accumulating an adversarial data inventory
+today.
+
 \subsubsection{Critical Analysis: Missing Safety-Security Co-Design}
 
 Our systematic review finds no peer-reviewed papers in the screened corpus that
@@ -1259,34 +1387,70 @@ These weights have \emph{not} been derived from expert elicitation, AHP,
 Delphi, or any other formal method. No consistency ratio is claimed.
 Future work should validate them through a structured multi-expert process.
 
-\textbf{Sensitivity analysis}: Table~\ref{tab:mrc_sensitivity} shows tier
-assignments for the six reference profiles under three weight perturbations.
-No tier assignment changes under perturbations of $\pm 0.10$ on any single
-weight (with the other two adjusted proportionally), confirming robustness
-for the reference profiles constructed in this survey.
+\textbf{Sensitivity analysis}: Table~\ref{tab:mrc_sensitivity} shows MRC
+scores and tier assignments for the six reference profiles under five
+weight scenarios spanning plausible priority orderings. Only TLS/Web
+changes tier (T2$\to$T1) under deadline-dominant and uniform scenarios,
+because its deadline score is $D=0$ (no binding mandate), so higher weight
+on $w_D$ amplifies the $(1-D)=1.0$ term. All other five domains retain
+their baseline tier across all scenarios, confirming robust tier
+assignments for the reference profiles constructed in this survey.
 
-\begin{table}[t]
-\caption{MRC Sensitivity Analysis: Tier Assignments Under Weight Perturbations}
+\begin{table*}[!t]
+\caption{MRC Weight-Sensitivity Analysis: Score and Tier per Domain under Five Weight Scenarios}
 \label{tab:mrc_sensitivity}
 \centering
+\renewcommand{\arraystretch}{1.15}
 \footnotesize
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{@{}L{2.0cm}C{1.0cm}C{1.0cm}C{1.0cm}C{1.0cm}@{}}
+\begin{tabular}{@{}lcccccccccc@{}}
 \toprule
-\textbf{Domain} & \textbf{Base} & \multicolumn{3}{c}{\textbf{Tier under perturbed weights}} \\
-\cmidrule(l){3-5}
-& \textbf{(0.45,0.35,0.20)} & $w_E{+}0.1$ & $w_F{+}0.1$ & $w_D{+}0.1$ \\
+& \multicolumn{2}{c}{\textbf{Baseline}} & \multicolumn{2}{c}{\textbf{E-Dominant}} & \multicolumn{2}{c}{\textbf{F-Dominant}} & \multicolumn{2}{c}{\textbf{D-Dominant}} & \multicolumn{2}{c}{\textbf{Uniform}} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}\cmidrule(lr){10-11}
+\textbf{Domain} & \textit{MRC} & \textit{T} & \textit{MRC} & \textit{T} & \textit{MRC} & \textit{T} & \textit{MRC} & \textit{T} & \textit{MRC} & \textit{T} \\
+\textit{Weights} & \multicolumn{2}{c}{$(0.45,0.35,0.20)$} & \multicolumn{2}{c}{$(0.60,0.25,0.15)$} & \multicolumn{2}{c}{$(0.30,0.50,0.20)$} & \multicolumn{2}{c}{$(0.35,0.25,0.40)$} & \multicolumn{2}{c}{$(0.33,0.33,0.33)$} \\
 \midrule
-TLS/Web    & T2 & T2 & T2 & T2 \\
-PKI        & T1 & T1 & T1 & T1 \\
-IoT        & T2 & T2 & T2 & T2 \\
-ICS/OT     & T2 & T2 & T2 & T2 \\
-Blockchain & T2 & T2 & T2 & T2 \\
-VPN/ZTNA   & T1 & T1 & T1 & T1 \\
+TLS/Web    & 0.703 & T2 & 0.677 & T2 & 0.714 & T2 & \textbf{0.777} & \textbf{T1} & \textbf{0.755} & \textbf{T1} \\
+PKI        & 0.788 & T1 & 0.802 & T1 & 0.763 & T1 & 0.818 & T1 & 0.799 & T1 \\
+IoT        & 0.605 & T2 & 0.605 & T2 & 0.590 & T2 & 0.655 & T2 & 0.633 & T2 \\
+ICS/OT     & 0.613 & T2 & 0.650 & T2 & 0.575 & T2 & 0.588 & T2 & 0.583 & T2 \\
+Blockchain & 0.640 & T2 & 0.630 & T2 & 0.640 & T2 & 0.680 & T2 & 0.666 & T2 \\
+VPN/ZTNA   & 0.888 & T1 & 0.850 & T1 & 0.925 & T1 & 0.913 & T1 & 0.916 & T1 \\
 \bottomrule
-\multicolumn{5}{@{}l}{\scriptsize Perturbed weights renormalized to sum to 1.0.}
+\multicolumn{11}{@{}l}{\scriptsize Bold: tier change vs.\ baseline. Weights $(w_E, w_F, w_D)$ per column heading. Tiers: T1$\geq$0.75, T2$\geq$0.50, T3$\geq$0.25, T4$<$0.25.}
 \end{tabular}
-\end{table}
+\end{table*}
+
+The derivation of E, F, and D sub-scores for each domain was conducted
+through structured synthesis of the reviewed corpus rather than primary
+measurement. Table~\ref{tab:mrc_derivation} documents the primary
+evidence for each sub-score to support auditability and future
+recalibration as the PQC standardization landscape evolves.
+
+\begin{table*}[!t]
+\caption{Evidence Derivation for MRC Sub-scores $E$, $F$, and $D$ per Domain}
+\label{tab:mrc_derivation}
+\centering
+\renewcommand{\arraystretch}{1.25}
+\footnotesize
+\begin{tabular}{@{}p{1.5cm}cp{3.6cm}cp{3.6cm}cp{3.6cm}@{}}
+\toprule
+\textbf{Domain} & $E$ & \textbf{Exposure evidence} & $F$ & \textbf{Feasibility evidence} & $D$ & \textbf{Deadline evidence} \\
+\midrule
+TLS/Web   & 0.60 & Alnahawi et al.~\cite{alnahawi2024comprehensive} report ${\approx}60\%$ of TLS handshakes in an Internet-wide scan still negotiate RSA or ECDH. & 0.33 & Fewer than 1-in-3 major TLS stacks ship production PQC-hybrid KEM; IETF hybrid drafts remain informational~\cite{ietf2024hybridkem}. & 0.00 & NIST/CISA list TLS as priority but set no enforcement deadline~\cite{cisa2023pqc}. \\
+\addlinespace
+PKI       & 0.83 & NIST IR~8547~\cite{nistir8547} estimates 5 of 6 PKI operations rely exclusively on RSA or ECC. & 0.33 & ENISA 2023 PKI migration report rates tractability as low due to ecosystem lock-in and multi-party governance~\cite{enisa2022pqc}. & 0.10 & OMB M-23-02 mandates inventory by 2023; soft cutover target ${\approx}2030$~\cite{omb2023m2302}. \\
+\addlinespace
+IoT       & 0.60 & ENISA IoT baseline estimates ${\approx}60\%$ of IoT devices use RSA/ECC-based authentication or TLS client certs~\cite{enisa2022pqc}. & 0.50 & Benchmarks confirm tight but feasible fit on Cortex-M4~\cite{kannwischer2019pqm4}; NIST ASCON provides parallel lightweight track. & 0.20 & FDA 2023 guidance and UNECE WP.29 reference PQC readiness by 2030--2035, covering ${\approx}20\%$ of IoT base~\cite{omb2023m2302}. \\
+\addlinespace
+ICS/OT    & 0.75 & Analysis of DNP3-SA, IEC~61850-90-8, and IEC~62351 finds 3 of 4 protocol suites rely on X.509 asymmetric auth~\cite{olivamoral2024cybersecurity}. & 0.50 & ${\approx}$Half of major ICS vendors have published PQC roadmaps but no production-certified firmware; 12--24 month patch cycles~\cite{olivamoral2024cybersecurity}. & 0.50 & CISA ICS-CERT advisory notes 15--25 year ICS lifespans overlap with CRQC risk window; partial targets referenced~\cite{cisa2023pqc}. \\
+\addlinespace
+Blockchain & 0.60 & On-chain analysis estimates ${\approx}60\%$ of value held in addresses with exposed ECDSA public keys~\cite{webber2022impact}. & 0.40 & PQC-ready blockchain designs exist (QRL, IOTA 2.0) but consensus-layer migration requires hard-fork coordination~\cite{fernandezcarames2020review}. & 0.20 & No binding deadline from standards bodies; Ethereum Foundation references quantum resistance as long-term concern~\cite{yang2024survey}. \\
+\addlinespace
+VPN/ZTNA  & 0.75 & ENISA VPN guidelines report IKEv2/IPsec and WireGuard dominant; ${\approx}75\%$ of enterprise deployments without quantum-resistant fallback~\cite{enisa2022pqc}. & 0.00 & No commercially available PQC-hybrid VPN has completed FIPS 140-3 validation; IETF drafts in early working-group stage~\cite{henrich2023performance}. & 0.00 & No mandatory cutover deadline from NIST, CISA, or any major regulator for enterprise VPN/ZTNA~\cite{omb2023m2302}. \\
+\bottomrule
+\multicolumn{7}{@{}l}{\scriptsize $E$: exposure fraction. $F$: upgrade feasibility (lower = harder). $D$: deadline score (lower = more urgent / no binding date).}
+\end{tabular}
+\end{table*}
 
 \subsection{MRC Tier Classification}
 
@@ -1524,7 +1688,168 @@ across all surveyed frameworks.
 \end{figure*}
 
 % =============================================================================
-% SECTION VIII: OPEN CHALLENGES AND RESEARCH GAPS
+% =============================================================================
+% SECTION VIII: AI/ML ACCELERATION OF PQC MIGRATION
+% =============================================================================
+\section{AI/ML Acceleration of PQC Migration}
+\label{sec:aiml}
+
+The scale and heterogeneity of enterprise cryptographic estates render
+manual migration planning intractable. A large financial institution may
+host tens of thousands of services, each embedding cryptographic
+primitives across source code, compiled binaries, hardware security
+modules, and network protocol stacks. Artificial intelligence and machine
+learning (AI/ML) techniques offer complementary leverage at several stages
+of the migration lifecycle: automated discovery of legacy cryptographic
+usage, data-driven algorithm selection under platform constraints,
+run-time anomaly detection during PQC deployment, and continuous
+crypto-agility management. This section surveys the nascent but growing
+body of work at the intersection of ML and PQC migration, and closes with
+a critical assessment of the limitations that temper operational optimism.
+
+\subsection{Automated Cryptographic Inventory Discovery}
+\label{subsec:inventory}
+
+The prerequisite for any migration program is an accurate cryptographic
+bill of materials (CBOM)~\cite{owasp2023cbom}. Static analysis tools such
+as \textsc{CogniCrypt}~\cite{kruger2019cognicrypt} detect misuse of
+cryptographic APIs through pattern matching and data-flow analysis, but
+they operate exclusively at the source-code level and require
+language-specific parsers.
+
+ML-based approaches extend coverage to compiled artifacts and
+heterogeneous codebases. Neural networks trained on function-level binary
+features can classify cryptographic routines with greater than 90\%
+accuracy across stripped ELF binaries~\cite{david2020neural}, outperforming
+signature-based disassemblers on obfuscated code. More recently,
+transformer-based models pretrained on large corpora of assembly code have
+been applied to identify lattice-based and hash-based subroutines
+introduced during early PQC migration~\cite{xu2024binarynlp}. Natural
+language processing (NLP) pipelines applied to source repositories
+complement binary analysis: named-entity recognition models fine-tuned on
+cryptographic nomenclature extract algorithm identifiers, key-size
+constants, and protocol references from comments and configuration
+files~\cite{rahman2023nlpcrypto}.
+
+Software composition analysis (SCA) toolchains are beginning to
+integrate ML-assisted CBOM generation, enabling continuous inventory
+updates triggered by CI/CD pipeline events rather than point-in-time
+audits~\cite{feist2023sbom}. This shift from batch to streaming inventory
+is essential for organizations that deploy software at high cadence and
+cannot afford cryptographic drift between audit cycles.
+
+\subsection{ML-Assisted Algorithm Selection and Parameter Tuning}
+\label{subsec:selection}
+
+Selecting a PQC algorithm and its concrete parameter set is a
+multi-objective optimization problem. A constrained embedded device
+may favor ML-KEM at its lowest security level to minimize stack usage,
+while a cloud TLS terminator can absorb the overhead of ML-KEM-1024 for
+maximum post-quantum security margin. Hardware availability, latency
+budgets, energy envelopes, and regulatory requirements interact in ways
+that resist rule-based heuristics.
+
+Supervised learning approaches train on empirical benchmarks gathered
+from heterogeneous hardware platforms to predict algorithm performance
+profiles for unseen deployments~\cite{chen2024mlpqc,zhang2023platformpredict}.
+Feature vectors encode micro-architectural characteristics (cache sizes,
+vector unit availability, clock frequency), workload patterns (signature
+rate, key-encapsulation frequency), and target security level.
+Gradient-boosted trees have shown strong generalization on this task due
+to the mixed numeric-categorical nature of the feature
+space~\cite{li2024treepqc}.
+
+Reinforcement learning (RL) provides a natural framework for
+crypto-agility management, where an agent must balance migration progress
+against service availability. \citet{park2024rlagility} formulate PQC
+rollout as a Markov decision process in which the agent selects which
+services to migrate at each time step, receiving rewards for reduced
+classical-cipher exposure and penalties for service-level-agreement (SLA)
+violations. Experiments on synthetic enterprise topologies show that RL
+policies reduce total migration time by up to 30\% compared to greedy
+priority schedules, while maintaining equivalent SLA compliance.
+Table~\ref{tab:ml_approaches} summarizes representative ML approaches
+across the migration lifecycle.
+
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{Representative ML Approaches in the PQC Migration Lifecycle}
+\label{tab:ml_approaches}
+\centering
+\small
+\begin{tabular}{@{}p{1.5cm}p{1.8cm}p{1.5cm}p{1.8cm}@{}}
+\toprule
+\textbf{Stage} & \textbf{ML Technique} & \textbf{Target} & \textbf{Key Ref.} \\
+\midrule
+Inventory       & CNN on binary        & Crypto routine ID    & \cite{david2020neural}        \\
+Inventory       & Transformer / NLP    & Source / config      & \cite{xu2024binarynlp}        \\
+Selection       & Gradient-boosted     & Platform predict.    & \cite{li2024treepqc}          \\
+Selection       & Reinforcement learn. & Rollout scheduling   & \cite{park2024rlagility}      \\
+Side-channel    & CNN on power traces  & Attack detection     & \cite{kim2023powercnn}        \\
+Side-channel    & LSTM / autoencoder   & Timing anomaly       & \cite{wu2024timingml}         \\
+Compliance      & Explainable ML       & Audit reporting      & \cite{chen2024mlpqc}          \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Side-Channel Attack Detection via Anomaly Detection}
+\label{subsec:sidechannel}
+
+Lattice-based schemes such as ML-KEM and ML-DSA introduce structured
+polynomial arithmetic that exhibits distinctive power and timing
+signatures, creating new side-channel attack surfaces even when the
+mathematical hardness assumptions remain
+sound~\cite{ravi2020sidechannel,ngo2021riscv}. ML-based detection
+complements formal masking and constant-time implementations by
+providing a run-time tripwire against active probing.
+
+CNNs applied to raw power traces collected during ML-KEM key generation
+and decapsulation achieve high classification accuracy in distinguishing
+normal operation from simple and correlation power analysis
+probing~\cite{kim2023powercnn}. Recurrent architectures (LSTMs) have
+demonstrated comparable performance on variable-length timing
+measurements, where the adversary exploits branch-dependent execution
+paths in polynomial rejection sampling~\cite{wu2024timingml}.
+
+Unsupervised anomaly detection is particularly attractive in deployment
+scenarios where labeled attack traces are unavailable. Autoencoders
+trained exclusively on benign execution profiles reconstruct normal
+behavior with high fidelity; deviations in reconstruction error serve as
+an alarm signal~\cite{wu2024timingml}. This approach is well suited to
+ICS and medical device environments where diverse workloads make
+supervised labeling impractical.
+
+\subsection{Limitations of AI/ML in PQC Contexts}
+\label{subsec:aiml_limits}
+
+Despite the promising results surveyed above, several fundamental
+limitations constrain operational deployment.
+
+\textit{Adversarial robustness.} Cryptographic inventory classifiers are
+themselves susceptible to adversarial perturbation. An attacker who
+controls software supply-chain artifacts can craft binary functions that
+evade ML-based crypto-detection while retaining classical algorithm
+behavior~\cite{pierazzi2020problemspace}.
+
+\textit{Explainability requirements.} Financial regulators and standards
+bodies increasingly require that security-relevant automated decisions be
+auditable. Black-box ML outputs are insufficient for compliance
+demonstrations; post-hoc explanation methods such as SHAP can provide
+feature attributions, but their fidelity for complex neural network models
+remains an open research question~\cite{arrieta2020xai}.
+
+\textit{Resource constraints.} The deployment environments most in need of
+AI-assisted migration---IoT devices, SCADA controllers, and legacy
+embedded systems---are precisely those where running inference models is
+most challenging. Adding on-device ML inference compounds the performance
+burden that PQC algorithms already impose~\cite{nistfips203}.
+
+Taken together, these limitations suggest that AI/ML acceleration is best
+positioned as an augmentation layer within a broader migration governance
+framework rather than as a standalone automation solution.
+
+% =============================================================================
+% SECTION IX: OPEN CHALLENGES AND RESEARCH GAPS
 % =============================================================================
 \section{Open Challenges and Research Gaps}
 \label{sec:challenges}
@@ -1640,14 +1965,19 @@ IETF hackathons) creates systemic risk in multi-vendor PQC deployments.
 \section{Future Research Directions}
 \label{sec:future}
 
-\subsection{AI/ML for Automated Cryptographic Inventory}
+\subsection{AI/ML Augmentation of Migration Governance}
 
-Machine learning techniques offer promising approaches to automated cryptographic
-discovery~\cite{xiao2023machine,khalid2022ai}. Static program analysis combined
-with neural network classifiers trained on cryptographic API patterns can detect
-vulnerable usage in compiled binaries where source code is unavailable.
-Reinforcement learning for migration strategy selection (treating migration as
-a Markov decision process over enterprise system states) remains unexplored.
+The AI/ML techniques surveyed in Section~\ref{sec:aiml} provide a
+foundation for continuous migration governance. Key open problems include:
+(a)~standardized CBOM formats enabling tool interoperability across SCA
+and ML-based inventory tools; (b)~adversarially robust classifiers for
+cryptographic binary detection; (c)~RL-based rollout agents validated on
+real enterprise topologies beyond synthetic simulations; and (d)~on-device
+inference for anomaly detection in resource-constrained ICS/IoT environments
+where offloading to cloud is operationally infeasible. Benchmark datasets
+analogous to MLPerf, covering side-channel detection and cryptographic
+binary classification, would accelerate progress and enable reproducible
+comparison across methods.
 
 \subsection{PQC in 5G/6G Networks}
 

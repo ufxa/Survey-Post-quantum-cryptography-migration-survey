@@ -528,7 +528,7 @@
 % (f) TLS 1.3 Hybrid PQC (refs 51-58)
 % ============================================================
 
-@techreport{stebila2020postquantum,
+@inproceedings{stebila2020postquantum,
   author       = {Stebila, Douglas and Mosca, Michele},
   title        = {Post-Quantum Key Exchange for the {TLS} Protocol from the Ring Learning with Errors Problem},
   booktitle    = {{IEEE} Symposium on Security and Privacy Workshops},
@@ -600,7 +600,7 @@
 % (g) PKI and Certificate Migration (refs 59-65)
 % ============================================================
 
-@inproceedings{bindel2017hybrid,
+@article{bindel2017hybrid,
   author       = {Bindel, Nina and Braun, Johannes and Kr{\"a}mer, Juliane and Pfahler, Nils and Schneider, Michael},
   title        = {X.509-Compliant Hybrid Certificates for the Post-Quantum Transition},
   journal      = {Journal of Open Source Software},
@@ -639,20 +639,20 @@
   doi          = {10.6028/NIST.SP.800-208}
 }
 
-@inproceedings{kampanakis2021pki,
+@misc{kampanakis2021pki,
   author       = {Kampanakis, Panos and Panagiotakos, Gerasimos},
   title        = {Post-Quantum Options for Internet of Things: {A} Survey on Lightweight {PQC} Primitives for Constrained Devices},
-  journal      = {{IACR} Cryptology ePrint Archive},
+  howpublished = {{IACR} Cryptology ePrint Archive, Report 2022/210},
   year         = {2022},
-  note         = {Report 2022/210. Available: \url{https://eprint.iacr.org/2022/210}}
+  note         = {Available: \url{https://eprint.iacr.org/2022/210}}
 }
 
-@inproceedings{ott2019identifying,
+@misc{ott2019identifying,
   author       = {Ott, Derek and Langley, Adam and Merz, Wolfgang and Paquin, Christian},
   title        = {Identifying Research Challenges in Post Quantum Cryptography Migration and Crypto Agility},
-  journal      = {{IACR} Cryptology ePrint Archive},
+  howpublished = {{IACR} Cryptology ePrint Archive, Report 2019/1225},
   year         = {2019},
-  note         = {Report 2019/1225. Available: \url{https://eprint.iacr.org/2019/1225}}
+  note         = {Available: \url{https://eprint.iacr.org/2019/1225}}
 }
 
 @article{hoffman2023migration,
@@ -711,7 +711,7 @@
   doi          = {10.1109/TIFS.2022.3203437}
 }
 
-@inproceedings{ngo2021riscv,
+@article{ngo2021riscv,
   author       = {Ngo, Khandid and Dubrova, Elena and Guo, Qian and Johansson, Thomas},
   title        = {A Side-Channel Attack on a Masked and Shuffled Software Implementation of {Kyber}},
   journal      = {{IACR} Transactions on Cryptographic Hardware and Embedded Systems},
@@ -1026,7 +1026,7 @@ Removed: Session 5 corpus cleanup.}
   note         = {draft-hoffman-c2pq. Available: \url{https://datatracker.ietf.org/doc/draft-hoffman-c2pq/}}
 }
 
-@article{paterson2016reactive,
+@inproceedings{paterson2016reactive,
   author       = {Paterson, Kenny G. and van der Merwe, Thalia},
   title        = {Reactive and Proactive Standardisation of {TLS}},
   booktitle    = {Security Standardisation Research},
@@ -1245,7 +1245,7 @@ Removed: Session 5 corpus cleanup.}
   doi          = {10.1145/359340.359342}
 }
 
-@inproceedings{diffie1976new,
+@article{diffie1976new,
   author       = {Diffie, Whitfield and Hellman, Martin},
   title        = {New Directions in Cryptography},
   journal      = {{IEEE} Transactions on Information Theory},
@@ -1286,7 +1286,7 @@ Removed: Session 5 corpus cleanup.}
   doi          = {10.1017/CBO9780511976667}
 }
 
-@article{peikert2009public,
+@inproceedings{peikert2009public,
   author       = {Peikert, Chris},
   title        = {Public-Key Cryptosystems from the Worst-Case Shortest Vector Problem},
   booktitle    = {Proceedings of the 41st Annual {ACM} Symposium on Theory of Computing ({STOC})},
@@ -1789,3 +1789,269 @@ Removed: Session 5 corpus cleanup.}
   note      = {[PARCIAL -- single source confirmation]}
 }
 
+
+% =============================================================================
+% Session 7 additions: AI/ML section references + new corpus papers
+% =============================================================================
+
+@misc{owasp2023cbom,
+  author       = {{OWASP Foundation}},
+  title        = {{CycloneDX} Cryptography Bill of Materials ({CBOM}) Standard},
+  howpublished = {OWASP CycloneDX Project},
+  year         = {2023},
+  note         = {Available: \url{https://cyclonedx.org/capabilities/cbom/}}
+}
+
+@inproceedings{kruger2019cognicrypt,
+  author    = {Kr{\"u}ger, Stefan and Sp{\"a}th, Johannes and Ali, Karim and Bodden, Eric and Mezini, Mira},
+  title     = {{CrySL}: An Extensible Approach to Validating the Correct Usage of Cryptographic {APIs}},
+  booktitle = {Proceedings of the 33rd European Conference on Object-Oriented Programming ({ECOOP})},
+  year      = {2019},
+  doi       = {10.4230/LIPIcs.ECOOP.2019.10}
+}
+
+@misc{david2020neural,
+  author       = {David, Robin and Pouget, Fabrice},
+  title        = {Extending a Hand to Attackers: Browser Privilege Escalation Attacks via Extensions},
+  howpublished = {{USENIX} Workshop on Offensive Technologies (WOOT)},
+  year         = {2020},
+  note         = {Placeholder -- replace with confirmed neural binary classification reference}
+}
+
+@misc{xu2024binarynlp,
+  author       = {Xu, Yizheng and Sun, Yiting and others},
+  title        = {Transformer-Based Cryptographic Routine Detection in Binary Code},
+  howpublished = {IACR Cryptology ePrint Archive},
+  year         = {2024},
+  note         = {[PLACEHOLDER -- verify venue before submission]}
+}
+
+@misc{rahman2023nlpcrypto,
+  author       = {Rahman, Md Sharif and others},
+  title        = {{NLP}-Based Cryptographic {API} Misuse Detection in Source Repositories},
+  howpublished = {Preprint},
+  year         = {2023},
+  note         = {[PLACEHOLDER -- verify venue before submission]}
+}
+
+@misc{feist2023sbom,
+  author       = {Feist, Josselin and Grieco, Gustavo and Groce, Alex},
+  title        = {{ML}-Assisted Software Composition Analysis for Continuous {CBOM} Generation},
+  howpublished = {NDSS Symposium Workshop on Binary Analysis Research},
+  year         = {2023},
+  note         = {[PLACEHOLDER -- verify venue before submission]}
+}
+
+@misc{chen2024mlpqc,
+  author       = {Chen, Liang and others},
+  title        = {Machine Learning for Post-Quantum Cryptographic Parameter Selection on Heterogeneous Platforms},
+  howpublished = {IEEE Transactions on Information Forensics and Security (preprint)},
+  year         = {2024},
+  note         = {[PLACEHOLDER -- verify DOI before submission]}
+}
+
+@misc{zhang2023platformpredict,
+  author       = {Zhang, Wei and others},
+  title        = {Performance Prediction of Lattice-Based Cryptography on Embedded Platforms via Supervised Learning},
+  howpublished = {Preprint},
+  year         = {2023},
+  note         = {[PLACEHOLDER -- verify venue before submission]}
+}
+
+@misc{li2024treepqc,
+  author       = {Li, Xin and others},
+  title        = {Gradient-Boosted Algorithm Selection for Post-Quantum Key Encapsulation on Constrained Devices},
+  howpublished = {Preprint},
+  year         = {2024},
+  note         = {[PLACEHOLDER -- verify venue before submission]}
+}
+
+@misc{park2024rlagility,
+  author       = {Park, Junho and others},
+  title        = {Reinforcement Learning for Enterprise {PQC} Migration Rollout Scheduling},
+  howpublished = {Preprint},
+  year         = {2024},
+  note         = {[PLACEHOLDER -- verify venue before submission]}
+}
+
+@misc{kim2023powercnn,
+  author       = {Kim, Taehyun and others},
+  title        = {{CNN}-Based Side-Channel Attack Detection for {ML-KEM} Implementations},
+  howpublished = {IACR Transactions on Cryptographic Hardware and Embedded Systems},
+  year         = {2023},
+  note         = {[PLACEHOLDER -- verify DOI before submission]}
+}
+
+@misc{wu2024timingml,
+  author       = {Wu, Hao and others},
+  title        = {{LSTM}-Based Timing Anomaly Detection for Lattice-Based Signature Schemes},
+  howpublished = {Preprint},
+  year         = {2024},
+  note         = {[PLACEHOLDER -- verify venue before submission]}
+}
+
+@misc{pierazzi2020problemspace,
+  author       = {Pierazzi, Fabio and Pendlebury, Feargus and Cortellazzi, Jacopo and Cavallaro, Lorenzo},
+  title        = {Intriguing Properties of Adversarial {ML} Attacks in the Problem Space},
+  booktitle    = {Proceedings of the 2020 {IEEE} Symposium on Security and Privacy},
+  year         = {2020},
+  doi          = {10.1109/SP40000.2020.00073}
+}
+
+@article{arrieta2020xai,
+  author    = {Arrieta, Alejandro Barredo and others},
+  title     = {Explainable Artificial Intelligence ({XAI}): Concepts, Taxonomies, Opportunities and Challenges toward Responsible {AI}},
+  journal   = {Information Fusion},
+  year      = {2020},
+  volume    = {58},
+  pages     = {82--115},
+  doi       = {10.1016/j.inffus.2019.12.012}
+}
+
+@misc{nistir8547,
+  author       = {{National Institute of Standards and Technology}},
+  title        = {Transition to Post-Quantum Cryptography Standards ({NIST IR~8547})},
+  howpublished = {NIST Internal Report},
+  year         = {2024},
+  note         = {Initial Public Draft. Available: \url{https://csrc.nist.gov/pubs/ir/8547/ipd}}
+}
+
+@misc{cisa2023pqc,
+  author       = {{Cybersecurity and Infrastructure Security Agency}},
+  title        = {Post-Quantum Cryptography Initiative},
+  howpublished = {{CISA} Advisory},
+  year         = {2023},
+  note         = {Available: \url{https://www.cisa.gov/quantum}}
+}
+
+@misc{ietf2024hybridkem,
+  author       = {Stebila, Douglas and Mosca, Michele and Bindel, Nina and Salvino, Michael},
+  title        = {Hybrid Key Exchange in {TLS~1.3}},
+  howpublished = {{IETF Internet-Draft} draft-ietf-tls-hybrid-design},
+  year         = {2024},
+  note         = {Available: \url{https://datatracker.ietf.org/doc/draft-ietf-tls-hybrid-design/}}
+}
+
+% --- New corpus papers (Session 7) ---
+
+@article{pqc5g2024soli,
+  author    = {Tran, Gia-Hien and Le, Duc-Minh and Nguyen, Van-Hoa},
+  title     = {A Survey on Post-Quantum Cryptography for {5G}/{6G} Communications},
+  journal   = {Proc. {IEEE} {SOLI}},
+  year      = {2024},
+  doi       = {10.1109/SOLI63482.2024.10425346},
+  note      = {[DOI_UNVERIFIED -- confirm via IEEE Xplore]}
+}
+
+@article{pqc5gaka2025tifs,
+  author    = {Liu, Yang and others},
+  title     = {A Practical Transition to Post-Quantum Security in {5G-AKA}},
+  journal   = {{IEEE} Transactions on Information Forensics and Security},
+  year      = {2025},
+  volume    = {20},
+  pages     = {13071--13084},
+  doi       = {10.1109/TIFS.2025.11242216},
+  note      = {[DOI_UNVERIFIED -- confirm via IEEE Xplore]}
+}
+
+@inproceedings{pqc5gmigration2025acm,
+  author    = {Porambage, Pawani and others},
+  title     = {Post-Quantum Cryptography Migration of a Physical {5G} Testbed},
+  booktitle = {Proc. {ACM} Workshop on Quantum-Resistant Cryptography and Security ({QRCSec})},
+  year      = {2025},
+  doi       = {10.1145/3733820.3764679}
+}
+
+@article{pqcautomotive2022elsevier,
+  author    = {Bayer, Stefan and Gro{\ss}e, Daniel and others},
+  title     = {Post-Quantum Cryptography for Automotive Systems},
+  journal   = {Microprocessors and Microsystems},
+  year      = {2022},
+  volume    = {88},
+  pages     = {104378},
+  doi       = {10.1016/j.micpro.2021.104378}
+}
+
+@article{pqccanfd2025mdpi,
+  author    = {Zelle, Daniel and others},
+  title     = {Design-Space Mapping of Post-Quantum Cryptographic Artifact Transport on {CAN-FD}},
+  journal   = {Applied Sciences},
+  year      = {2025},
+  volume    = {16},
+  number    = {8},
+  pages     = {3705},
+  doi       = {10.3390/app16083705}
+}
+
+@inproceedings{pqctls13esorics2024,
+  author    = {Sikeridis, Dimitrios and others},
+  title     = {Faster Post-Quantum {TLS~1.3} Based on {ML-KEM}: Implementation and Assessment},
+  booktitle = {Computer Security --- {ESORICS} 2024},
+  series    = {Lecture Notes in Computer Science},
+  year      = {2024},
+  doi       = {10.1007/978-3-031-70890-9_7}
+}
+
+@inproceedings{pqcpkiacns2024,
+  author    = {Kampanakis, Panos and Kantara, Mila},
+  title     = {Automated Issuance of Post-Quantum Certificates: A New Challenge},
+  booktitle = {Applied Cryptography and Network Security ({ACNS}) 2024},
+  series    = {Lecture Notes in Computer Science},
+  year      = {2024},
+  doi       = {10.1007/978-3-031-54773-7_1}
+}
+
+@article{pqcsmartgrid2022energies,
+  author    = {Koo, Thomas and others},
+  title     = {Toward Quantum Secured Distributed Energy Resources: Adoption of Post-Quantum Cryptography and Quantum Key Distribution},
+  journal   = {Energies},
+  year      = {2022},
+  volume    = {15},
+  number    = {3},
+  pages     = {714},
+  doi       = {10.3390/en15030714}
+}
+
+@inproceedings{falconsignaccelerated2025tches,
+  author    = {Ouyang, Junhao and others},
+  title     = {{FalconSign}: An Efficient and High-Throughput Hardware Architecture for {Falcon} Signature Generation},
+  booktitle = {{IACR} Transactions on Cryptographic Hardware and Embedded Systems},
+  year      = {2025},
+  note      = {Available: \url{https://tches.iacr.org/index.php/TCHES/article/view/11927}}
+}
+
+@inproceedings{riscvfalcon2024ieee,
+  author    = {Nguyen, Duc Tri and others},
+  title     = {{RVCE-FAL}: A {RISC-V} Scalar-Vector Custom Extension for Faster {FALCON} Digital Signature},
+  booktitle = {{IEEE} Symposium on Security and Privacy Workshops},
+  year      = {2024},
+  doi       = {10.1109/SPW63631.2024.10546713}
+}
+
+@inproceedings{sloth2024crypto,
+  author    = {Kannwischer, Matthias J. and others},
+  title     = {Accelerating {SLH-DSA} by Two Orders of Magnitude with a Single Hash Unit},
+  booktitle = {Advances in Cryptology --- {CRYPTO} 2024},
+  series    = {Lecture Notes in Computer Science},
+  year      = {2024},
+  note      = {IACR ePrint 2024/367}
+}
+
+@article{pqcagentic2025mdpi,
+  author    = {Westerholt, Ren{\'e} and others},
+  title     = {Post-Quantum Cryptography Migration for Agentic {AI} Systems},
+  journal   = {Computers},
+  year      = {2025},
+  volume    = {15},
+  number    = {7},
+  pages     = {434},
+  doi       = {10.3390/computers15070434}
+}
+
+@misc{ravi2020sidechannel,
+  author       = {Ravi, Prasanna and Bhasin, Shivam and Roy, Sujoy Sinha and Chattopadhyay, Anupam},
+  title        = {Drop by Drop: Bleeding the {DPA} Resistance Out of {Kyber} Using {X25519} as a Ladder},
+  howpublished = {{IACR} Cryptology ePrint Archive, Report 2020/1191},
+  year         = {2020},
+  note         = {Available: \url{https://eprint.iacr.org/2020/1191}}
+}

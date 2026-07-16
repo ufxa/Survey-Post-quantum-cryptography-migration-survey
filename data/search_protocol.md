@@ -181,3 +181,16 @@ Session 6 additions: 35 papers verified via web search agents across four domain
 DOI_UNVERIFIED entries (record 151, 129, 130) require author/DOI confirmation
 before final submission. Execution against indexed databases still pending
 (institutional IEEE Xplore, ACM DL, Scopus access required).
+
+Session 7 additions (July 2026): manuscript expanded to ~25-26 pages.
+- BibTeX entries added: 14 new peer-reviewed corpus papers (5G/AKA, automotive CAN-FD,
+  TLS/ESORICS, PKI/ACNS, smart grid, TCHES hardware, RISC-V, SLH-DSA, agentic AI,
+  side-channel, automotive) + 18 reference entries (AI/ML section: CBOM/OWASP, CrySL,
+  ML-based detection placeholders, NIST IR 8547, CISA PQC, IETF hybrid-KEM, IEC 62443).
+- Manuscript additions: full AI/ML section (sec:aiml, ~3pp), ICS/OT expansion (3
+  subsubsections: safety certification, protocol gaps, HNDL), Blockchain expansion (2
+  subsubsections: immutability paradox, migration path divergence), 5-scenario MRC
+  sensitivity table, MRC E/F/D derivation table, formal Limitations subsection.
+- Corpus total after Session 7: ~121 peer-reviewed + 39 normative = ~160 total.
+  AI/ML placeholder entries (david2020neural etc.) marked [PLACEHOLDER]; require venue
+  confirmation before camera-ready submission.
