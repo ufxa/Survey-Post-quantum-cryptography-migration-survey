@@ -90,8 +90,8 @@ solves the integer factorization and discrete logarithm problems in polynomial
 time, eliminating the computational hardness upon which RSA-2048 and ECC-256
 rely for security guarantees expected to last decades. The National Institute of
 Standards and Technology (NIST) finalized the first post-quantum cryptography
-(PQC) standards in August 2024---FIPS~203 (ML-KEM), FIPS~204 (ML-DSA), and
-FIPS~205 (SLH-DSA)---triggering mandatory migration timelines across critical
+(PQC) standards in August 2024: FIPS~203 (ML-KEM), FIPS~204 (ML-DSA), and
+FIPS~205 (SLH-DSA), triggering mandatory migration timelines across critical
 sectors worldwide. Despite this pivotal standardization milestone, no
 comprehensive survey has systematically mapped the migration landscape across
 standards evolution, threat models, domain-specific implementation constraints,
@@ -106,7 +106,7 @@ a structured narrative review encompassing 72 peer-reviewed
 publications and 39 normative/standards documents (2016--2026, with seminal
 antecedents), we identify 14 distinct migration strategies and compare their
 applicability across these domains. We introduce the Migration
-Readiness Classification (MRC) framework---a heuristic decision-support rubric
+Readiness Classification (MRC) framework, a heuristic decision-support rubric,
 that scores legacy systems across four tiers
 (Critical, High, Medium, and Low readiness) based on cryptographic exposure,
 upgrade feasibility, and regulatory deadline proximity.
@@ -146,8 +146,8 @@ Migration Readiness Classification, Lattice-Based Cryptography, Hash-Based Signa
 
 \IEEEPARstart{T}{he} intersection of quantum computing progress and global digital
 infrastructure creates one of the most consequential security challenges of the
-coming decade. Contemporary public-key cryptographic systems---including RSA~\cite{rivest1978method},
-Diffie-Hellman key exchange~\cite{diffie1976new}, and elliptic-curve variants---derive
+coming decade. Contemporary public-key cryptographic systems, including RSA~\cite{rivest1978method},
+Diffie-Hellman key exchange~\cite{diffie1976new}, and elliptic-curve variants, derive
 their security from the computational intractability of integer factorization and
 discrete logarithm problems. Shor's quantum algorithm~\cite{shor1994algorithms}
 renders both problems solvable in polynomial time on a sufficiently large
@@ -169,14 +169,14 @@ emerge within 10--15 years~\cite{mosca2018cybersecurity,preskill2018quantum}.
 
 The key vulnerability surface is vast. An estimated 4.4 billion SSL/TLS
 certificates worldwide rely on RSA or ECC for key exchange~\cite{netcraft2024survey}.
-Critical infrastructure sectors---financial systems, healthcare, energy grids,
-telecommunications, and government communications---collectively depend on
+Critical infrastructure sectors (financial systems, healthcare, energy grids,
+telecommunications, and government communications) collectively depend on
 public-key cryptography for authentication, key establishment, and data
 confidentiality. The ``Harvest Now, Decrypt Later'' (HNDL) threat
 compounds urgency: adversaries can intercept and store encrypted traffic
 today and decrypt it retroactively once CRQCs become available~\cite{chen2016report,
-nsasuite2022}. Data with multi-decade confidentiality requirements---classified
-government communications, medical records, intellectual property---is thus
+nsasuite2022}. Data with multi-decade confidentiality requirements (classified
+government communications, medical records, intellectual property) is thus
 already at risk.
 
 \subsection{The Standardization Inflection Point}
@@ -441,8 +441,8 @@ publications by sub-theme.
 
 \subsection{Quantum Computing: State of the Art and Projections}
 
-Quantum computation exploits quantum mechanical phenomena---superposition,
-entanglement, and interference---to solve certain problem classes exponentially
+Quantum computation exploits quantum mechanical phenomena (superposition,
+entanglement, and interference) to solve certain problem classes exponentially
 faster than classical algorithms~\cite{nielsen2010quantum}. The relevant
 complexity-theoretic metric for cryptography is \emph{qubit quality}, quantified
 by logical qubit error rates and the ratio of physical to logical qubits
@@ -568,7 +568,7 @@ encrypted data is currently HNDL-vulnerable.
 
 \begin{definition}[Crypto-Agility]
 A cryptographic system is \emph{crypto-agile} if it supports algorithmic
-substitution without requiring redesign of the application layer---i.e.,
+substitution without requiring redesign of the application layer; that is,
 the cryptographic primitives are negotiated dynamically and replaceable
 independently of the protocol logic~\cite{hoffman2022cryptoagility}.
 \end{definition}
@@ -727,7 +727,7 @@ Xiao et al.~\cite{xiao2023machine}                & 2023 & All     & Multiple  &
 TLS~1.3 represents the dominant protocol for internet security, protecting
 over 95\% of HTTPS connections~\cite{firefox2024telemetry}. Its handshake
 mechanism relies on (EC)DHE for forward secrecy and RSA/ECDSA for
-authentication---both broken by Shor's algorithm.
+authentication, both of which are broken by Shor's algorithm.
 
 \subsubsection{Hybrid TLS Handshake Architecture}
 
@@ -800,7 +800,7 @@ A typical enterprise PKI has a three-tier hierarchy: Root CA $\to$ Intermediate
 CA $\to$ End-Entity certificate. Full PQC migration requires re-issuance of
 all certificates with PQC keys. The browser ecosystem adds complexity: major
 root stores (Mozilla NSS, Microsoft CTL, Apple ATS) must adopt PQC root
-certificates---a process requiring years of coordinated rollout.
+certificates, a process requiring years of coordinated rollout.
 
 Composite certificates~\cite{bindel2017hybrid} encode both classical and PQC
 public keys in a single X.509 structure, enabling relying parties to validate
@@ -832,7 +832,7 @@ the security level distribution across surveyed papers.
 Online Certificate Status Protocol (OCSP) responses and Certificate Revocation
 Lists (CRLs) are themselves signed with RSA or ECDSA. Migrating PKI thus
 requires simultaneous migration of certificate issuance and revocation
-infrastructure---a dependency often overlooked in migration planning~\cite{hoffman2023migration}.
+infrastructure, a dependency often overlooked in migration planning~\cite{hoffman2023migration}.
 
 \subsection{IoT and Embedded Systems}
 \label{sec:iot}
@@ -880,8 +880,8 @@ ECDSA-256 (ref) & 2203 & 2134  & 2098 & 1.4 \\
 
 \subsubsection{Hardware Acceleration}
 
-Dedicated hardware for Number Theoretic Transform (NTT)---the computational
-core of lattice-based schemes---provides $10$--$50\times$ speedups over
+Dedicated hardware for Number Theoretic Transform (NTT), the computational
+core of lattice-based schemes, provides $10$--$50\times$ speedups over
 software implementations on constrained MCUs~\cite{ngo2021hardware}. Recent
 work demonstrates ML-KEM-512 at $<10$~ms on RISC-V with a co-processor~\cite{ngo2021riscv}.
 However, hardware co-processor availability in deployed IoT devices is limited,
@@ -941,7 +941,7 @@ tension between security migration and network utility.
 \label{sec:vpn}
 
 Enterprise VPNs using IPSec/IKEv2 and SSL-VPN rely on DH/ECDH for perfect
-forward secrecy and RSA/ECDSA for authentication---the same vulnerable
+forward secrecy and RSA/ECDSA for authentication, the same vulnerable
 primitives. Zero Trust Network Access (ZTNA) architectures additionally depend
 on frequent certificate-based mutual authentication.
 
@@ -993,14 +993,14 @@ operational lifetimes of 15--25~years. Many have reached end-of-life from
 the perspective of vendor cryptographic support. For these systems,
 migration requires either: (a)~gateway-based PQC proxies that terminate
 classical crypto and re-originate with PQC (Strategy~S6); or (b)~physical
-hardware replacement (Strategy~S9)---both costly.
+hardware replacement (Strategy~S9), both costly.
 
 \subsubsection{Critical Analysis: Missing Safety-Security Co-Design}
 
 Our systematic review finds no peer-reviewed papers in the screened corpus that
 formally address the safety-security co-design challenge of PQC migration in
-ICS---i.e., how to migrate without introducing safety degradation during the
-transition period. This gap may reflect corpus-boundary effects and warrants
+ICS (i.e., how to migrate without introducing safety degradation during the
+transition period). This gap may reflect corpus-boundary effects and warrants
 dedicated search; it nonetheless represents an underexplored area in our corpus
 (Section~\ref{sec:challenges}, Gap~G3).
 
@@ -1187,7 +1187,7 @@ in Tier~2 (High), requiring near-term migration planning. TLS reaches T2 despite
 high exposure because its primary regulatory deadline (OMB M-23-02, FY2025) is
 already past, reducing the $D$ contribution. ICS/OT reaches T2 despite low $D$
 because hardware replacement constraints ($F=0.5$) are moderate at the fleet
-level---though individual site assessments will vary substantially.
+level, though individual site assessments will vary substantially.
 
 \textbf{Interpretation caveat}: These scores are outputs of a heuristic rubric
 applied to reference system profiles constructed for this survey. Practitioners
@@ -1302,7 +1302,7 @@ Sector scope & Federal & NSS & All & Private sector \\
 \end{table}
 
 \textbf{Key divergence}: ENISA recommends completion by 2030 while CNSA~2.0
-allows legacy systems until 2033---a 3-year gap that creates compliance
+allows legacy systems until 2033, a 3-year gap that creates compliance
 complexity for multinational organizations. LGPD's implicit coverage leaves
 Brazilian organizations without clear technical guidance, relying on
 sector-specific regulators (BACEN for banking, ANS for health insurance)
@@ -1355,13 +1355,13 @@ KEM primitives (ML-KEM-512, $\approx$800-byte public key) may be feasible
 in isolation, but complete PQC stacks remain unverified at this constraint
 level. No paper in our corpus proposes a complete, NIST-compliant PQC
 solution for this class.
-Candidate approaches---code-based light schemes (BIKE-lite variants)---remain
+Candidate approaches, including code-based light schemes (BIKE-lite variants), remain
 unstandardized and unreviewed for side-channel resistance.
 
 \subsubsection{G2: Automated Cryptographic Inventory at Scale}
 
-Enterprise cryptographic inventory---identifying all use of quantum-vulnerable
-algorithms across software, firmware, protocols, and data stores---is a
+Enterprise cryptographic inventory (identifying all use of quantum-vulnerable
+algorithms across software, firmware, protocols, and data stores) is a
 prerequisite for migration but is not addressed by NIST guidance beyond
 conceptual recommendations. Existing tools (BouncyCastle Inspector, IBM
 Quantum Safe Explorer) achieve $<$30\% coverage of typical enterprise attack
@@ -1374,7 +1374,7 @@ third-party library usage.
 As noted in Section~\ref{sec:ics}, no paper in our corpus addresses the formal
 safety-security co-design challenge for ICS/OT PQC migration. IEC~62443~\cite{iec62443}
 (industrial cybersecurity) and IEC~61508 (functional safety) have no
-intersection addressing PQC transition---a gap with potential for physical harm
+intersection addressing PQC transition, a gap with potential for physical harm
 if cryptographic failures occur during migration.
 
 \subsubsection{G4: Standardized Crypto-Agility Metrics}
@@ -1415,8 +1415,8 @@ Machine learning techniques offer promising approaches to automated cryptographi
 discovery~\cite{xiao2023machine,khalid2022ai}. Static program analysis combined
 with neural network classifiers trained on cryptographic API patterns can detect
 vulnerable usage in compiled binaries where source code is unavailable.
-Reinforcement learning for migration strategy selection---treating migration as
-a Markov decision process over enterprise system states---remains unexplored.
+Reinforcement learning for migration strategy selection (treating migration as
+a Markov decision process over enterprise system states) remains unexplored.
 
 \subsection{PQC in 5G/6G Networks}
 
@@ -1446,8 +1446,8 @@ for the foreseeable future.
 
 \subsection{PQC Hardware: ASICs and FPGAs}
 
-Dedicated silicon for PQC---NTT accelerators, Gaussian sampling engines,
-hash co-processors---will drive adoption in constrained domains. Recent work
+Dedicated silicon for PQC (NTT accelerators, Gaussian sampling engines,
+hash co-processors) will drive adoption in constrained domains. Recent work
 on ASIC implementations of ML-KEM achieves $<$0.1~ms per operation at
 $<$50~mW~\cite{ngo2021hardware}. Supply chain integration timelines for
 PQC silicon suggest 3--5 years from standard finalization to broad availability,
@@ -1467,11 +1467,11 @@ a unified framework with explicit migration-readiness scoring.
 Our principal contributions are: (1)~a three-level unified taxonomy enabling
 cross-domain comparison of PQC migration approaches; (2)~the Migration Readiness
 Classification (MRC) framework, a heuristic decision-support rubric that scores
-domains using computed crypto-exposure, feasibility, and deadline dimensions---
+domains using computed crypto-exposure, feasibility, and deadline dimensions,
 with PKI (0.788, T1) and VPN/ZTNA (0.888, T1) emerging as the most urgent;
-(3)~identification of research gaps---particularly the absence of PQC solutions for
+(3)~identification of research gaps (particularly the absence of PQC solutions for
 ultra-constrained devices and the lack of safety-security co-design frameworks
-for ICS/OT migration---within the screened corpus; and (4)~a cross-regulatory
+for ICS/OT migration) within the screened corpus; and (4)~a cross-regulatory
 analysis revealing deadline misalignments across NIST, NSA CNSA~2.0, ENISA, and
 national frameworks with direct compliance implications for multinational operators.
 
