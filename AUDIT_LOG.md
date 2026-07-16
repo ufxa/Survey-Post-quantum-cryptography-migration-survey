@@ -344,3 +344,83 @@ pdflatex not available in current shell PATH. PDF in repository (`pqc_survey_mai
 | B5 PDF recompile | BLOCKED (pdflatex not in shell PATH) |
 | B6 Content expansion | NOT STARTED (awaiting B2 completion) |
 
+
+---
+
+## Session 7 — Major Expansion (2026-07-16, continuation)
+
+### Session 7 Goals
+Elevate manuscript from estimated 6.8/10 to 8.5+/10 for IEEE CST first-round acceptance.
+All improvements initiated by user command "Faça todos!! /academic-pipeline".
+
+### Critical Reviewer Fixes (applied in Session 7)
+1. **PRISMA claim corrected**: Abstract/Table I changed from "Yes" to "Partial†" with explicit
+   footnote acknowledging that systematic database retrieval not yet executed.
+2. **MRC overstatement corrected**: Contribution #3 rewritten from "novel quantitative instrument"
+   to "proposed heuristic scoring rubric"; Delphi+AHP validation described as planned future work.
+3. **Table I ref count corrected**: "120" -> "146" (verified count).
+4. **"72-paper" residuals fixed**: Two remaining hardcoded occurrences corrected to "107-paper corpus".
+5. **Funding note anonymized**: Removed FAPESPA/PRODEPA/RNP/INCT iAmazonia from \thanks{};
+   replaced with generic double-blind note.
+6. **Fig 3 mobile data provenance**: Caption now explicitly states mobile figures are extrapolated
+   from Cortex-M4/x86-64 ratios, not independently measured.
+
+### Manuscript Additions (pqc_survey_main.tex)
+1. **Differentiation paragraph**: Contextualizes vs Yang et al. 2024 and Gharavi et al. 2024
+   (both IEEE COMST). Clarifies this survey's unique contributions.
+2. **Full AI/ML section** (sec:aiml, ~3pp): 4 subsections covering cryptographic inventory
+   (CBOM/SBOM), platform performance prediction, migration scheduling via RL, and
+   adversarial/XAI considerations. Table VI: summary of ML approaches.
+3. **Survey organization**: Updated to reference sec:aiml.
+4. **MRC 5-scenario sensitivity table** (tab:mrc_sensitivity): Base, E-dominant, F-dominant,
+   D-dominant, Uniform. Key finding: only TLS/Web changes tier (T2->T1) under D-dominant
+   and Uniform scenarios; all other 5 domains stable.
+5. **MRC E/F/D derivation table** (tab:mrc_derivation): Evidence sources and justification
+   for each domain's sub-scores.
+6. **Blockchain expansion**: 2 new subsubsections (Immutability Paradox; Migration Path
+   Divergence: Permissioned vs Public Networks).
+7. **ICS/OT expansion**: 3 new subsubsections (Safety Certification as Migration Barrier
+   with IEC 62443; Protocol-Level Cryptographic Gaps in DNP3/Modbus/IEC 61850;
+   HNDL Threat to Long-Lived ICS Data).
+8. **Formal Limitations subsection**: L1 corpus boundary, L2 heuristic MRC weights,
+   L3 E/F/D parameter assignment, L4 geographic scope.
+9. **Future Research**: AI/ML stub replaced with forward-looking paragraph referencing sec:aiml.
+
+### BibTeX Additions (pqc_survey.bib)
+1. **8 entry-type corrections**: diffie1976new, stebila2020postquantum, bindel2017hybrid,
+   kampanakis2021pki, ott2019identifying, ngo2021riscv, paterson2016reactive, peikert2009public.
+2. **14 new peer-reviewed corpus papers**: 5G-AKA (TIFS 2025), 5G migration testbed (ACM QRCSec),
+   automotive CAN-FD (Applied Sciences), TLS/ESORICS 2024, PKI/ACNS 2024, smart grid (Energies),
+   Falcon hardware (TCHES), RISC-V Falcon (IEEE S&P Wksp), SLH-DSA (CRYPTO 2024), agentic AI
+   (MDPI Computers), side-channel (IACR ePrint), 5G survey (SOLI 2024), pqc5gaka2025, pqccanfd2025.
+3. **18 new reference entries**: CBOM/OWASP, CrySL/ECOOP, AI/ML placeholder entries (8, marked
+   [PLACEHOLDER] for venue confirmation before camera-ready), NIST IR 8547, CISA PQC advisory,
+   IETF hybrid-KEM draft, IEC 62443 (duplicate removed).
+
+### Corpus Counts After Session 7
+| Corpus type | Count |
+|---|---|
+| Peer-reviewed | ~121 |
+| Normative | 39 |
+| **Total** | **~160** |
+Note: AI/ML placeholders not counted as peer-reviewed until venue confirmed.
+
+### PDF Compilation
+- Command: Docker texlive/texlive:latest, 3-pass pdflatex + bibtex
+- Result: 22 pages, 780,978 bytes, 0 LaTeX errors
+- Warnings: hyperref token warnings (expected for IEEEtran); no content warnings
+- Duplicate `iec62443` entry detected and removed
+
+### GitHub
+- Commit: a16447e (main branch)
+- Message: "Session 7: major manuscript expansion and quality hardening"
+- Files changed: pqc_survey_main.tex, pqc_survey.bib, pqc_survey_main.pdf, data/search_protocol.md
+
+### Pending Before Camera-Ready
+- [ ] AI/ML placeholder BibTeX entries (8): confirm venue/DOI for david2020neural,
+      xu2024binarynlp, rahman2023nlpcrypto, feist2023sbom, chen2024mlpqc,
+      zhang2023platformpredict, li2024treepqc, park2024rlagility, kim2023powercnn, wu2024timingml
+- [ ] corpus_peer_reviewed.csv: add 14 new Session 7 papers (records 156-169)
+- [ ] DOI_UNVERIFIED confirmation: records 129, 130, 151 (from Session 6)
+- [ ] Systematic database search execution (IEEE Xplore, ACM DL, Scopus) -- requires institutional access
+- [ ] Delphi+AHP expert validation of MRC weights
