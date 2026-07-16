@@ -223,3 +223,36 @@ Both clearly marked as pending official source verification.
 | 2026-07-15 (Phase A) | 15 pages, 674 KB, 0 fatal errors |
 | 2026-07-15 (Phase B mid) | 15 pages, 700 KB, 0 fatal errors |
 | 2026-07-15 (Phase B Session 3) | 16 pages, 720,699 bytes, **0 BibTeX errors, 0 undefined citations** |
+| 2026-07-15 (Phase B Session 4) | Disclosure replaced; PDF pending recompile (TeX not in shell PATH) |
+
+---
+
+## Changes — Session 4
+
+### AI Usage Disclosure — Replaced
+| Change | Description |
+|---|---|
+| Lines 1495-1501 | Replaced generic disclosure with IEEE-compliant text citing actual benchmark sources (OQS liboqs `\cite{oqs2024}` + pqm4 `\cite{kannwischer2019pqm4}`); removed "experimental design" language (not applicable to a survey); added "survey design, methodology choices" |
+
+Old text: "AI-assisted writing tools were used to support literature synthesis and draft preparation."  
+New text: Per user-provided IEEE policy statement, adjusted to match paper scope.
+
+### GitHub Repository — Initialized and Pushed
+| Item | Status |
+|---|---|
+| `git init` + remote origin | DONE — `https://github.com/ufxa/Survey-Post-quantum-cryptography-migration-survey.git` |
+| `.gitignore` | DONE — excludes LaTeX aux/log, Python cache, checkpoint dirs |
+| `README.md` | CREATED — documents structure, reproduction steps, MRC table, corpus stats |
+| First commit `88fffe0` | DONE — 48 files, `git push -u origin main` succeeded |
+
+### GitHub Citation in Article
+Line 272: `\url{https://github.com/ufxa/Survey-Post-quantum-cryptography-migration-survey}` — confirmed present since Session 3.
+
+### Recompile Note
+pdflatex not available in current shell PATH. PDF in repository (`pqc_survey_main.pdf`) is from Session 3 clean compile (16 pages, 720,699 bytes, 0 errors). Disclosure change is in tex source; recompile needed on next TeX Live session to update the PDF.
+
+### Verification Matrix — Updated
+| # | Requirement | Status | Notes |
+|---|---|---|---|
+| R13 | Placeholders | **DONE** | AI disclosure no longer generic; GitHub URL present at line 272 |
+| R15 | Reproducibility | PARTIAL | README.md added; unit tests still pending |
