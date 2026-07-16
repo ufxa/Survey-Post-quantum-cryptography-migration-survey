@@ -224,6 +224,7 @@ Both clearly marked as pending official source verification.
 | 2026-07-15 (Phase B mid) | 15 pages, 700 KB, 0 fatal errors |
 | 2026-07-15 (Phase B Session 3) | 16 pages, 720,699 bytes, **0 BibTeX errors, 0 undefined citations** |
 | 2026-07-15 (Phase B Session 4) | Disclosure replaced; PDF pending recompile (TeX not in shell PATH) |
+| 2026-07-15 (Phase B Session 5) | Fig 4 caption fixed; Acknowledgments added; \thanks{} updated; pushed commit 896f5a7 |
 
 ---
 
@@ -247,6 +248,42 @@ New text: Per user-provided IEEE policy statement, adjusted to match paper scope
 
 ### GitHub Citation in Article
 Line 272: `\url{https://github.com/ufxa/Survey-Post-quantum-cryptography-migration-survey}` — confirmed present since Session 3.
+
+---
+
+## Changes — Session 5
+
+### Bug Fix — Fig 4 Caption (FALSE CLAIM)
+| Location | Original | Corrected | Reason |
+|---|---|---|---|
+| ~line 825 | "Error bars: 95\% CI." | Removed; replaced with corpus-count note ($n=63$) | Bootstrap/CI was removed in Session 3; caption was not updated — constituted a false methodological claim |
+
+### \thanks{} Funding Note — Updated
+| Location | Original | Corrected |
+|---|---|---|
+| Line 73 | "no specific grant from any funding agency" | Updated to list FAPESPA, PRODEPA, RNP, INCT iAmazonia (anonymized form for double-blind) |
+
+Reason: Original `\thanks{}` flatly contradicted the institutional support listed in Acknowledgments.
+
+### Acknowledgments — De-anonymized (Camera-Ready Text)
+- Replaced `[Anonymized for peer review.]` with full institutional acknowledgment text
+- Entities acknowledged: FAPESPA, PRODEPA, Government of Pará, Federal Government of Brazil, SEC365 project (UFPA/UFRA), LICA/UFRA, CCAD-IA/UFPA, RNP, INCT iAmazonia
+- LaTeX comment added instructing re-anonymization before double-blind submission
+- Text adjusted from user-provided draft: "experimental testbeds" → "research infrastructure" (paper is a survey, not an experimental study); "experimental phases" → "research and validation phases"
+
+### AI Disclosure — Verified Current
+- Text confirmed at lines 1495-1503 (updated in Session 4): cites `\cite{oqs2024}` and `\cite{kannwischer2019pqm4}` — correct benchmark sources
+
+### GitHub Status
+- Remote: `https://github.com/ufxa/Survey-Post-quantum-cryptography-migration-survey`
+- Commits pushed: 88fffe0 (initial), 59f0118 (AUDIT_LOG), 896f5a7 (this session)
+- All source files up to date; PDF needs recompile after 3 tex changes (TeX not in shell PATH)
+
+### Verification Matrix — Updated
+| # | Requirement | Status | Notes |
+|---|---|---|---|
+| R4 | Figures from real data | **DONE** | Fig 4 caption no longer claims CI/error bars |
+| R13 | No false methodological claims | **DONE** | "Error bars: 95% CI" removed from Fig 4 |
 
 ### Recompile Note
 pdflatex not available in current shell PATH. PDF in repository (`pqc_survey_main.pdf`) is from Session 3 clean compile (16 pages, 720,699 bytes, 0 errors). Disclosure change is in tex source; recompile needed on next TeX Live session to update the PDF.
