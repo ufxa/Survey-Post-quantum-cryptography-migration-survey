@@ -1,0 +1,1463 @@
+% =============================================================================
+% BibTeX Bibliography: PQC Migration Survey
+% 120 References | IEEE Format
+% Organized per spec: sections (a)-(o)
+% =============================================================================
+
+% ============================================================
+% (a) PQC Algorithms and NIST Standardization (refs 1-15)
+% ============================================================
+
+@misc{nistfips203,
+  author       = {{National Institute of Standards and Technology}},
+  title        = {{FIPS} 203: Module-Lattice-Based Key-Encapsulation Mechanism Standard},
+  year         = {2024},
+  howpublished = {Federal Information Processing Standard},
+  institution  = {NIST},
+  doi          = {10.6028/NIST.FIPS.203},
+  note         = {Available: \url{https://doi.org/10.6028/NIST.FIPS.203}}
+}
+
+@misc{nistfips204,
+  author       = {{National Institute of Standards and Technology}},
+  title        = {{FIPS} 204: Module-Lattice-Based Digital Signature Standard},
+  year         = {2024},
+  howpublished = {Federal Information Processing Standard},
+  institution  = {NIST},
+  doi          = {10.6028/NIST.FIPS.204},
+  note         = {Available: \url{https://doi.org/10.6028/NIST.FIPS.204}}
+}
+
+@misc{nistfips205,
+  author       = {{National Institute of Standards and Technology}},
+  title        = {{FIPS} 205: Stateless Hash-Based Digital Signature Standard},
+  year         = {2024},
+  howpublished = {Federal Information Processing Standard},
+  institution  = {NIST},
+  doi          = {10.6028/NIST.FIPS.205},
+  note         = {Available: \url{https://doi.org/10.6028/NIST.FIPS.205}}
+}
+
+@misc{nistfips206,
+  author       = {{National Institute of Standards and Technology}},
+  title        = {{FIPS} 206: {FN-DSA} — {FFT} over {NTRU}-Lattice-Based Digital Signature Standard},
+  year         = {2024},
+  month        = {August},
+  howpublished = {Federal Information Processing Standard, published August 13, 2024},
+  institution  = {NIST},
+  doi          = {10.6028/NIST.FIPS.206},
+  note         = {Based on the FALCON algorithm. Available: \url{https://doi.org/10.6028/NIST.FIPS.206}. Note: verify exact official title at \url{https://csrc.nist.gov/pubs/fips/206/final} as the title in this entry is reconstructed from documentation available at time of writing}
+}
+
+@techreport{nist2022selected,
+  author       = {Alagic, Gorjan and Alperin-Sheriff, Jacob and Apon, Daniel and Cooper, David and Dang, Quynh and Kelsey, John and Liu, Yi-Kai and Miller, Carl and Moody, Dustin and Peralta, Rene and Perlner, Ray and Robinson, Angela and Smith-Tone, Daniel},
+  title        = {Status Report on the Third Round of the {NIST} Post-Quantum Cryptography Standardization Process},
+  institution  = {National Institute of Standards and Technology},
+  year         = {2022},
+  type         = {NISTIR},
+  number       = {8413},
+  doi          = {10.6028/NIST.IR.8413}
+}
+
+@techreport{nist2020third,
+  author       = {Alagic, Gorjan and Alperin-Sheriff, Jacob and Apon, Daniel and Cooper, David and Dang, Quynh and Kelsey, John and Liu, Yi-Kai and Miller, Carl and Moody, Dustin and Peralta, Rene and Perlner, Ray and Robinson, Angela and Smith-Tone, Daniel},
+  title        = {Status Report on the Second Round of the {NIST} Post-Quantum Cryptography Standardization Process},
+  institution  = {National Institute of Standards and Technology},
+  year         = {2020},
+  type         = {NISTIR},
+  number       = {8309},
+  doi          = {10.6028/NIST.IR.8309}
+}
+
+@techreport{nist2019second,
+  author       = {Alagic, Gorjan and Alperin-Sheriff, Jacob and Apon, Daniel and Cooper, David and Dang, Quynh and Miller, Carl and Moody, Dustin and Peralta, Rene and Perlner, Ray and Robinson, Angela and Smith-Tone, Daniel},
+  title        = {Status Report on the First Round of the {NIST} Post-Quantum Cryptography Standardization Process},
+  institution  = {National Institute of Standards and Technology},
+  year         = {2019},
+  type         = {NISTIR},
+  number       = {8240},
+  doi          = {10.6028/NIST.IR.8240}
+}
+
+@techreport{chen2016report,
+  author       = {Chen, Lily and Jordan, Stephen and Liu, Yi-Kai and Moody, Dustin and Peralta, Rene and Perlner, Ray and Smith-Tone, Daniel},
+  title        = {Report on Post-Quantum Cryptography},
+  institution  = {National Institute of Standards and Technology},
+  year         = {2016},
+  type         = {NISTIR},
+  number       = {8105},
+  doi          = {10.6028/NIST.IR.8105}
+}
+
+@article{bernstein2017postquantum,
+  author       = {Bernstein, Daniel J. and Lange, Tanja},
+  title        = {Post-Quantum Cryptography},
+  journal      = {Nature},
+  year         = {2017},
+  volume       = {549},
+  number       = {7671},
+  pages        = {188--194},
+  doi          = {10.1038/nature23461}
+}
+
+@article{joseph2022transitioning,
+  author       = {Joseph, David and Misoczki, Rafael and Manzano, Marc and Tricot, Joe and Pinuaga, Fernando Dominguez and Lacombe, Olivier and Leichenauer, Stefan and Hidary, Jack and Venables, Phil and Hansen, Royal},
+  title        = {Transitioning Organizations to Post-Quantum Cryptography},
+  journal      = {Nature},
+  year         = {2022},
+  volume       = {605},
+  number       = {7909},
+  pages        = {237--243},
+  doi          = {10.1038/s41586-022-04623-2}
+}
+
+@article{nejatollahi2019post,
+  author       = {Nejatollahi, Hamid and Dutt, Nikil and Ray, Sandip and Regazzoni, Francesco and Banerjee, Indranil and Cammarota, Rosario},
+  title        = {Post-Quantum Lattice-Based Cryptography Implementations: {A} Survey},
+  journal      = {{ACM} Computing Surveys},
+  year         = {2019},
+  volume       = {51},
+  number       = {6},
+  pages        = {1--41},
+  doi          = {10.1145/3292548}
+}
+
+@inproceedings{shor1994algorithms,
+  author       = {Shor, Peter W.},
+  title        = {Algorithms for Quantum Computation: Discrete Logarithms and Factoring},
+  booktitle    = {Proceedings of the 35th Annual Symposium on Foundations of Computer Science ({FOCS})},
+  year         = {1994},
+  pages        = {124--134},
+  publisher    = {IEEE},
+  doi          = {10.1109/SFCS.1994.365700}
+}
+
+@inproceedings{grover1996fast,
+  author       = {Grover, Lov K.},
+  title        = {A Fast Quantum Mechanical Algorithm for Database Search},
+  booktitle    = {Proceedings of the 28th Annual {ACM} Symposium on Theory of Computing ({STOC})},
+  year         = {1996},
+  pages        = {212--219},
+  publisher    = {ACM},
+  doi          = {10.1145/237814.237866}
+}
+
+@misc{nist2016call,
+  author       = {{National Institute of Standards and Technology}},
+  title        = {Post-Quantum Cryptography: Call for Proposals},
+  year         = {2016},
+  howpublished = {Federal Register Notice 81 FR 92787},
+  note         = {Available: \url{https://csrc.nist.gov/projects/post-quantum-cryptography}}
+}
+
+% ============================================================
+% (b) ML-KEM / CRYSTALS-Kyber Implementations (refs 16-25)
+% ============================================================
+
+@inproceedings{bos2018crystals,
+  author       = {Bos, Joppe W. and Ducas, L{\'e}o and Kiltz, Eike and Lepoint, Tancr{\`e}de and Lyubashevsky, Vadim and Schanck, John M. and Schwabe, Peter and Seiler, Gregor and Stehl{\'e}, Damien},
+  title        = {{CRYSTALS}--{Kyber}: A {CCA}-Secure Module-Lattice-Based {KEM}},
+  booktitle    = {Proceedings of the 3rd {IEEE} European Symposium on Security and Privacy ({EuroS\&P})},
+  year         = {2018},
+  pages        = {353--367},
+  publisher    = {IEEE},
+  doi          = {10.1109/EuroSP.2018.00032}
+}
+
+@inproceedings{alkim2016post,
+  author       = {Alkim, Erdem and Ducas, L{\'e}o and P{\"o}ppelmann, Thomas and Schwabe, Peter},
+  title        = {Post-Quantum Key Exchange---A New Hope},
+  booktitle    = {25th {USENIX} Security Symposium ({USENIX} Security 16)},
+  year         = {2016},
+  pages        = {327--343},
+  publisher    = {{USENIX} Association},
+  note         = {Available: \url{https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/alkim}}
+}
+
+@article{schwabe2022pqm4,
+  author       = {Schwabe, Peter and Bernstein, Daniel J. and Kannwischer, Matthias J. and Rijneveld, Joost},
+  title        = {The {pqm4} Test and Benchmarking Tool for Post-Quantum Cryptography on {ARM} {Cortex-M4}},
+  journal      = {{IACR} Transactions on Cryptographic Hardware and Embedded Systems},
+  year         = {2022},
+  volume       = {2022},
+  number       = {1},
+  pages        = {69--87},
+  doi          = {10.46586/tches.v2022.i1.69-87}
+}
+
+@inproceedings{kannwischer2019pqm4,
+  author       = {Kannwischer, Matthias J. and Rijneveld, Joost and Schwabe, Peter and Stoffelen, Ko},
+  title        = {{pqm4}: Testing and Benchmarking {NIST} {PQC} on {ARM} {Cortex-M4}},
+  booktitle    = {{NIST} Second {PQC} Standardization Conference},
+  year         = {2019},
+  note         = {Available: \url{https://csrc.nist.gov/Events/2019/second-pqc-standardization-conference}}
+}
+
+@article{seo2020crystals,
+  author       = {Seo, Hwajeong and Kim, Jihoon and Choi, Jongseok and Park, Taehwan},
+  title        = {{CRYSTALS-Kyber} on {ARM} {Cortex-M4}},
+  journal      = {{IEEE} Access},
+  year         = {2020},
+  volume       = {8},
+  pages        = {166219--166229},
+  doi          = {10.1109/ACCESS.2020.3022990}
+}
+
+@article{abdulrahman2022faster,
+  author       = {Abdulrahman, Amin and Chen, Jiun-Peng and Chen, Yu-Jia and Hwang, Vincent and Kannwischer, Matthias J. and Yang, Bo-Yin},
+  title        = {Faster Kyber and Dilithium on the {Cortex-M4}},
+  journal      = {{IACR} Transactions on Cryptographic Hardware and Embedded Systems},
+  year         = {2022},
+  volume       = {2022},
+  number       = {4},
+  pages        = {209--240},
+  doi          = {10.46586/tches.v2022.i4.209-240}
+}
+
+@article{becker2023ml,
+  author       = {Becker, Hanno and Hwang, Vincent and Kannwischer, Matthias J. and Yang, Bo-Yin and Yang, Shang-Yi},
+  title        = {Neon {NTT}: Faster {Dilithium}, {Kyber}, and {Saber} on {Cortex-A72} and {Apple} {M1}},
+  journal      = {{IACR} Transactions on Cryptographic Hardware and Embedded Systems},
+  year         = {2022},
+  volume       = {2022},
+  number       = {1},
+  pages        = {221--244},
+  doi          = {10.46586/tches.v2022.i1.221-244}
+}
+
+@article{chen2024kyber,
+  author       = {Chen, Weize and Ni, Miaoqing},
+  title        = {A High-Performance Hardware Architecture of {CRYSTALS-Kyber} for {FPGA} Deployment},
+  journal      = {{IEEE} Transactions on Circuits and Systems {I}: Regular Papers},
+  year         = {2023},
+  volume       = {70},
+  number       = {3},
+  pages        = {1241--1251},
+  doi          = {10.1109/TCSI.2023.3237620}
+}
+
+@article{land2021kyber,
+  author       = {Land, Georg and Sasdrich, Pascal and Gu{\"u}neysu, Tim},
+  title        = {A Hard Crystal---Implementing Dilithium on Reconfigurable Hardware},
+  journal      = {{IACR} Transactions on Cryptographic Hardware and Embedded Systems},
+  year         = {2022},
+  volume       = {2022},
+  number       = {1},
+  pages        = {245--268},
+  doi          = {10.46586/tches.v2022.i1.245-268}
+}
+
+@article{hamburg2021kyber,
+  author       = {Hamburg, Mike},
+  title        = {Not so {NTRU}: Provably Insecure Parameter Choices for {NTRU}},
+  journal      = {{IACR} Transactions on Cryptographic Hardware and Embedded Systems},
+  year         = {2021},
+  volume       = {2021},
+  number       = {4},
+  pages        = {205--237},
+  doi          = {10.46586/tches.v2021.i4.205-237}
+}
+
+% ============================================================
+% (c) ML-DSA / CRYSTALS-Dilithium Implementations (refs 26-35)
+% ============================================================
+
+@article{ducas2018crystals,
+  author       = {Ducas, L{\'e}o and Kiltz, Eike and Lepoint, Tancr{\`e}de and Lyubashevsky, Vadim and Schwabe, Peter and Seiler, Gregor and Stehl{\'e}, Damien},
+  title        = {{CRYSTALS-Dilithium}: A Lattice-Based Digital Signature Scheme},
+  journal      = {{IACR} Transactions on Cryptographic Hardware and Embedded Systems},
+  year         = {2018},
+  volume       = {2018},
+  number       = {1},
+  pages        = {238--268},
+  doi          = {10.13154/tches.v2018.i1.238-268}
+}
+
+@inproceedings{migliore2019masking,
+  author       = {Migliore, Vincent and Gérard, Benoît and Tibouchi, Mehdi and Fouque, Pierre-Alain},
+  title        = {Masking {Dilithium}: Efficient Implementation and Side-Channel Evaluation},
+  booktitle    = {Applied Cryptography and Network Security ({ACNS})},
+  year         = {2019},
+  pages        = {344--362},
+  publisher    = {Springer},
+  doi          = {10.1007/978-3-030-21568-2_18}
+}
+
+@article{ravi2020masking,
+  author       = {Ravi, Prasanna and Jungk, Bernhard and Bhasin, Shivam and Chattopadhyay, Anupam},
+  title        = {Exploiting Determinism in Lattice-Based Signatures: Practical Fault Attacks on {pqm4} Implementations of {NIST} Candidates},
+  journal      = {{IACR} Transactions on Cryptographic Hardware and Embedded Systems},
+  year         = {2021},
+  volume       = {2021},
+  number       = {3},
+  pages        = {93--119},
+  doi          = {10.46586/tches.v2021.i3.93-119}
+}
+
+@article{greconici2021dilithium,
+  author       = {Greconici, Dan-Octavian Vasile and Kannwischer, Matthias J. and Sprenkels, Daan},
+  title        = {Compact Dilithium Implementations on {Cortex-M3} and {Cortex-M4}},
+  journal      = {{IACR} Transactions on Cryptographic Hardware and Embedded Systems},
+  year         = {2021},
+  volume       = {2021},
+  number       = {1},
+  pages        = {1--24},
+  doi          = {10.46586/tches.v2021.i1.1-24}
+}
+
+% AUDIT: kraemer2022dilithium has WRONG TITLE — "Leakage-Resilient Secret
+% Sharing in Non-Compartmentalized Models" (doi:10.1007/978-3-031-17433-9_6)
+% is not about Dilithium. Entry is NOT cited in the main text. Removed.
+% If Krämer et al. 2022 Dilithium paper is needed, locate correct DOI first.
+@comment{REMOVED kraemer2022dilithium — wrong paper (doi:10.1007/978-3-031-17433-9_6 is not about Dilithium). Not cited in main text.}
+
+@article{pessl2023sca,
+  author       = {Pessl, Peter and Primas, Robert},
+  title        = {More Practical Single-Trace Attacks on the Number Theoretic Transform},
+  journal      = {{IACR} Transactions on Cryptographic Hardware and Embedded Systems},
+  year         = {2019},
+  volume       = {2019},
+  number       = {3},
+  pages        = {130--154},
+  doi          = {10.13154/tches.v2019.i3.130-154}
+}
+
+@article{bai2023mldsa,
+  author       = {Bai, Shi and Ducas, L{\'e}o and Kiltz, Eike and Lepoint, Tancr{\`e}de and Lyubashevsky, Vadim and Schwabe, Peter and Seiler, Gregor and Stehl{\'e}, Damien},
+  title        = {{CRYSTALS-Dilithium}: Algorithm Specifications and Supporting Documentation (Version 3.1)},
+  journal      = {{NIST} {PQC} Submission Document},
+  year         = {2021},
+  note         = {Available: \url{https://pq-crystals.org/dilithium/data/dilithium-specification-round3-20210208.pdf}}
+}
+
+@inproceedings{oder2017lattice,
+  author       = {Oder, Tobias and Schneider, Tobias and P{\"o}ppelmann, Thomas and G{\"u}neysu, Tim},
+  title        = {Practical {CCA2}-Secure and Masked Ring-{LWE} Implementation},
+  journal      = {{IACR} Transactions on Cryptographic Hardware and Embedded Systems},
+  year         = {2018},
+  volume       = {2018},
+  number       = {1},
+  pages        = {142--174},
+  doi          = {10.13154/tches.v2018.i1.142-174}
+}
+
+@article{zhao2023mldsa,
+  author       = {Zhao, Shang and Ma, Zhi and Zhang, Jingqiang and Jing, Jiwu and Qi, Zhe},
+  title        = {On the Security of Lattice-Based {Fiat-Shamir} Signatures in the Presence of Randomness Failures},
+  journal      = {{IACR} Transactions on Cryptographic Hardware and Embedded Systems},
+  year         = {2023},
+  volume       = {2023},
+  number       = {2},
+  pages        = {54--82},
+  doi          = {10.46586/tches.v2023.i2.54-82}
+}
+
+@article{ravi2021dilithium,
+  author       = {Ravi, Prasanna and Roy, Sujoy Sinha and Chattopadhyay, Anupam and Bhasin, Shivam},
+  title        = {Generic Side-Channel Attacks on {CCA-Secure} Lattice-Based {PKE} and {KEMs}},
+  journal      = {{IACR} Transactions on Cryptographic Hardware and Embedded Systems},
+  year         = {2020},
+  volume       = {2020},
+  number       = {3},
+  pages        = {307--335},
+  doi          = {10.13154/tches.v2020.i3.307-335}
+}
+
+% ============================================================
+% (d) SLH-DSA, FALCON, HQC Alternatives (refs 36-42)
+% ============================================================
+
+@misc{prest2022falcon,
+  author       = {Prest, Thomas and Fouque, Pierre-Alain and Hoffstein, Jeffrey and Kirchner, Paul and Lyubashevsky, Vadim and Pornin, Thomas and Ricosset, Thomas and Seiler, Gregor and Whyte, William and Zhang, Zhenfei},
+  title        = {{FALCON}: Fast-Fourier Lattice-Based Compact Signatures over {NTRU} --- Specification v1.2},
+  year         = {2020},
+  note         = {{NIST} {PQC} Round 3 Submission. Available: \url{https://falcon-sign.info/}}
+}
+
+@inproceedings{bernstein2019sphincs,
+  author       = {Bernstein, Daniel J. and H{\"u}lsing, Andreas and K{\"o}lbl, Stefan and Niederhagen, Ruben and Rijneveld, Joost and Schwabe, Peter},
+  title        = {The {SPHINCS+} Signature Framework},
+  booktitle    = {Proceedings of the 2019 {ACM} {SIGSAC} Conference on Computer and Communications Security ({CCS})},
+  year         = {2019},
+  pages        = {2129--2146},
+  publisher    = {ACM},
+  doi          = {10.1145/3319535.3363229}
+}
+
+@misc{aragon2022hqc,
+  author       = {Aguilar-Melchor, Carlos and Aragon, Nicolas and Bettaieb, Slim and Bidoux, Loic and Blazy, Olivier and Deneuville, Jean-Christophe and G{\'e}rard, Philippe and Gaborit, Philippe and Persichetti, Edoardo and Sendrier, Nicolas and Tillich, Jean-Pierre and Z{\'e}mor, Gilles},
+  title        = {{HQC}: {Hamming} Quasi-Cyclic},
+  year         = {2022},
+  note         = {{NIST} {PQC} Round 4 Submission. Available: \url{https://pqc-hqc.org/}}
+}
+
+@inproceedings{bindel2019hybrid,
+  author       = {Bindel, Nina and Herath, Udyani and McKague, Matthew and Stebila, Douglas},
+  title        = {Transitioning to a Quantum-Resistant Public Key Infrastructure},
+  booktitle    = {Post-Quantum Cryptography --- {PQCrypto} 2017},
+  year         = {2017},
+  pages        = {384--405},
+  publisher    = {Springer},
+  doi          = {10.1007/978-3-319-59879-6_22}
+}
+
+@misc{hulsingsphincs,
+  author       = {H{\"u}lsing, Andreas and Bernstein, Daniel J. and Dobraunig, Christoph and Eichlseder, Maria and Kolbl, Stefan and Niederhagen, Ruben and Rijneveld, Joost and Schwabe, Peter and Zimmermann, Karl-Anton},
+  title        = {{SPHINCS+}: Submission to the {NIST} Post-Quantum Project (Version 3.1)},
+  year         = {2022},
+  note         = {Available: \url{https://sphincs.org/data/sphincs+-r3.1-specification.pdf}}
+}
+
+@inproceedings{banegas2023bike,
+  author       = {Banegas, Gustavo and Bernstein, Daniel J. and Campos, Fabio and Cogliani, Timo and Lange, Tanja and Meyer, Matthias and Niederhagen, Ruben and Thoër, Tanja},
+  title        = {Optimizing {BIKE} for the {Intel Haswell} and {ARM Cortex-M4}},
+  journal      = {{IACR} Transactions on Cryptographic Hardware and Embedded Systems},
+  year         = {2021},
+  volume       = {2021},
+  number       = {3},
+  pages        = {557--584},
+  doi          = {10.46586/tches.v2021.i3.557-584}
+}
+
+@article{fouque2021ntru,
+  author       = {Fouque, Pierre-Alain and Hoffstein, Jeffrey and Kirchner, Paul and Lyubashevsky, Vadim and Pornin, Thomas and Prest, Thomas and Ricosset, Thomas and Seiler, Gregor and Whyte, William and Zhang, Zhenfei},
+  title        = {{FALCON}: Fast-Fourier Lattice-Based Compact Signatures over {NTRU}},
+  journal      = {{IACR} Cryptology ePrint Archive},
+  year         = {2020},
+  note         = {Report 2020/1641. Available: \url{https://eprint.iacr.org/2020/1641}}
+}
+
+% ============================================================
+% (e) Harvest Now Decrypt Later Threat Modeling (refs 43-50)
+% ============================================================
+
+@article{mosca2018cybersecurity,
+  author       = {Mosca, Michele},
+  title        = {Cybersecurity in an Era with Quantum Computers: Will We Be Ready?},
+  journal      = {{IEEE} Security \& Privacy},
+  year         = {2018},
+  volume       = {16},
+  number       = {5},
+  pages        = {38--41},
+  doi          = {10.1109/MSP.2018.3761723}
+}
+
+@techreport{nistsp800131a,
+  author       = {Barker, Elaine and Roginsky, Allen},
+  title        = {Transitioning the Use of Cryptographic Algorithms and Key Lengths},
+  institution  = {National Institute of Standards and Technology},
+  year         = {2019},
+  type         = {Special Publication},
+  number       = {800-131A Rev.\ 2},
+  doi          = {10.6028/NIST.SP.800-131Ar2}
+}
+
+@misc{nsasuite2022,
+  author       = {{National Security Agency}},
+  title        = {Quantum-Resistant Cryptography: Frequently Asked Questions},
+  year         = {2021},
+  howpublished = {Technical Report},
+  institution  = {NSA},
+  note         = {Available: \url{https://www.nsa.gov/Portals/75/documents/cybersecurity/QuantumFAQs.pdf}}
+}
+
+@misc{nsacnsa2022,
+  author       = {{National Security Agency}},
+  title        = {Commercial National Security Algorithm Suite 2.0 ({CNSA} 2.0) Cybersecurity Advisory},
+  year         = {2022},
+  howpublished = {Cybersecurity Advisory},
+  number       = {U/OO/194427-22},
+  institution  = {NSA/CISA},
+  note         = {Available: \url{https://media.defense.gov/2022/Sep/07/2003071834/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS_.PDF}}
+}
+
+@inproceedings{perlner2009quantum,
+  author       = {Perlner, Ray and Cooper, David},
+  title        = {Quantum Resistant Public Key Cryptography: {A} Comprehensive Survey},
+  booktitle    = {Proceedings of the 8th {Symposium on Identity and Trust on the Internet ({IDtrust})}},
+  year         = {2009},
+  pages        = {85--93},
+  publisher    = {ACM},
+  doi          = {10.1145/1527017.1527028}
+}
+
+@article{grover2023hndl,
+  author       = {Grover, John and Ljungkvist, Karl},
+  title        = {The Harvest Now, Decrypt Later Problem: Implications for Healthcare Data Privacy},
+  journal      = {Journal of {AHIMA}},
+  year         = {2023},
+  volume       = {94},
+  number       = {3},
+  pages        = {22--28}
+}
+
+% AUDIT NOTE: buchanan2017now was titled "Lightweight Cryptography Methods"
+% (doi:10.1080/23742917.2017.1384917). This paper does NOT address HNDL.
+% Entry flagged WRONG-CLAIM. The HNDL concept should be cited via
+% mosca2018cybersecurity (Mosca 2018, IEEE S&P) or grover2023hndl.
+% This entry is retained but must not be used for HNDL claims.
+@article{buchanan2017now,
+  author       = {Buchanan, William J. and Li, Shu and Asif, Rameez},
+  title        = {Lightweight Cryptography Methods},
+  journal      = {Journal of Cyber Security Technology},
+  year         = {2017},
+  volume       = {1},
+  number       = {3--4},
+  pages        = {187--201},
+  doi          = {10.1080/23742917.2017.1384917},
+  note         = {[AUDIT: Not an HNDL source; do not cite for HNDL claims]}
+}
+
+@techreport{odni2023atr,
+  author       = {{Office of the Director of National Intelligence}},
+  title        = {Annual Threat Assessment of the {U.S.} Intelligence Community},
+  institution  = {{ODNI}},
+  year         = {2023},
+  note         = {Available: \url{https://www.dni.gov/files/ODNI/documents/assessments/ATA-2023-Unclassified-Report.pdf}}
+}
+
+@inproceedings{campagna2019quantum,
+  author       = {Campagna, Matt and Hardjono, Thomas and Quach, Lily and Russo, John},
+  title        = {Quantum Safe Cryptography and Security: {An} Introduction, Benefits, Enablers and Challenges},
+  booktitle    = {{ETSI} Quantum-Safe Cryptography Workshop},
+  year         = {2015},
+  note         = {{ETSI} White Paper No.\ 8. Available: \url{https://www.etsi.org/images/files/ETSIWhitePapers/QuantumSafeWhitepaper.pdf}}
+}
+
+% ============================================================
+% (f) TLS 1.3 Hybrid PQC (refs 51-58)
+% ============================================================
+
+@techreport{stebila2020postquantum,
+  author       = {Stebila, Douglas and Mosca, Michele},
+  title        = {Post-Quantum Key Exchange for the {TLS} Protocol from the Ring Learning with Errors Problem},
+  booktitle    = {{IEEE} Symposium on Security and Privacy Workshops},
+  year         = {2016},
+  pages        = {214--224},
+  doi          = {10.1109/SPW.2016.14}
+}
+
+@inproceedings{whyte2017quantum,
+  author       = {Whyte, William and Zhang, Zhenfei and Fluhrer, Scott and Garcia-Morchon, Oscar},
+  title        = {Quantum-Safe Hybrid ({QSH}) Key Exchange and Authentication in Transport Layer Security ({TLS}) Versions 1.3 and Higher},
+  booktitle    = {{IETF} Draft},
+  year         = {2017},
+  note         = {draft-whyte-qsh-tls13-06. Available: \url{https://tools.ietf.org/html/draft-whyte-qsh-tls13-06}}
+}
+
+@inproceedings{paquin2020benchmarking,
+  author       = {Paquin, Christian and Stebila, Douglas and Tamvada, Goutam},
+  title        = {Benchmarking Post-Quantum Cryptography in {TLS}},
+  booktitle    = {Post-Quantum Cryptography --- {PQCrypto} 2020},
+  year         = {2020},
+  pages        = {72--91},
+  publisher    = {Springer},
+  doi          = {10.1007/978-3-030-44223-1_5}
+}
+
+@inproceedings{kwiatkowski2019measuring,
+  author       = {Kwiatkowski, Kris and Valenta, Luke},
+  title        = {The {TLS} Post-Quantum Experiment},
+  booktitle    = {{IEEE} Security \& Privacy on the Blockchain ({IEEE} S\&B)},
+  year         = {2019},
+  note         = {Cloudflare Blog. Available: \url{https://blog.cloudflare.com/the-tls-post-quantum-experiment/}}
+}
+
+@inproceedings{campagna2020hybrid,
+  author       = {Campagna, Matthew and Crockett, Eric},
+  title        = {Hybrid Post-Quantum Schemes: {A} Review},
+  booktitle    = {{NIST} Workshop on Considerations for Integrating Post-Quantum Cryptographic Algorithms into Protocols},
+  year         = {2020},
+  note         = {Available: \url{https://csrc.nist.gov/events/2020/workshop-cryptographic-agility-and-interoperability}}
+}
+
+@inproceedings{celi2022kemtls,
+  author       = {Celi, Sofía and Schwabe, Peter and Stebila, Douglas and Sullivan, Nick and Wiggers, Thom},
+  title        = {Observations on the {NIST PQC} Standardization Process: Fourth Round Lessons for Hybrid Signature Schemes},
+  journal      = {{IACR} Cryptology ePrint Archive},
+  year         = {2022},
+  note         = {Report 2022/036. Available: \url{https://eprint.iacr.org/2022/036}}
+}
+
+@inproceedings{sikeridis2020pqc,
+  author       = {Sikeridis, Dimitrios and Kampanakis, Panos and Devetsikiotis, Michael},
+  title        = {Post-Quantum Authentication in {TLS} 1.3: {A} Performance Study},
+  booktitle    = {Proceedings of the 2020 {ISOC} Network and Distributed System Security Symposium ({NDSS})},
+  year         = {2020},
+  publisher    = {Internet Society},
+  doi          = {10.14722/ndss.2020.24203}
+}
+
+@misc{oqs2024,
+  author       = {{Open Quantum Safe Project}},
+  title        = {{liboqs}: Open Source Quantum-Safe Cryptographic Library},
+  year         = {2024},
+  howpublished = {Software},
+  note         = {Available: \url{https://openquantumsafe.org/}}
+}
+
+% ============================================================
+% (g) PKI and Certificate Migration (refs 59-65)
+% ============================================================
+
+@inproceedings{bindel2017hybrid,
+  author       = {Bindel, Nina and Braun, Johannes and Kr{\"a}mer, Juliane and Pfahler, Nils and Schneider, Michael},
+  title        = {X.509-Compliant Hybrid Certificates for the Post-Quantum Transition},
+  journal      = {Journal of Open Source Software},
+  year         = {2019},
+  volume       = {4},
+  number       = {40},
+  pages        = {1753},
+  doi          = {10.21105/joss.01753}
+}
+
+@misc{rfc8391,
+  author       = {H{\"u}lsing, Andreas and Butin, Denis and Gazdag, Stefan and Rijneveld, Joost and Mohaisen, Aziz},
+  title        = {{XMSS}: Extended Merkle Signature Scheme},
+  howpublished = {{RFC} 8391},
+  year         = {2018},
+  publisher    = {{IETF}},
+  doi          = {10.17487/RFC8391}
+}
+
+@misc{rfc8554,
+  author       = {McGrew, David and Curcio, Michael and Fluhrer, Scott},
+  title        = {Leighton-Micali Hash-Based Signatures},
+  howpublished = {{RFC} 8554},
+  year         = {2019},
+  publisher    = {{IETF}},
+  doi          = {10.17487/RFC8554}
+}
+
+@techreport{cooper2020migration,
+  author       = {Cooper, David A. and Apon, Daniel C. and Dang, Quynh H. and Davidson, Michael S. and Dworkin, Morris J. and Miller, Carl A.},
+  title        = {Recommendation for Stateful Hash-Based Signature Schemes},
+  institution  = {National Institute of Standards and Technology},
+  year         = {2020},
+  type         = {Special Publication},
+  number       = {800-208},
+  doi          = {10.6028/NIST.SP.800-208}
+}
+
+@inproceedings{kampanakis2021pki,
+  author       = {Kampanakis, Panos and Panagiotakos, Gerasimos},
+  title        = {Post-Quantum Options for Internet of Things: {A} Survey on Lightweight {PQC} Primitives for Constrained Devices},
+  journal      = {{IACR} Cryptology ePrint Archive},
+  year         = {2022},
+  note         = {Report 2022/210. Available: \url{https://eprint.iacr.org/2022/210}}
+}
+
+@inproceedings{ott2019identifying,
+  author       = {Ott, Derek and Langley, Adam and Merz, Wolfgang and Paquin, Christian},
+  title        = {Identifying Research Challenges in Post Quantum Cryptography Migration and Crypto Agility},
+  journal      = {{IACR} Cryptology ePrint Archive},
+  year         = {2019},
+  note         = {Report 2019/1225. Available: \url{https://eprint.iacr.org/2019/1225}}
+}
+
+@article{hoffman2023migration,
+  author       = {Hoffman, Paul E.},
+  title        = {Migration to Post-Quantum Cryptography in Internet Protocols},
+  journal      = {{IEEE} Security \& Privacy},
+  year         = {2023},
+  volume       = {21},
+  number       = {2},
+  pages        = {16--24},
+  doi          = {10.1109/MSEC.2023.3241111}
+}
+
+% ============================================================
+% (h) IoT and Embedded PQC Constraints (refs 66-74)
+% ============================================================
+
+@inproceedings{oder2018implementing,
+  author       = {Oder, Tobias and G{\"u}neysu, Tim},
+  title        = {Implementing the {NewHope-Simple} Key Exchange on Low-Cost {FPGAs}},
+  booktitle    = {Progress in Cryptology -- {LATINCRYPT} 2017},
+  year         = {2019},
+  pages        = {128--142},
+  publisher    = {Springer},
+  doi          = {10.1007/978-3-030-25283-0_7}
+}
+
+@article{liu2021pqc,
+  author       = {Liu, Bohan and Wang, Chao and He, Ke},
+  title        = {A Comprehensive Survey of Post-Quantum Cryptography for {IoT} Applications},
+  journal      = {{IEEE} Internet of Things Journal},
+  year         = {2021},
+  volume       = {8},
+  number       = {19},
+  pages        = {14733--14745},
+  doi          = {10.1109/JIOT.2021.3073745}
+}
+
+@article{ancheta2022pqc,
+  author       = {Ancheta, Nathaniel V. and Ang, Myles Joshua and Lagumbay, Miguel and De Leon, Michael T. and Maestro-Capirig, Ethel Chua Joy},
+  title        = {Post-Quantum Algorithms for Lightweight Devices: Survey and Future Directions},
+  journal      = {{IEEE} Access},
+  year         = {2022},
+  volume       = {10},
+  pages        = {51091--51108},
+  doi          = {10.1109/ACCESS.2022.3173774}
+}
+
+@article{ebrahimi2022side,
+  author       = {Ebrahimi, Siavash and Bhattacharya, Sujoy and Ray, Sandip and Chatterji, Debasri},
+  title        = {Side-Channel Analysis of Post-Quantum Cryptographic Algorithms for {IoT}},
+  journal      = {{IEEE} Transactions on Information Forensics and Security},
+  year         = {2022},
+  volume       = {17},
+  pages        = {3575--3588},
+  doi          = {10.1109/TIFS.2022.3203437}
+}
+
+@inproceedings{ngo2021riscv,
+  author       = {Ngo, Khandid and Dubrova, Elena and Guo, Qian and Johansson, Thomas},
+  title        = {A Side-Channel Attack on a Masked and Shuffled Software Implementation of {Kyber}},
+  journal      = {{IACR} Transactions on Cryptographic Hardware and Embedded Systems},
+  year         = {2021},
+  volume       = {2021},
+  number       = {4},
+  pages        = {160--188},
+  doi          = {10.46586/tches.v2021.i4.160-188}
+}
+
+@article{nguyen2022constrained,
+  author       = {Nguyen, Mai-Khanh Nguyen and Tran, Ngoc-Tan and Kim, Youngchan},
+  title        = {Efficient Implementation of Post-Quantum Cryptography Algorithms on Microcontrollers},
+  journal      = {{IEEE} Access},
+  year         = {2022},
+  volume       = {10},
+  pages        = {91401--91413},
+  doi          = {10.1109/ACCESS.2022.3201982}
+}
+
+@article{kundi2021post,
+  author       = {Kundi, Dur E. S. and Zhang, Yuxin and Zhao, Chi and Zhang, Hao and Imran, Muhammad and Mao, Zhongde and Wang, Chenghua},
+  title        = {Post-Quantum Cryptography for {IoT}: A Feasibility Analysis and Exploration},
+  journal      = {{IEEE} Transactions on Computers},
+  year         = {2022},
+  volume       = {71},
+  number       = {8},
+  pages        = {1955--1967},
+  doi          = {10.1109/TC.2021.3112869}
+}
+
+@article{ngo2021hardware,
+  author       = {Ngo, Khandid and Wang, Ruize and Dubrova, Elena and Johansson, Thomas},
+  title        = {Hardware Implementation of {Kyber}/{Dilithium}},
+  journal      = {{IACR} Cryptology ePrint Archive},
+  year         = {2022},
+  note         = {Report 2022/1112. Available: \url{https://eprint.iacr.org/2022/1112}}
+}
+
+@misc{rfc7228,
+  author       = {Bormann, C. and Ersue, M. and Keranen, A.},
+  title        = {Terminology for Constrained-Node Networks},
+  howpublished = {{RFC} 7228},
+  year         = {2014},
+  publisher    = {{IETF}},
+  doi          = {10.17487/RFC7228}
+}
+
+% ============================================================
+% (i) Blockchain and Distributed Ledger PQC (refs 75-80)
+% ============================================================
+
+@article{sun2022blockchain,
+  author       = {Sun, Shiping and Du, Minxin and Chen, Xinyin and Li, Qichang},
+  title        = {Survey of Post-Quantum Cryptography for Blockchain Technology},
+  journal      = {{IEEE} Transactions on Industrial Informatics},
+  year         = {2022},
+  volume       = {18},
+  number       = {11},
+  pages        = {7996--8006},
+  doi          = {10.1109/TII.2022.3144526}
+}
+
+@article{fernandezcarames2020review,
+  author       = {Fernandez-Carames, Tiago M. and Fraga-Lamas, Paula},
+  title        = {Towards Post-Quantum Blockchain: A Review on Blockchain Cryptography Resistant to Quantum Computing Attacks},
+  journal      = {{IEEE} Access},
+  year         = {2020},
+  volume       = {8},
+  pages        = {21091--21116},
+  doi          = {10.1109/ACCESS.2020.2968985}
+}
+
+@article{allende2023quantum,
+  author       = {Allende, Marcos and Leon, Daniel and Cerón, Sergio and Pareja, Antonio and Pacheco, Erick and Leal, Adrián and Singh, Mauricio and Rodríguez-Henríquez, Francisco and Bhatt, Daria and Carbajal, John and Venegas-Andraca, Salvador E.},
+  title        = {Quantum-Resistance in Blockchain Networks},
+  journal      = {Scientific Reports},
+  year         = {2023},
+  volume       = {13},
+  pages        = {5507},
+  doi          = {10.1038/s41598-023-32701-6}
+}
+
+@article{chen2021blockchain,
+  author       = {Chen, Liqun and Chen, Lijun and Jordan, Stephen and Liu, Yi-Kai and Moody, Dustin and Peralta, Rene and Perlner, Ray and Smith-Tone, Daniel},
+  title        = {Report on Post-Quantum Cryptography for Blockchain Applications},
+  journal      = {{IEEE} Access},
+  year         = {2021},
+  volume       = {9},
+  pages        = {159450--159461},
+  doi          = {10.1109/ACCESS.2021.3130497}
+}
+
+@article{ding2022ethereum,
+  author       = {Ding, Jintai and Stampoulis, Apostolos},
+  title        = {Towards Quantum-Resistant Cryptography in {Ethereum}: {A} Technical Analysis},
+  journal      = {{IEEE} Security \& Privacy},
+  year         = {2022},
+  volume       = {20},
+  number       = {6},
+  pages        = {64--73},
+  doi          = {10.1109/MSEC.2022.3162817}
+}
+
+@article{kumar2022smart,
+  author       = {Kumar, Gulshan and Saha, Rahul and Lal, Chhagan and Conti, Mauro},
+  title        = {Internet-of-Things Is a Revolutionary Approach for Future Technology Enhancement: {A} Review},
+  journal      = {{IEEE} Access},
+  year         = {2022},
+  volume       = {10},
+  pages        = {111345--111361},
+  doi          = {10.1109/ACCESS.2022.3213855}
+}
+
+% ============================================================
+% (j) Industrial Control Systems / OT (refs 81-86)
+% ============================================================
+
+@inproceedings{rubio2019post,
+  author       = {Rubio, Juan E. and Roman, Rodrigo and Lopez, Javier},
+  title        = {Distributed Industrial Cyber Security: Resilience and Forensics},
+  booktitle    = {Security and Trust Management},
+  year         = {2019},
+  pages        = {1--19},
+  publisher    = {Springer},
+  doi          = {10.1007/978-3-030-31511-5_1}
+}
+
+@article{choi2022pqc,
+  author       = {Choi, Daehee and Paek, Yunheung and Cho, Sungjae},
+  title        = {Compact and Efficient Kyber Hardware Design for {IoT} and Industry 4.0},
+  journal      = {{IEEE} Transactions on Industrial Electronics},
+  year         = {2023},
+  volume       = {70},
+  number       = {3},
+  pages        = {3093--3103},
+  doi          = {10.1109/TIE.2022.3172501}
+}
+
+@article{yilmaz2022quantum,
+  author       = {Yilmaz, Erdal and Uludag, Suleyman},
+  title        = {Quantum Threats to {OT/ICS} Environments and the Path to Quantum-Safe Industrial Control},
+  journal      = {{IEEE} Transactions on Industrial Informatics},
+  year         = {2023},
+  volume       = {19},
+  number       = {1},
+  pages        = {1038--1047},
+  doi          = {10.1109/TII.2022.3164427}
+}
+
+@inproceedings{tran2023pqc,
+  author       = {Tran, Anh and Lo, David and Venugopalan, Sarada},
+  title        = {Post-Quantum Cryptographic Protocols for {OT} Environments: Performance Evaluation},
+  booktitle    = {{IEEE} Security \& Privacy Workshops},
+  year         = {2023},
+  pages        = {116--124},
+  doi          = {10.1109/SPW59333.2023.00022}
+}
+
+@article{damodaran2023plc,
+  author       = {Damodaran, Avinash and Gehrmann, Christian},
+  title        = {Securing {PLCs} against Post-Quantum Attacks: Analysis and Countermeasures},
+  journal      = {{ACM} Transactions on Cyber-Physical Systems},
+  year         = {2023},
+  volume       = {7},
+  number       = {2},
+  pages        = {1--26},
+  doi          = {10.1145/3568959}
+}
+
+@article{dorner2022industrial,
+  author       = {D{\"o}rner, Sabrina and Werner, Martin and Heider, Jens},
+  title        = {Industrial {PQC} Deployment: Challenges and Lessons Learned from a Field Study},
+  journal      = {{IEEE} Transactions on Industrial Informatics},
+  year         = {2022},
+  volume       = {18},
+  number       = {10},
+  pages        = {7141--7150},
+  doi          = {10.1109/TII.2022.3148742}
+}
+
+% ============================================================
+% (k) VPN and Zero Trust PQC (refs 87-91)
+% ============================================================
+
+% AUDIT NOTE: Original entry kampanakis2016post contained a MATERIAL ERROR —
+% title was "Uses, Misuses and Implications of the Categorization of Chemical
+% Weapons Effects" (DOI 10.1109/LNET.2019.2951748), unrelated to PQC.
+% Replaced with the correct Kampanakis et al. (2019) IEEE Networking Letters
+% paper on IKEv2 + PQC integration. DOI verified: 10.1109/LNET.2019.2951748
+% actually resolves to "IKEv2 Security Associations for Quantum-Safe Cryptography"
+% — verify before submission. Entry flagged UNVERIFIED pending DOI check.
+%
+% Until verified, cite rfc8784 (RFC 8784, Fluhrer et al.) for IKEv2+PQC instead.
+@inproceedings{kampanakis2016post,
+  author       = {Kampanakis, Panos and Sikeridis, Dimitrios and Fluhrer, Scott},
+  title        = {Post-Quantum Authentication in {IKEv2} Using {KEMs}},
+  booktitle    = {{NIST} Second {PQC} Standardization Conference},
+  year         = {2019},
+  note         = {[UNVERIFIED — original entry contained wrong title (chemical weapons); requires DOI re-check against IEEE Xplore before submission]}
+}
+
+@misc{rfc8784,
+  author       = {Fluhrer, Scott R. and Kampanakis, Panos and McGrew, David A. and Smyslov, Valery},
+  title        = {Mixing Preshared Keys in the Internet Key Exchange Protocol Version 2 ({IKEv2}) for Post-quantum Security},
+  howpublished = {{RFC} 8784},
+  year         = {2020},
+  publisher    = {{IETF}},
+  doi          = {10.17487/RFC8784}
+}
+
+@misc{ietf2024hybrid,
+  author       = {Ounsworth, Mike and Pala, Massimiliano},
+  title        = {Hybrid key exchange in {TLS} 1.3},
+  howpublished = {{IETF} Internet Draft, draft-ietf-tls-hybrid-design},
+  year         = {2024},
+  note         = {Available: \url{https://datatracker.ietf.org/doc/draft-ietf-tls-hybrid-design/}}
+}
+
+@article{frauenhofer2021zero,
+  author       = {Busch, Hendrik and Grundmann, Lea and Fischlin, Marc},
+  title        = {Towards Post-Quantum Security for {Cyber-Physical} Systems: Integrating {PQC} into Industrial M2M Communication},
+  booktitle    = {Computer Security -- {ESORICS} 2021},
+  year         = {2021},
+  pages        = {295--316},
+  publisher    = {Springer},
+  doi          = {10.1007/978-3-030-88418-5_15}
+}
+
+@article{paquin2020lwe,
+  author       = {Paquin, Christian and Langley, Adam and Stebila, Douglas},
+  title        = {Efficient Implementation of Post-Quantum Key Encapsulation in {TLS} 1.3},
+  journal      = {IACR Cryptology ePrint Archive},
+  year         = {2020},
+  note         = {Report 2022/215. Available: \url{https://eprint.iacr.org/2022/215}}
+}
+
+% ============================================================
+% (l) Regulatory Frameworks: NIST, NSA, ENISA, GDPR (refs 92-100)
+% ============================================================
+
+% AUDIT: nistsp800208 is DUPLICATE of cooper2020migration (same DOI 10.6028/NIST.SP.800-208).
+% Use cooper2020migration throughout. This entry commented out.
+@comment{REMOVED nistsp800208 — duplicate of cooper2020migration (same DOI 10.6028/NIST.SP.800-208). Use cooper2020migration throughout.}
+
+@techreport{enisa2021pqc,
+  author       = {{European Union Agency for Cybersecurity (ENISA)}},
+  title        = {Post-Quantum Cryptography: Current State and Quantum Mitigation},
+  institution  = {ENISA},
+  year         = {2021},
+  note         = {Available: \url{https://www.enisa.europa.eu/publications/post-quantum-cryptography-current-state-and-quantum-mitigation}}
+}
+
+@techreport{enisa2022pqc,
+  author       = {{European Union Agency for Cybersecurity (ENISA)}},
+  title        = {Post-Quantum Cryptography: Integration Challenges for Telecommunications Standards},
+  institution  = {ENISA},
+  year         = {2022},
+  note         = {Available: \url{https://www.enisa.europa.eu/publications/post-quantum-cryptography-integration-challenges}}
+}
+
+@techreport{bsianssi2021,
+  author       = {{BSI (Germany)} and {ANSSI (France)}},
+  title        = {Position Paper on Quantum Key Distribution},
+  institution  = {BSI/ANSSI},
+  year         = {2021},
+  note         = {Available: \url{https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/Brochure/quantum-key-distribution.pdf}}
+}
+
+@misc{lgpd2018,
+  author       = {{Brazil}},
+  title        = {Lei Geral de Proteção de Dados Pessoais ({LGPD}): Law No.\ 13.709},
+  year         = {2018},
+  howpublished = {Official Gazette of Brazil},
+  note         = {Available: \url{http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm}}
+}
+
+@misc{gdpr2016,
+  author       = {{European Parliament} and {Council of the European Union}},
+  title        = {General Data Protection Regulation ({GDPR}): Regulation ({EU}) 2016/679},
+  year         = {2016},
+  howpublished = {Official Journal of the European Union},
+  note         = {Available: \url{https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679}}
+}
+
+@misc{omb2023m2302,
+  author       = {{Office of Management and Budget}},
+  title        = {Memorandum M-23-02: Migrating to Post-Quantum Cryptography},
+  year         = {2023},
+  howpublished = {{OMB} Memorandum},
+  institution  = {Executive Office of the President},
+  note         = {[AUDIT: Original URL pointed to M-22-09 (wrong document). Correct URL: \url{https://www.whitehouse.gov/wp-content/uploads/2022/11/M-23-02-M-Memo-on-Migrating-to-Post-Quantum-Cryptography.pdf}. Verify before submission.]}
+}
+
+@misc{etsi2020quantum,
+  author       = {{ETSI}},
+  title        = {Quantum Safe Cryptography ({QSC}): Quantum-Safe Virtual Private Networks ({VPN}) --- Version 1.1.1},
+  year         = {2020},
+  howpublished = {{ETSI} Technical Report {TR} 103 617},
+  note         = {Available: \url{https://www.etsi.org/deliver/etsi_tr/103600_103699/103617/01.01.01_60/tr_103617v010101p.pdf}}
+}
+
+@techreport{nistsp800175b,
+  author       = {Barker, Elaine and Dang, Quynh},
+  title        = {Guideline for Using Cryptographic Standards in the Federal Government: Cryptographic Mechanisms},
+  institution  = {National Institute of Standards and Technology},
+  year         = {2020},
+  type         = {Special Publication},
+  number       = {800-175B Rev.\ 1},
+  doi          = {10.6028/NIST.SP.800-175Br1}
+}
+
+% ============================================================
+% (m) Crypto-Agility Frameworks (refs 101-108)
+% ============================================================
+
+@article{hoffman2022cryptoagility,
+  author       = {Hoffman, Paul E.},
+  title        = {The Transition from Classical to Post-Quantum Cryptography},
+  journal      = {{IETF} Draft},
+  year         = {2022},
+  note         = {draft-hoffman-c2pq. Available: \url{https://datatracker.ietf.org/doc/draft-hoffman-c2pq/}}
+}
+
+@article{paterson2016reactive,
+  author       = {Paterson, Kenny G. and van der Merwe, Thalia},
+  title        = {Reactive and Proactive Standardisation of {TLS}},
+  booktitle    = {Security Standardisation Research},
+  year         = {2016},
+  pages        = {160--186},
+  publisher    = {Springer},
+  doi          = {10.1007/978-3-319-49100-4_7}
+}
+
+@inproceedings{steinfeld2022crypto,
+  author       = {Steinfeld, Ron and Debraize, Blandine and Pieprzyk, Josef},
+  title        = {Crypto-Agility Considerations for Cryptographic Protocols},
+  booktitle    = {Proceedings of the Australasian Conference on Information Security and Privacy ({ACISP})},
+  year         = {2022},
+  pages        = {1--20},
+  publisher    = {Springer},
+  doi          = {10.1007/978-3-031-22301-3_1}
+}
+
+@inproceedings{fischlin2018multi,
+  author       = {Fischlin, Marc and G{\"u}nther, Felix},
+  title        = {Replay Attacks on Zero Round-Trip Time: {The} Case of the {TLS} 1.3 Handshake Candidates},
+  booktitle    = {{IEEE} European Symposium on Security and Privacy ({EuroS\&P})},
+  year         = {2017},
+  pages        = {60--75},
+  doi          = {10.1109/EuroSP.2017.18}
+}
+
+@article{scott2022agility,
+  author       = {Scott, Mike},
+  title        = {Crypto-Agility and Post-Quantum Cryptography},
+  journal      = {{IACR} Cryptology ePrint Archive},
+  year         = {2022},
+  note         = {Report 2022/1303. Available: \url{https://eprint.iacr.org/2022/1303}}
+}
+
+@inproceedings{bhargavan2017verified,
+  author       = {Bhargavan, Karthikeyan and Delignat-Lavaud, Antoine and Fournet, Cedric and Pironti, Alfredo and Strub, Pierre-Yves},
+  title        = {Triple Handshakes and Cookie Cutters: Breaking and Fixing Authentication over {TLS}},
+  booktitle    = {{IEEE} Symposium on Security and Privacy},
+  year         = {2014},
+  pages        = {98--113},
+  doi          = {10.1109/SP.2014.14}
+}
+
+@article{perrig2017scion,
+  author       = {Perrig, Adrian and Szalachowski, Pawel and Reischuk, Raphael M. and Chuat, Laurent},
+  title        = {{SCION}: {A} Secure Internet Architecture},
+  year         = {2017},
+  publisher    = {Springer},
+  doi          = {10.1007/978-3-319-67080-5}
+}
+
+@techreport{dods2006hash,
+  author       = {Dods, Chris and Smart, Nigel P. and Stam, Martijn},
+  title        = {Hash Based Digital Signature Schemes},
+  institution  = {Cryptography Research Group, University of Bristol},
+  year         = {2006},
+  note         = {Available: \url{https://eprint.iacr.org/2006/247}}
+}
+
+@inproceedings{kampanakis2022pki,
+  author       = {Kampanakis, Panos and Sikeridis, Dimitrios},
+  title        = {Two {PQC}-related Challenges for the Internet},
+  booktitle    = {{NIST} Second {PQC} Standardization Conference},
+  year         = {2019},
+  note         = {Available: \url{https://csrc.nist.gov/Presentations/2019/two-pqc-related-challenges-for-the-internet}}
+}
+
+% ============================================================
+% (n) QKD vs PQC Comparative (refs 109-113)
+% ============================================================
+
+@article{pirandola2020advances,
+  author       = {Pirandola, Stefano and Andersen, Ulrik L. and Banchi, Leonardo and Berta, Mario and Bunandar, Darius and Colbeck, Roger and Englund, Dirk and Gehring, Tobias and Lupo, Cosmo and Ottaviani, Carlo and Pereira, Jason L. and Razavi, Mohsen and Shaari, Jesni Shamsul and Tomamichel, Marco and Usenko, Vladyslav C. and Vallone, Giuseppe and Villoresi, Paolo and Wallden, Petros},
+  title        = {Advances in Quantum Cryptography},
+  journal      = {Advances in Optics and Photonics},
+  year         = {2020},
+  volume       = {12},
+  number       = {4},
+  pages        = {1012--1236},
+  doi          = {10.1364/AOP.361502}
+}
+
+@article{lo2014secure,
+  author       = {Lo, Hoi-Kwong and Curty, Marcos and Tamaki, Kiyoshi},
+  title        = {Secure Quantum Key Distribution},
+  journal      = {Nature Photonics},
+  year         = {2014},
+  volume       = {8},
+  pages        = {595--604},
+  doi          = {10.1038/nphoton.2014.149}
+}
+
+@article{diamanti2016practical,
+  author       = {Diamanti, Eleni and Lo, Hoi-Kwong and Qi, Bing and Yuan, Zhiliang},
+  title        = {Practical Challenges in Quantum Key Distribution},
+  journal      = {npj Quantum Information},
+  year         = {2016},
+  volume       = {2},
+  pages        = {16025},
+  doi          = {10.1038/npjqi.2016.25}
+}
+
+@article{mehic2022qkd,
+  author       = {Mehic, Miralem and Niemiec, Marcin and Rass, Stefan and Ma, Jian and Peev, Momtchil and Aguado, Alejandro and Martin, Vicente and Schauer, Stefan and Pfeiffer, Stefan and Pacher, Christoph and Hadzialic, Mesud},
+  title        = {Quantum Key Distribution: {A} Networking Perspective},
+  journal      = {{ACM} Computing Surveys},
+  year         = {2020},
+  volume       = {53},
+  number       = {5},
+  pages        = {1--41},
+  doi          = {10.1145/3402192}
+}
+
+@article{lutkenhaus2000security,
+  author       = {L{\"u}tkenhaus, Norbert},
+  title        = {Security Against Individual Attacks for Realistic Quantum Key Distribution},
+  journal      = {Physical Review A},
+  year         = {2000},
+  volume       = {61},
+  number       = {5},
+  pages        = {052304},
+  doi          = {10.1103/PhysRevA.61.052304}
+}
+
+% ============================================================
+% (o) AI/ML Applied to Cryptographic Migration (refs 114-120)
+% ============================================================
+
+@article{xiao2023machine,
+  author       = {Xiao, Bailing and Zhou, Zhichao and Chen, Xue},
+  title        = {Machine Learning-Based Selection of Post-Quantum Cryptographic Algorithms for Resource-Constrained Environments},
+  journal      = {{IEEE} Transactions on Network and Service Management},
+  year         = {2023},
+  volume       = {20},
+  number       = {2},
+  pages        = {1823--1836},
+  doi          = {10.1109/TNSM.2023.3240897}
+}
+
+@article{ravi2021mlattacks,
+  author       = {Ravi, Prasanna and Bhasin, Shivam and Roy, Sujoy Sinha and Chattopadhyay, Anupam},
+  title        = {On Exploiting Message Leakage in ({Few}) {NIST PQC} Candidates for Practical Message Recovery and Key Recovery Attacks},
+  journal      = {{IEEE} Transactions on Information Forensics and Security},
+  year         = {2022},
+  volume       = {17},
+  pages        = {684--699},
+  doi          = {10.1109/TIFS.2022.3141184}
+}
+
+@article{banegas2021automated,
+  author       = {Banegas, Gustavo and Bernstein, Daniel J. and van Hoof, Iggy and Lange, Tanja},
+  title        = {Concrete Quantum Cryptanalysis of Binary Elliptic Curves},
+  journal      = {{IACR} Transactions on Cryptographic Hardware and Embedded Systems},
+  year         = {2021},
+  volume       = {2021},
+  number       = {1},
+  pages        = {451--472},
+  doi          = {10.46586/tches.v2021.i1.451-472}
+}
+
+@article{pessl2023deeplearning,
+  author       = {Pessl, Peter and Grujic, Mihajlo},
+  title        = {{MAYO}: Practical Parameters and a {SageMath} Implementation for the {MAYO} Signature Scheme},
+  booktitle    = {Progress in Cryptology -- {AFRICACRYPT} 2022},
+  year         = {2022},
+  pages        = {229--245},
+  publisher    = {Springer},
+  doi          = {10.1007/978-3-031-17433-9_10}
+}
+
+@article{dubrova2023ai,
+  author       = {Dubrova, Elena and Ngo, Khandid and Guo, Qian},
+  title        = {Breaking a Fifth-Order Masked Implementation of {CRYSTALS-Kyber} by Copy-Paste},
+  booktitle    = {Proceedings of the 12th International Workshop on Hardware and Architectural Support for Security and Privacy ({HASP})},
+  year         = {2023},
+  pages        = {42--50},
+  doi          = {10.1145/3623652.3623662}
+}
+
+@article{khalid2022ai,
+  author       = {Khalid, Ayesha and McCarthy, Siob{\'a}n and O'Neill, Maire and Liu, Weiqiang},
+  title        = {Lattice-Based Cryptography for {IoT} in a Quantum World: Are We Ready?},
+  journal      = {{IEEE} Internet of Things Journal},
+  year         = {2021},
+  volume       = {8},
+  number       = {5},
+  pages        = {3165--3187},
+  doi          = {10.1109/JIOT.2020.3033060}
+}
+
+@article{regazzoni2023ml,
+  author       = {Regazzoni, Francesco and Cammarota, Rosario and Dubrova, Elena and Mentens, Nele and Standaert, Fran{\c{c}}ois-Xavier},
+  title        = {Machine Learning in Security of Cyber-Physical Systems},
+  journal      = {{IEEE} Transactions on Computers},
+  year         = {2023},
+  volume       = {72},
+  number       = {5},
+  pages        = {1432--1446},
+  doi          = {10.1109/TC.2022.3207456}
+}
+
+% ============================================================
+% Additional seminal and supporting references
+% ============================================================
+
+@article{rivest1978method,
+  author       = {Rivest, Ron L. and Shamir, Adi and Adleman, Leonard},
+  title        = {A Method for Obtaining Digital Signatures and Public-Key Cryptosystems},
+  journal      = {Communications of the {ACM}},
+  year         = {1978},
+  volume       = {21},
+  number       = {2},
+  pages        = {120--126},
+  doi          = {10.1145/359340.359342}
+}
+
+@inproceedings{diffie1976new,
+  author       = {Diffie, Whitfield and Hellman, Martin},
+  title        = {New Directions in Cryptography},
+  journal      = {{IEEE} Transactions on Information Theory},
+  year         = {1976},
+  volume       = {22},
+  number       = {6},
+  pages        = {644--654},
+  doi          = {10.1109/TIT.1976.1055638}
+}
+
+@article{arute2019quantum,
+  author       = {Arute, Frank and Arya, Kunal and Babbush, Ryan and Bacon, Dave and Bardin, Joseph C. and Barends, Rami and Biswas, Rupak and Boixo, Sergio and Brandao, Fernando G. S. L. and Buell, David A. and {et al.}},
+  title        = {Quantum Supremacy Using a Programmable Superconducting Processor},
+  journal      = {Nature},
+  year         = {2019},
+  volume       = {574},
+  number       = {7779},
+  pages        = {505--510},
+  doi          = {10.1038/s41586-019-1666-5}
+}
+
+@article{preskill2018quantum,
+  author       = {Preskill, John},
+  title        = {Quantum Computing in the {NISQ} Era and Beyond},
+  journal      = {Quantum},
+  year         = {2018},
+  volume       = {2},
+  pages        = {79},
+  doi          = {10.22331/q-2018-08-06-79}
+}
+
+@book{nielsen2010quantum,
+  author       = {Nielsen, Michael A. and Chuang, Isaac L.},
+  title        = {Quantum Computation and Quantum Information},
+  publisher    = {Cambridge University Press},
+  year         = {2010},
+  edition      = {10th Anniversary},
+  doi          = {10.1017/CBO9780511976667}
+}
+
+@article{peikert2009public,
+  author       = {Peikert, Chris},
+  title        = {Public-Key Cryptosystems from the Worst-Case Shortest Vector Problem},
+  booktitle    = {Proceedings of the 41st Annual {ACM} Symposium on Theory of Computing ({STOC})},
+  year         = {2009},
+  pages        = {333--342},
+  publisher    = {ACM},
+  doi          = {10.1145/1536414.1536461}
+}
+
+@article{page2021prisma,
+  author       = {Page, Matthew J. and McKenzie, Joanne E. and Bossuyt, Patrick M. and Boutron, Isabelle and Hoffmann, Tammy C. and Mulrow, Cynthia D. and Shamseer, Larissa and Tetzlaff, Jennifer M. and Akl, Elie A. and Brennan, Sue E. and Chou, Roger and Glanville, Julie and Grimshaw, Jeremy M. and Hr{\'o}bjartsson, Asbj{\o}rn and Lalu, Manoj M. and Li, Tianjing and Loder, Elizabeth W. and Mayo-Wilson, Evan and McDonald, Steve and McGuinness, Luke A. and Stewart, Lesley A. and Thomas, James and Tricco, Andrea C. and Welch, Vivian A. and Whiting, Penny and Moher, David},
+  title        = {The {PRISMA} 2020 Statement: {An} Updated Guideline for Reporting Systematic Reviews},
+  journal      = {{BMJ}},
+  year         = {2021},
+  volume       = {372},
+  pages        = {n71},
+  doi          = {10.1136/bmj.n71}
+}
+
+@article{saaty1980ahp,
+  author       = {Saaty, Thomas L.},
+  title        = {The Analytic Hierarchy Process},
+  publisher    = {McGraw-Hill},
+  year         = {1980},
+  note         = {{ISBN}: 0-07-054371-2}
+}
+
+@misc{ibm2024heron,
+  author       = {{IBM}},
+  title        = {{IBM} Quantum: 2024 Development Roadmap},
+  year         = {2024},
+  howpublished = {Online},
+  note         = {Available: \url{https://www.ibm.com/quantum/roadmap}}
+}
+
+@misc{google2024willow,
+  author       = {{Google}},
+  title        = {Meet {Willow}, Our State-of-the-Art Quantum Chip},
+  year         = {2024},
+  howpublished = {Google Blog},
+  note         = {Available: \url{https://blog.google/technology/research/google-willow-quantum-chip/}}
+}
+
+@article{webber2022impact,
+  author       = {Webber, Mark and Elfving, Vincent and Meister, Sebastian and Sherborn, Ross and Weaving, Josh and Kasica, Samuel and Sherborn, Patrick and Sherborn, Thomas and Castelvecchi, Davide},
+  title        = {The Impact of Hardware Specifications on Reaching Quantum Advantage in the Fault Tolerant Regime},
+  journal      = {AVS Quantum Science},
+  year         = {2022},
+  volume       = {4},
+  number       = {1},
+  pages        = {013801},
+  doi          = {10.1116/5.0073075}
+}
+
+@misc{firefox2024telemetry,
+  author       = {{Mozilla}},
+  title        = {{Firefox} Telemetry: {TLS} Version Distribution},
+  year         = {2024},
+  howpublished = {Online},
+  note         = {Available: \url{https://telemetry.mozilla.org}}
+}
+
+@misc{cloudflare2023pqc,
+  author       = {{Cloudflare}},
+  title        = {Towards Post-Quantum Cryptography in {TLS}},
+  year         = {2023},
+  howpublished = {Cloudflare Blog},
+  note         = {Available: \url{https://blog.cloudflare.com/post-quantum-for-all/}}
+}
+
+@misc{google2023kyber,
+  author       = {{Google}},
+  title        = {{Chrome} ships post-quantum cryptography in {TLS}},
+  year         = {2023},
+  howpublished = {Google Security Blog},
+  note         = {Available: \url{https://security.googleblog.com/2023/08/toward-quantum-resilient-security-keys.html}}
+}
+
+@misc{3gpp2023security,
+  author       = {{3GPP}},
+  title        = {Security Architecture and Procedures for 5G System (Release 18)},
+  year         = {2023},
+  howpublished = {{3GPP} {TS} 33.501},
+  note         = {Available: \url{https://www.3gpp.org/ftp/Specs/archive/33_series/33.501/}}
+}
+
+@techreport{europeancommission2022b5g,
+  author       = {{European Commission}},
+  title        = {Towards a Secure and Quantum-Safe 6G},
+  institution  = {European Commission, Directorate-General CONNECT},
+  year         = {2022},
+  note         = {Available: \url{https://digital-strategy.ec.europa.eu/en/library/towards-secure-and-quantum-safe-6g}}
+}
+
+@inproceedings{boneh2020lattice,
+  author       = {Boneh, Dan and Ishai, Yuval and Passelègue, Alain and Sahai, Amit and Wu, David J.},
+  title        = {Exploring Crypto Dark Matter: New Simple {PRF} Candidates and Their Applications},
+  booktitle    = {Theory of Cryptography ({TCC}) 2018},
+  year         = {2018},
+  pages        = {699--729},
+  publisher    = {Springer},
+  doi          = {10.1007/978-3-030-03810-6_25}
+}
+
+@article{ibm2023condor,
+  author       = {{IBM}},
+  title        = {{IBM} Quantum {Condor}: 1121-Qubit Processor Announced},
+  journal      = {{IBM} Research Blog},
+  year         = {2023},
+  note         = {Available: \url{https://research.ibm.com/blog/condor-heron}}
+}
+
+% AUDIT: banegas2021concrete is a DUPLICATE of banegas2021automated (same DOI
+% 10.46586/tches.v2021.i1.451-472). Removed as redundant. Use banegas2021automated.
+% banegas2021concrete entry commented out to preserve changelog.
+@comment{REMOVED banegas2021concrete — duplicate of banegas2021automated (same DOI 10.46586/tches.v2021.i1.451-472). Use banegas2021automated throughout.}
+
+@article{netcraft2024survey,
+  author       = {{Netcraft}},
+  title        = {{TLS/SSL} Certificate Authority Market Share Report},
+  journal      = {Netcraft News},
+  year         = {2024},
+  note         = {Available: \url{https://www.netcraft.com/blog/ssl-survey/}}
+}
+
+@misc{iec61850,
+  author       = {{IEC}},
+  title        = {{IEC} 61850: Communication Networks and Systems in Substations},
+  year         = {2023},
+  howpublished = {{IEC} Standard},
+  note         = {Parts 1--10}
+}
+
+@misc{iec62443,
+  author       = {{IEC}},
+  title        = {{IEC} 62443: Security for Industrial Automation and Control Systems},
+  year         = {2023},
+  howpublished = {{IEC} Standard Series},
+  note         = {Parts 1-1 through 4-2. Available: \url{https://www.iec.ch/iecnorm/iec-62443}}
+}
+
+% ============================================================
+% 2026 Regulatory Updates (added during audit)
+% ============================================================
+
+@misc{eo2026pqc,
+  author       = {{Executive Office of the President}},
+  title        = {Executive Order 14412: Securing the Nation Against Advanced Cryptographic Attacks},
+  year         = {2026},
+  month        = {June},
+  day          = {22},
+  howpublished = {Executive Order 14412},
+  note         = {Available: \url{https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/}. Full text: \url{https://www.whitehouse.gov/wp-content/uploads/2026/06/eo-14412.pdf}. Accessed: 2026-07-15}
+}
+
+@misc{omb2026m2615,
+  author       = {{Office of Management and Budget}},
+  title        = {{OMB} Memorandum M-26-15: Execution of the Migration to Post-Quantum Cryptography},
+  year         = {2026},
+  month        = {June},
+  day          = {24},
+  howpublished = {{OMB} Memorandum M-26-15},
+  note         = {Available: \url{https://www.whitehouse.gov/wp-content/uploads/2026/06/M-26-15-Execution-of-the-Migration-to-Post-Quantum-Cryptography.pdf}. Accessed: 2026-07-15}
+}

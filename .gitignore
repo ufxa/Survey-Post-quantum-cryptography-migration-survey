@@ -36,6 +36,8 @@ __pycache__/
 .vscode/
 .idea/
 
-# Checkpoint dirs (large, reconstructable)
-_ORIGINAL_v1/
-_CURRENT_v2/
+# Claude Code session files
+.claude/
+
+# macOS extended attributes
+.DS_Store
