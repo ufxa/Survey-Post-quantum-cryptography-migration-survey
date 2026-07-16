@@ -103,7 +103,7 @@ migration challenges spanning six critical infrastructure domains: Transport
 Layer Security (TLS), Public Key Infrastructure (PKI), Internet of Things (IoT),
 Blockchain and distributed ledger technologies, Virtual Private Networks (VPN)
 and Zero Trust architectures, and Industrial Control Systems (ICS/OT). Through
-a structured narrative review encompassing 150 peer-reviewed
+a structured narrative review encompassing 151 peer-reviewed
 publications and 39 normative/standards documents (2016--2026, with seminal
 antecedents), we identify 14 distinct migration strategies and compare their
 applicability across these domains. We introduce the Migration
@@ -282,7 +282,7 @@ This survey makes the following specific contributions:
   infrastructure domains, structured at three levels (domain, algorithm,
   strategy), enabling systematic comparison across previously siloed research
   (Section~\ref{sec:taxonomy}).
-  \item \textbf{Structured narrative survey} synthesizing 150 peer-reviewed
+  \item \textbf{Structured narrative survey} synthesizing 151 peer-reviewed
   publications and 39 normative documents (2016--2026), with documented
   inclusion criteria, de-duplication log, and quality assessment
   (Section~\ref{sec:methodology}).
@@ -344,7 +344,14 @@ execute a registered, reproducible database search protocol, and the corpus
 assembled below does not derive from a documented exhaustive retrieval process.
 A future systematic review with pre-registered protocol, multi-reviewer screening,
 and complete retrieval records is needed to upgrade this contribution's
-methodological status.
+methodological status. A partial public-database search (arXiv cs.CR, IACR ePrint,
+Google Scholar; 2023--2026) was executed on 2026-07-16, identifying 12 papers
+meeting inclusion criteria from approximately 130 records inspected; 7 were new
+candidates not previously in the corpus. The search log is preserved in
+\texttt{data/partial\_systematic\_search\_record\_2026-07-16.md}. N{\"a}ther
+et al.~\cite{nather2024migrating} independently conducted a systematic literature
+review of PQC migration for software systems, providing methodological reference for
+our corpus coverage assessment.
 
 \subsection{Research Questions}
 
@@ -429,12 +436,12 @@ Works scoring $\geq$3/5 were considered for inclusion.
 \subsection{Corpus Composition}
 \label{sec:corpus}
 
-The assembled corpus consists of \textbf{150 peer-reviewed publications} and
+The assembled corpus consists of \textbf{151 peer-reviewed publications} and
 \textbf{39 normative/standards documents}, totalling 111 sources after
 de-duplication of 9 redundant entries from the initial 120-record working list.
 The separation between peer-reviewed and normative sources is maintained
 throughout this survey: counts, figures, and tables derived from the scientific
-evidence base refer to the 150-paper peer-reviewed corpus; regulatory and
+evidence base refer to the 151-paper peer-reviewed corpus; regulatory and
 standards claims cite the normative corpus separately.
 
 \textbf{Normative corpus}: standards (FIPS~203/204/205), NIST reports (NISTIR
@@ -452,7 +459,7 @@ publications by sub-theme.
   \includegraphics[width=\columnwidth]{figures/prisma_flowchart.pdf}
   \caption{Corpus composition diagram. The initial working list
   was de-duplicated and expanded across eight thematic searches to yield
-  150 peer-reviewed papers and 39 normative/standards documents (189 total).
+  151 peer-reviewed papers and 39 normative/standards documents (190 total).
   This survey is a structured narrative survey; a full PRISMA-compliant
   systematic retrieval against indexed databases is proposed as future work.}
   \label{fig:prisma}
@@ -462,7 +469,7 @@ publications by sub-theme.
   \centering
   \includegraphics[width=\columnwidth]{figures/temporal_distribution.pdf}
   \caption{Temporal distribution of peer-reviewed publications (2016--2026)
-  by sub-theme. Stacked bars show observed counts from the 150-paper corpus.
+  by sub-theme. Stacked bars show observed counts from the 151-paper corpus.
   Shading indicates the NIST standardization phase.}
   \label{fig:temporal}
 \end{figure}
@@ -473,7 +480,7 @@ publications by sub-theme.
 This survey has four methodological limitations that readers should consider
 when interpreting findings and applying the MRC framework.
 
-\textbf{L1 -- Corpus boundary effects.} The 150 peer-reviewed papers were
+\textbf{L1 -- Corpus boundary effects.} The 151 peer-reviewed papers were
 assembled through a structured narrative process rather than exhaustive
 database retrieval. Systematic execution of the search strings in
 Table~\ref{tab:search_strings} against IEEE Xplore, ACM DL, Scopus, and
@@ -738,7 +745,7 @@ in parallel, with security guaranteed if at least one is unbroken:
 \end{itemize}
 
 Table~\ref{tab:taxonomy_comparative} provides the comparative taxonomy matrix
-for all 189 surveyed sources (150 peer-reviewed + 39 normative).
+for all 190 surveyed sources (151 peer-reviewed + 39 normative).
 
 \begin{table*}[!t]
 \caption{Comparative Taxonomy of Surveyed Papers (Representative Subset of 30; Full Table in Supplementary Material)}
@@ -2035,7 +2042,7 @@ creating a hardware gap for systems requiring upgrade before 2028.
 
 This survey has provided a structured narrative analysis of post-quantum
 cryptography migration across six critical infrastructure domains, synthesizing
-150 peer-reviewed publications and 39 normative documents.
+151 peer-reviewed publications and 39 normative documents.
 To our knowledge, it is among the first surveys to address all six domains under
 a unified framework with explicit migration-readiness scoring.
 Our principal contributions are: (1)~a three-level unified taxonomy enabling
