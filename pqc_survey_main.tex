@@ -353,8 +353,8 @@ and complete retrieval records is needed to upgrade this contribution's
 methodological status. A partial public-database search (arXiv cs.CR, IACR ePrint,
 Google Scholar; 2023--2026) was executed on 2026-07-16, identifying 12 papers
 meeting inclusion criteria from approximately 130 records inspected; 7 were new
-candidates not previously in the corpus. The search log is preserved in
-\texttt{data/partial\_systematic\_search\_record\_2026-07-16.md}. N{\"a}ther
+candidates not previously in the corpus. The search log is preserved in the replication package (see
+\texttt{data/search\_record\_2026-07-16.md}). N{\"a}ther
 et al.~\cite{nather2024migrating} independently conducted a systematic literature
 review of PQC migration for software systems, providing methodological reference for
 our corpus coverage assessment.
@@ -983,34 +983,34 @@ pqm4~\cite{kannwischer2019pqm4} is the canonical IoT PQC benchmark suite,
 providing cycle counts and stack usage for 18 PQC schemes on the ARM
 Cortex-M4 (STM32F407). Table~\ref{tab:iot_benchmark} summarizes key results.
 
-\begin{table}[t]
+\begin{table*}[t]
 \caption{PQC Performance on ARM Cortex-M4 (pqm4~\cite{kannwischer2019pqm4}, Extended)}
 \label{tab:iot_benchmark}
 \centering
 \footnotesize
 \renewcommand{\arraystretch}{1.2}
-\begin{tabular}{@{}L{2.5cm}R{1.5cm}R{1.5cm}R{1.5cm}R{1.2cm}@{}}
+\begin{tabular}{@{}lrrrr@{}}
 \toprule
 \textbf{Algorithm} & \textbf{KeyGen} & \textbf{Encap/Sign} & \textbf{Decap/Verify} & \textbf{Stack (KB)} \\
  & (kcycles) & (kcycles) & (kcycles) & \\
 \midrule
 \multicolumn{5}{@{}l}{\textit{Key Encapsulation Mechanisms}} \\
-ML-KEM-512      & 98   & 106  & 122  & 3.9 \\
-ML-KEM-768      & 148  & 163  & 180  & 5.6 \\
-ML-KEM-1024     & 217  & 235  & 258  & 7.2 \\
-ECDH-256 (ref)  & 1891 & 1891 & 1891 & 1.2 \\
+ML-KEM-512      & 98   & 106   & 122  & 3.9 \\
+ML-KEM-768      & 148  & 163   & 180  & 5.6 \\
+ML-KEM-1024     & 217  & 235   & 258  & 7.2 \\
+ECDH-256 (ref)  & 1891 & 1891  & 1891 & 1.2 \\
 \midrule
 \multicolumn{5}{@{}l}{\textit{Digital Signature Schemes}} \\
-ML-DSA-44       & 413  & 545  & 181  & 9.6 \\
-ML-DSA-65       & 662  & 881  & 264  & 14.1 \\
-FALCON-512      & 4812 & 521  & 191  & 11.8 \\
-SLH-DSA-128s    & 1890 & 25311 & 1432 & 1.1 \\
-SLH-DSA-128f    & 189  & 1943  & 1432 & 1.1 \\
-ECDSA-256 (ref) & 2203 & 2134  & 2098 & 1.4 \\
+ML-DSA-44       & 413  & 545   & 181  & 9.6  \\
+ML-DSA-65       & 662  & 881   & 264  & 14.1 \\
+FALCON-512      & 4812 & 521   & 191  & 11.8 \\
+SLH-DSA-128s    & 1890 & 25311 & 1432 & 1.1  \\
+SLH-DSA-128f    & 189  & 1943  & 1432 & 1.1  \\
+ECDSA-256 (ref) & 2203 & 2134  & 2098 & 1.4  \\
 \bottomrule
 \multicolumn{5}{@{}l}{\scriptsize kcycles = kilo clock cycles at 168 MHz. Stack usage is peak during operation.}
 \end{tabular}
-\end{table}
+\end{table*}
 
 \subsubsection{Hardware Acceleration}
 
