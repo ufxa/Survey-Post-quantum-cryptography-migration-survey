@@ -557,17 +557,18 @@ def fig7_gap_heatmap():
     precise counts.
     """
     problems = [
-        'Ultra-constrained devices (<64 KB) [G1]',
-        'Automated crypto inventory [G2]',
-        'Safety-security co-design (ICS) [G3]',
-        'Crypto-agility metrics [G4]',
-        'Economic migration models [G5]',
-        'PQC interoperability testing [G6]',
+        'Ultra-constrained devices (<64 KB)',
+        'Automated crypto inventory',
+        'Safety-security co-design (ICS)',
+        'Crypto-agility metrics',
+        'Economic migration models',
+        'PQC interoperability testing',
         'Hybrid scheme standardization',
         'Regulatory cross-mapping',
         'Long-lived data protection',
         'Supply chain PQC assurance',
     ]
+    gap_labels = ['G1', 'G2', 'G3', 'G4', 'G5', 'G6']
     solutions = [
         'Lightweight\nalgorithms',
         'Static\nanalysis',
@@ -621,9 +622,17 @@ def fig7_gap_heatmap():
                 ax.add_patch(plt.Rectangle((j, i), 1, 1, fill=True,
                              color='#c0392b', alpha=0.35, zorder=3))
 
+    # G1-G6 labels on the right side (outside heatmap, before colorbar)
+    n_cols = data.shape[1]
+    for i, lbl in enumerate(gap_labels):
+        ax.text(n_cols + 0.15, i + 0.5, lbl,
+                ha='left', va='center', fontsize=8,
+                color='#c0392b', fontweight='bold',
+                transform=ax.transData)
+
     ax.set_title(
-        'Fig. 7 — Research Gap Map (Qualitative Author Assessment)\n'
-        '(0=no coverage; red=critical gap in G1–G6; NOT exact paper counts)'
+        'Fig. 7 — Research Gap Heatmap\n'
+        '(Red = zero coverage; G1--G6 annotate critical gaps)'
     )
     ax.set_xlabel('Solution Approach')
     ax.set_ylabel('Problem Dimension')
