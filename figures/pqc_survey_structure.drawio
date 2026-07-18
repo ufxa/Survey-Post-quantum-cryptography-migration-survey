@@ -1,456 +1,215 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1"
   connect="1" arrows="1" fold="1" page="1" pageScale="1"
-  pageWidth="1540" pageHeight="920" math="0" shadow="0">
+  pageWidth="1540" pageHeight="900" math="0" shadow="0">
   <root>
     <mxCell id="0" />
     <mxCell id="1" parent="0" />
 
-    <!-- ═══════════════════════════════════════════════════════════
-         TITLE
-    ═══════════════════════════════════════════════════════════ -->
-    <mxCell id="title" value="PQC Migration Survey &#x2014; Paper Structure Overview"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#1a2744;fontColor=#ffffff;strokeColor=#1a2744;
-             fontSize=16;fontStyle=1;arcSize=4;"
+    <!-- TITLE -->
+    <mxCell id="2"
+      value="PQC Migration Survey -- Paper Structure Overview"
+      style="rounded=1;whiteSpace=wrap;html=0;fillColor=#E8EDF5;strokeColor=#1F2937;strokeWidth=3;fontColor=#1F2937;fontSize=15;fontStyle=1;arcSize=4;"
       vertex="1" parent="1">
       <mxGeometry x="200" y="30" width="1140" height="52" as="geometry" />
     </mxCell>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         LEVEL 1 — FOUNDATION (y=150)
-    ═══════════════════════════════════════════════════════════ -->
-    <mxCell id="s2" value="&lt;b&gt;§II&lt;/b&gt;&lt;br&gt;Methodology&lt;br&gt;&lt;font style=&quot;font-style:italic&quot;&gt;(PRISMA 2020)&lt;/font&gt;"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#ffffff;strokeColor=#1a2744;strokeWidth=2;
-             fontSize=12;arcSize=10;"
+    <!-- FOUNDATION: §II §III §IV -->
+    <mxCell id="3"
+      value="§II Methodology&#xa;(PRISMA 2020)"
+      style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#1F2937;strokeWidth=2;fontColor=#1F2937;fontSize=12;fontStyle=1;arcSize=10;"
       vertex="1" parent="1">
       <mxGeometry x="200" y="150" width="200" height="72" as="geometry" />
     </mxCell>
 
-    <mxCell id="s3" value="&lt;b&gt;§III&lt;/b&gt;&lt;br&gt;Background&lt;br&gt;&lt;font style=&quot;font-style:italic&quot;&gt;(Quantum + NIST)&lt;/font&gt;"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#ffffff;strokeColor=#1a2744;strokeWidth=2;
-             fontSize=12;arcSize=10;"
+    <mxCell id="4"
+      value="§III Background&#xa;(Quantum + NIST)"
+      style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#1F2937;strokeWidth=2;fontColor=#1F2937;fontSize=12;fontStyle=1;arcSize=10;"
       vertex="1" parent="1">
       <mxGeometry x="670" y="150" width="200" height="72" as="geometry" />
     </mxCell>
 
-    <mxCell id="s4" value="&lt;b&gt;§IV&lt;/b&gt;&lt;br&gt;Taxonomy&lt;br&gt;&lt;font style=&quot;font-style:italic&quot;&gt;(3-level)&lt;/font&gt;"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#ffffff;strokeColor=#1a2744;strokeWidth=2;
-             fontSize=12;arcSize=10;"
+    <mxCell id="5"
+      value="§IV Taxonomy&#xa;(3-level)"
+      style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#1F2937;strokeWidth=2;fontColor=#1F2937;fontSize=12;fontStyle=1;arcSize=10;"
       vertex="1" parent="1">
       <mxGeometry x="1140" y="150" width="200" height="72" as="geometry" />
     </mxCell>
 
-    <!-- Title → §II (exit at x≈300 on title bottom) -->
-    <mxCell id="e_t2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1.5;
-             exitX=0.088;exitY=1;exitDx=0;exitDy=0;
-             entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
-      edge="1" source="title" target="s2" parent="1">
+    <!-- Edges: Title -> Foundation -->
+    <mxCell id="6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#374151;strokeWidth=1.5;exitX=0.088;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="2" target="3" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#374151;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="2" target="4" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#374151;strokeWidth=1.5;exitX=0.912;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="2" target="5" parent="1">
       <mxGeometry relative="1" as="geometry" />
     </mxCell>
 
-    <!-- Title → §III (exit center) -->
-    <mxCell id="e_t3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1.5;
-             exitX=0.5;exitY=1;exitDx=0;exitDy=0;
-             entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
-      edge="1" source="title" target="s3" parent="1">
-      <mxGeometry relative="1" as="geometry" />
-    </mxCell>
-
-    <!-- Title → §IV (exit right) -->
-    <mxCell id="e_t4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1.5;
-             exitX=0.912;exitY=1;exitDx=0;exitDy=0;
-             entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
-      edge="1" source="title" target="s4" parent="1">
-      <mxGeometry relative="1" as="geometry" />
-    </mxCell>
-
-    <!-- ═══════════════════════════════════════════════════════════
-         DOMAIN SECTION LABEL (y=272)
-    ═══════════════════════════════════════════════════════════ -->
-    <mxCell id="lbl_v" value="§V &#x2014; Domain Analysis (6 domains)"
-      style="text;html=1;strokeColor=none;fillColor=none;
-             align=center;verticalAlign=middle;whiteSpace=wrap;
-             fontSize=11;fontStyle=2;"
+    <!-- DOMAIN LABEL -->
+    <mxCell id="9"
+      value="§V -- Domain Analysis (6 domains)"
+      style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#374151;"
       vertex="1" parent="1">
       <mxGeometry x="200" y="274" width="1140" height="22" as="geometry" />
     </mxCell>
 
-    <!-- Junction hub: tiny filled dot between §III and domains -->
-    <mxCell id="hub" value=""
-      style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;
-             fillColor=#374151;strokeColor=#374151;"
-      vertex="1" parent="1">
-      <mxGeometry x="767" y="282" width="6" height="6" as="geometry" />
-    </mxCell>
-
-    <!-- §III bottom → hub (straight line down, no arrow head) -->
-    <mxCell id="e_3hub" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1.5;endArrow=none;
-             exitX=0.5;exitY=1;exitDx=0;exitDy=0;
-             entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;"
-      edge="1" source="s3" target="hub" parent="1">
-      <mxGeometry relative="1" as="geometry" />
-    </mxCell>
-
-    <!-- ═══════════════════════════════════════════════════════════
-         LEVEL 2 — DOMAIN BOXES (y=305, h=55, w=160, gap=28)
-         cx: 300, 488, 676, 864, 1052, 1240
-    ═══════════════════════════════════════════════════════════ -->
-    <mxCell id="v1" value="&lt;b&gt;§V.1&lt;/b&gt;&lt;br&gt;TLS / Web PKI"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#F3F4F6;strokeColor=#6B7280;strokeWidth=1;
-             fontSize=11;arcSize=15;"
+    <!-- DOMAINS: V.1 - V.6 -->
+    <mxCell id="10"
+      value="§V.1&#xa;TLS / Web PKI"
+      style="rounded=1;whiteSpace=wrap;html=0;fillColor=#F3F4F6;strokeColor=#6B7280;strokeWidth=1;fontColor=#374151;fontSize=11;fontStyle=1;arcSize=15;"
       vertex="1" parent="1">
       <mxGeometry x="220" y="305" width="160" height="55" as="geometry" />
     </mxCell>
 
-    <mxCell id="v2" value="&lt;b&gt;§V.2&lt;/b&gt;&lt;br&gt;PKI / Certs"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#F3F4F6;strokeColor=#6B7280;strokeWidth=1;
-             fontSize=11;arcSize=15;"
+    <mxCell id="11"
+      value="§V.2&#xa;PKI / Certs"
+      style="rounded=1;whiteSpace=wrap;html=0;fillColor=#F3F4F6;strokeColor=#6B7280;strokeWidth=1;fontColor=#374151;fontSize=11;fontStyle=1;arcSize=15;"
       vertex="1" parent="1">
       <mxGeometry x="408" y="305" width="160" height="55" as="geometry" />
     </mxCell>
 
-    <mxCell id="v3" value="&lt;b&gt;§V.3&lt;/b&gt;&lt;br&gt;IoT / Embedded"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#F3F4F6;strokeColor=#6B7280;strokeWidth=1;
-             fontSize=11;arcSize=15;"
+    <mxCell id="12"
+      value="§V.3&#xa;IoT / Embedded"
+      style="rounded=1;whiteSpace=wrap;html=0;fillColor=#F3F4F6;strokeColor=#6B7280;strokeWidth=1;fontColor=#374151;fontSize=11;fontStyle=1;arcSize=15;"
       vertex="1" parent="1">
       <mxGeometry x="596" y="305" width="160" height="55" as="geometry" />
     </mxCell>
 
-    <mxCell id="v4" value="&lt;b&gt;§V.4&lt;/b&gt;&lt;br&gt;Blockchain / DLT"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#F3F4F6;strokeColor=#6B7280;strokeWidth=1;
-             fontSize=11;arcSize=15;"
+    <mxCell id="13"
+      value="§V.4&#xa;Blockchain / DLT"
+      style="rounded=1;whiteSpace=wrap;html=0;fillColor=#F3F4F6;strokeColor=#6B7280;strokeWidth=1;fontColor=#374151;fontSize=11;fontStyle=1;arcSize=15;"
       vertex="1" parent="1">
       <mxGeometry x="784" y="305" width="160" height="55" as="geometry" />
     </mxCell>
 
-    <mxCell id="v5" value="&lt;b&gt;§V.5&lt;/b&gt;&lt;br&gt;VPN / ZTNA"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#F3F4F6;strokeColor=#6B7280;strokeWidth=1;
-             fontSize=11;arcSize=15;"
+    <mxCell id="14"
+      value="§V.5&#xa;VPN / ZTNA"
+      style="rounded=1;whiteSpace=wrap;html=0;fillColor=#F3F4F6;strokeColor=#6B7280;strokeWidth=1;fontColor=#374151;fontSize=11;fontStyle=1;arcSize=15;"
       vertex="1" parent="1">
       <mxGeometry x="972" y="305" width="160" height="55" as="geometry" />
     </mxCell>
 
-    <mxCell id="v6" value="&lt;b&gt;§V.6&lt;/b&gt;&lt;br&gt;ICS / OT"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#F3F4F6;strokeColor=#6B7280;strokeWidth=1;
-             fontSize=11;arcSize=15;"
+    <mxCell id="15"
+      value="§V.6&#xa;ICS / OT"
+      style="rounded=1;whiteSpace=wrap;html=0;fillColor=#F3F4F6;strokeColor=#6B7280;strokeWidth=1;fontColor=#374151;fontSize=11;fontStyle=1;arcSize=15;"
       vertex="1" parent="1">
       <mxGeometry x="1160" y="305" width="160" height="55" as="geometry" />
     </mxCell>
 
-    <!-- Hub → each domain (horizontal at y=285, then straight down) -->
-    <mxCell id="e_hv1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1;
-             exitX=0;exitY=0.5;exitDx=0;exitDy=0;
-             entryX=0.5;entryY=0;entryDx=0;entryDy=0;
-             startArrow=none;endArrow=open;endFill=0;"
-      edge="1" source="hub" target="v1" parent="1">
-      <mxGeometry relative="1" as="geometry">
-        <Array as="points">
-          <mxPoint x="300" y="285" />
-        </Array>
-      </mxGeometry>
+    <!-- Edges: §III -> each domain (spine at y=283) -->
+    <mxCell id="16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#374151;strokeWidth=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="4" target="10" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="770" y="283" /><mxPoint x="300" y="283" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#374151;strokeWidth=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="4" target="11" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="770" y="283" /><mxPoint x="488" y="283" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#374151;strokeWidth=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="4" target="12" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="770" y="283" /><mxPoint x="676" y="283" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#374151;strokeWidth=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="4" target="13" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="770" y="283" /><mxPoint x="864" y="283" /></Array></mxGeometry>
+    </mxCell>
+    <mxCell id="20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#374151;strokeWidth=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="4" target="14" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="770" y="283" /><mxPoint x="1052" y="283" /></Array></mxGeometry>
     </mxCell>
 
-    <mxCell id="e_hv2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1;
-             exitX=0;exitY=0.5;exitDx=0;exitDy=0;
-             entryX=0.5;entryY=0;entryDx=0;entryDy=0;
-             startArrow=none;endArrow=open;endFill=0;"
-      edge="1" source="hub" target="v2" parent="1">
-      <mxGeometry relative="1" as="geometry">
-        <Array as="points">
-          <mxPoint x="488" y="285" />
-        </Array>
-      </mxGeometry>
-    </mxCell>
-
-    <mxCell id="e_hv3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1;
-             exitX=0;exitY=0.5;exitDx=0;exitDy=0;
-             entryX=0.5;entryY=0;entryDx=0;entryDy=0;
-             startArrow=none;endArrow=open;endFill=0;"
-      edge="1" source="hub" target="v3" parent="1">
-      <mxGeometry relative="1" as="geometry">
-        <Array as="points">
-          <mxPoint x="676" y="285" />
-        </Array>
-      </mxGeometry>
-    </mxCell>
-
-    <mxCell id="e_hv4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1;
-             exitX=1;exitY=0.5;exitDx=0;exitDy=0;
-             entryX=0.5;entryY=0;entryDx=0;entryDy=0;
-             startArrow=none;endArrow=open;endFill=0;"
-      edge="1" source="hub" target="v4" parent="1">
-      <mxGeometry relative="1" as="geometry">
-        <Array as="points">
-          <mxPoint x="864" y="285" />
-        </Array>
-      </mxGeometry>
-    </mxCell>
-
-    <mxCell id="e_hv5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1;
-             exitX=1;exitY=0.5;exitDx=0;exitDy=0;
-             entryX=0.5;entryY=0;entryDx=0;entryDy=0;
-             startArrow=none;endArrow=open;endFill=0;"
-      edge="1" source="hub" target="v5" parent="1">
-      <mxGeometry relative="1" as="geometry">
-        <Array as="points">
-          <mxPoint x="1052" y="285" />
-        </Array>
-      </mxGeometry>
-    </mxCell>
-
-    <mxCell id="e_hv6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1;
-             exitX=1;exitY=0.5;exitDx=0;exitDy=0;
-             entryX=0.5;entryY=0;entryDx=0;entryDy=0;
-             startArrow=none;endArrow=open;endFill=0;"
-      edge="1" source="hub" target="v6" parent="1">
-      <mxGeometry relative="1" as="geometry">
-        <Array as="points">
-          <mxPoint x="1240" y="285" />
-        </Array>
-      </mxGeometry>
-    </mxCell>
-
-    <!-- §IV → §V.6 (straight down, same center x=1240) -->
-    <mxCell id="e_4v6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1.5;
-             exitX=0.5;exitY=1;exitDx=0;exitDy=0;
-             entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
-      edge="1" source="s4" target="v6" parent="1">
+    <!-- Edge: §IV -> V.6 -->
+    <mxCell id="21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#374151;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="5" target="15" parent="1">
       <mxGeometry relative="1" as="geometry" />
     </mxCell>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         LEVEL 3 — SYNTHESIS (y=445, h=70)
-         §VI cx=510, §VII cx=770, §VIII cx=1030
-    ═══════════════════════════════════════════════════════════ -->
-    <mxCell id="s6" value="&lt;b&gt;§VI&lt;/b&gt;&lt;br&gt;MRC Framework&lt;br&gt;&lt;font style=&quot;font-style:italic&quot;&gt;(Quantitative)&lt;/font&gt;"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#ffffff;strokeColor=#374151;strokeWidth=1.5;
-             fontSize=12;arcSize=10;"
+    <!-- SYNTHESIS -->
+    <mxCell id="22"
+      value="§VI MRC Framework&#xa;(Quantitative)"
+      style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#374151;strokeWidth=1.5;fontColor=#1F2937;fontSize=12;fontStyle=1;arcSize=10;"
       vertex="1" parent="1">
-      <mxGeometry x="410" y="445" width="200" height="70" as="geometry" />
+      <mxGeometry x="410" y="448" width="200" height="70" as="geometry" />
     </mxCell>
 
-    <mxCell id="s7" value="&lt;b&gt;§VII&lt;/b&gt;&lt;br&gt;Regulatory&lt;br&gt;Landscape"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#ffffff;strokeColor=#374151;strokeWidth=1.5;
-             dashed=1;dashPattern=8 4;
-             fontSize=12;arcSize=10;"
+    <mxCell id="23"
+      value="§VII Regulatory&#xa;Landscape"
+      style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#374151;strokeWidth=1.5;dashed=1;dashPattern=8 4;fontColor=#1F2937;fontSize=12;fontStyle=1;arcSize=10;"
       vertex="1" parent="1">
-      <mxGeometry x="670" y="445" width="200" height="70" as="geometry" />
+      <mxGeometry x="670" y="448" width="200" height="70" as="geometry" />
     </mxCell>
 
-    <mxCell id="s8" value="&lt;b&gt;§VIII&lt;/b&gt;&lt;br&gt;Open&lt;br&gt;Challenges"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#ffffff;strokeColor=#374151;strokeWidth=1.5;
-             dashed=1;dashPattern=8 4;
-             fontSize=12;arcSize=10;"
+    <mxCell id="24"
+      value="§VIII Open&#xa;Challenges"
+      style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#374151;strokeWidth=1.5;dashed=1;dashPattern=8 4;fontColor=#1F2937;fontSize=12;fontStyle=1;arcSize=10;"
       vertex="1" parent="1">
-      <mxGeometry x="930" y="445" width="200" height="70" as="geometry" />
+      <mxGeometry x="930" y="448" width="200" height="70" as="geometry" />
     </mxCell>
 
-    <!-- §II → §VI (dashed, route left of domain boxes) -->
-    <mxCell id="e_2_6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1;dashed=1;dashPattern=6 4;
-             exitX=0.5;exitY=1;exitDx=0;exitDy=0;
-             entryX=0;entryY=0.5;entryDx=0;entryDy=0;"
-      edge="1" source="s2" target="s6" parent="1">
-      <mxGeometry relative="1" as="geometry">
-        <Array as="points">
-          <mxPoint x="300" y="415" />
-          <mxPoint x="180" y="415" />
-          <mxPoint x="180" y="480" />
-        </Array>
-      </mxGeometry>
+    <!-- Edge: §II -> §VI (left margin bypass) -->
+    <mxCell id="25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#374151;strokeWidth=1;dashed=1;dashPattern=6 4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="3" target="22" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="300" y="418" /><mxPoint x="175" y="418" /><mxPoint x="175" y="483" /></Array></mxGeometry>
+    </mxCell>
+    <!-- Edge: V.1 -> §VI -->
+    <mxCell id="26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#374151;strokeWidth=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="10" target="22" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="300" y="418" /><mxPoint x="510" y="418" /></Array></mxGeometry>
+    </mxCell>
+    <!-- Edge: V.3 -> §VI -->
+    <mxCell id="27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#374151;strokeWidth=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="12" target="22" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="676" y="418" /><mxPoint x="510" y="418" /></Array></mxGeometry>
+    </mxCell>
+    <!-- Edge: V.4 -> §VII -->
+    <mxCell id="28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#374151;strokeWidth=1;dashed=1;dashPattern=6 4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="13" target="23" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="864" y="418" /><mxPoint x="770" y="418" /></Array></mxGeometry>
+    </mxCell>
+    <!-- Edge: V.6 -> §VIII -->
+    <mxCell id="29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#374151;strokeWidth=1;dashed=1;dashPattern=6 4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="15" target="24" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1240" y="418" /><mxPoint x="1030" y="418" /></Array></mxGeometry>
     </mxCell>
 
-    <!-- V.1 (TLS) → §VI -->
-    <mxCell id="e_v1_6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1;
-             exitX=0.5;exitY=1;exitDx=0;exitDy=0;
-             entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
-      edge="1" source="v1" target="s6" parent="1">
-      <mxGeometry relative="1" as="geometry">
-        <Array as="points">
-          <mxPoint x="300" y="415" />
-          <mxPoint x="510" y="415" />
-        </Array>
-      </mxGeometry>
-    </mxCell>
-
-    <!-- V.3 (IoT) → §VI -->
-    <mxCell id="e_v3_6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1;
-             exitX=0.5;exitY=1;exitDx=0;exitDy=0;
-             entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
-      edge="1" source="v3" target="s6" parent="1">
-      <mxGeometry relative="1" as="geometry">
-        <Array as="points">
-          <mxPoint x="676" y="415" />
-          <mxPoint x="510" y="415" />
-        </Array>
-      </mxGeometry>
-    </mxCell>
-
-    <!-- V.4 (Blockchain) → §VII (dashed) -->
-    <mxCell id="e_v4_7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1;dashed=1;dashPattern=6 4;
-             exitX=0.5;exitY=1;exitDx=0;exitDy=0;
-             entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
-      edge="1" source="v4" target="s7" parent="1">
-      <mxGeometry relative="1" as="geometry">
-        <Array as="points">
-          <mxPoint x="864" y="415" />
-          <mxPoint x="770" y="415" />
-        </Array>
-      </mxGeometry>
-    </mxCell>
-
-    <!-- V.6 (ICS/OT) → §VIII (dashed) -->
-    <mxCell id="e_v6_8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1;dashed=1;dashPattern=6 4;
-             exitX=0.5;exitY=1;exitDx=0;exitDy=0;
-             entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
-      edge="1" source="v6" target="s8" parent="1">
-      <mxGeometry relative="1" as="geometry">
-        <Array as="points">
-          <mxPoint x="1240" y="415" />
-          <mxPoint x="1030" y="415" />
-        </Array>
-      </mxGeometry>
-    </mxCell>
-
-    <!-- ═══════════════════════════════════════════════════════════
-         LEVEL 4 — CONCLUSION (y=600, h=65)
-         §IX cx=632, §X cx=897
-    ═══════════════════════════════════════════════════════════ -->
-    <mxCell id="s9" value="&lt;b&gt;§IX&lt;/b&gt;&lt;br&gt;Future&lt;br&gt;Directions"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#1a2744;fontColor=#ffffff;strokeColor=#1a2744;
-             fontSize=12;fontStyle=1;arcSize=10;"
+    <!-- CONCLUSIONS -->
+    <mxCell id="30"
+      value="§IX&#xa;Future Directions"
+      style="rounded=1;whiteSpace=wrap;html=0;fillColor=#E8EDF5;strokeColor=#1F2937;strokeWidth=2;fontColor=#1F2937;fontSize=12;fontStyle=1;arcSize=10;"
       vertex="1" parent="1">
-      <mxGeometry x="545" y="600" width="175" height="65" as="geometry" />
+      <mxGeometry x="545" y="598" width="175" height="65" as="geometry" />
     </mxCell>
 
-    <mxCell id="s10" value="&lt;b&gt;§X&lt;/b&gt;&lt;br&gt;Conclusion"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#1a2744;fontColor=#ffffff;strokeColor=#1a2744;
-             fontSize=12;fontStyle=1;arcSize=10;"
+    <mxCell id="31"
+      value="§X&#xa;Conclusion"
+      style="rounded=1;whiteSpace=wrap;html=0;fillColor=#E8EDF5;strokeColor=#1F2937;strokeWidth=2;fontColor=#1F2937;fontSize=12;fontStyle=1;arcSize=10;"
       vertex="1" parent="1">
-      <mxGeometry x="810" y="600" width="175" height="65" as="geometry" />
+      <mxGeometry x="810" y="598" width="175" height="65" as="geometry" />
     </mxCell>
 
-    <!-- §VI → §IX -->
-    <mxCell id="e_6_9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1.5;
-             exitX=0.5;exitY=1;exitDx=0;exitDy=0;
-             entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
-      edge="1" source="s6" target="s9" parent="1">
-      <mxGeometry relative="1" as="geometry">
-        <Array as="points">
-          <mxPoint x="510" y="570" />
-          <mxPoint x="632" y="570" />
-        </Array>
-      </mxGeometry>
+    <!-- Edge: §VI -> §IX -->
+    <mxCell id="32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#374151;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="22" target="30" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="510" y="572" /><mxPoint x="632" y="572" /></Array></mxGeometry>
     </mxCell>
-
-    <!-- §VII → §IX (dashed) -->
-    <mxCell id="e_7_9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1;dashed=1;dashPattern=6 4;
-             exitX=0.5;exitY=1;exitDx=0;exitDy=0;
-             entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
-      edge="1" source="s7" target="s9" parent="1">
-      <mxGeometry relative="1" as="geometry">
-        <Array as="points">
-          <mxPoint x="770" y="570" />
-          <mxPoint x="632" y="570" />
-        </Array>
-      </mxGeometry>
+    <!-- Edge: §VII -> §IX -->
+    <mxCell id="33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#374151;strokeWidth=1;dashed=1;dashPattern=6 4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="23" target="30" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="770" y="572" /><mxPoint x="632" y="572" /></Array></mxGeometry>
     </mxCell>
-
-    <!-- §VIII → §IX (dashed) -->
-    <mxCell id="e_8_9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1;dashed=1;dashPattern=6 4;
-             exitX=0.5;exitY=1;exitDx=0;exitDy=0;
-             entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
-      edge="1" source="s8" target="s9" parent="1">
-      <mxGeometry relative="1" as="geometry">
-        <Array as="points">
-          <mxPoint x="1030" y="570" />
-          <mxPoint x="632" y="570" />
-        </Array>
-      </mxGeometry>
+    <!-- Edge: §VIII -> §IX -->
+    <mxCell id="34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#374151;strokeWidth=1;dashed=1;dashPattern=6 4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="24" target="30" parent="1">
+      <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1030" y="572" /><mxPoint x="632" y="572" /></Array></mxGeometry>
     </mxCell>
-
-    <!-- §IX → §X -->
-    <mxCell id="e_9_10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;
-             strokeColor=#374151;strokeWidth=1.5;
-             exitX=1;exitY=0.5;exitDx=0;exitDy=0;
-             entryX=0;entryY=0.5;entryDx=0;entryDy=0;"
-      edge="1" source="s9" target="s10" parent="1">
+    <!-- Edge: §IX -> §X -->
+    <mxCell id="35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#374151;strokeWidth=1.5;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="30" target="31" parent="1">
       <mxGeometry relative="1" as="geometry" />
     </mxCell>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         LEGEND (y=740)
-    ═══════════════════════════════════════════════════════════ -->
-    <mxCell id="leg1" value="Foundation sections"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#ffffff;strokeColor=#1a2744;strokeWidth=2;fontSize=10;"
-      vertex="1" parent="1">
-      <mxGeometry x="390" y="740" width="160" height="30" as="geometry" />
+    <!-- LEGEND -->
+    <mxCell id="36" value="Foundation sections" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#1F2937;strokeWidth=2;fontColor=#1F2937;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="370" y="732" width="170" height="30" as="geometry" />
     </mxCell>
-
-    <mxCell id="leg2" value="Domain analysis"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#F3F4F6;strokeColor=#6B7280;strokeWidth=1;fontSize=10;"
-      vertex="1" parent="1">
-      <mxGeometry x="580" y="740" width="160" height="30" as="geometry" />
+    <mxCell id="37" value="Domain analysis" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#F3F4F6;strokeColor=#6B7280;strokeWidth=1;fontColor=#374151;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="560" y="732" width="170" height="30" as="geometry" />
     </mxCell>
-
-    <mxCell id="leg3" value="Synthesis / Framework"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#ffffff;strokeColor=#374151;strokeWidth=1.5;
-             dashed=1;dashPattern=8 4;fontSize=10;"
-      vertex="1" parent="1">
-      <mxGeometry x="770" y="740" width="160" height="30" as="geometry" />
+    <mxCell id="38" value="Synthesis / Framework" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#374151;strokeWidth=1.5;dashed=1;dashPattern=8 4;fontColor=#1F2937;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="750" y="732" width="170" height="30" as="geometry" />
     </mxCell>
-
-    <mxCell id="leg4" value="Conclusion"
-      style="rounded=1;whiteSpace=wrap;html=1;
-             fillColor=#1a2744;fontColor=#ffffff;strokeColor=#1a2744;
-             fontSize=10;"
-      vertex="1" parent="1">
-      <mxGeometry x="960" y="740" width="160" height="30" as="geometry" />
+    <mxCell id="39" value="Conclusion" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#E8EDF5;strokeColor=#1F2937;strokeWidth=2;fontColor=#1F2937;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="940" y="732" width="170" height="30" as="geometry" />
     </mxCell>
-
-    <!-- Legend label -->
-    <mxCell id="leg_lbl" value="&#x2014;&#x2014;&#x2014;  solid: primary flow     - - -  dashed: informing / cross-reference"
-      style="text;html=1;strokeColor=none;fillColor=none;
-             align=center;verticalAlign=middle;fontSize=9;fontStyle=2;
-             fontColor=#6B7280;"
-      vertex="1" parent="1">
-      <mxGeometry x="300" y="785" width="940" height="20" as="geometry" />
+    <mxCell id="40" value="Solid arrow: primary flow     Dashed arrow: informing / cross-reference" style="text;html=0;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontStyle=2;fontColor=#6B7280;" vertex="1" parent="1">
+      <mxGeometry x="300" y="775" width="940" height="18" as="geometry" />
     </mxCell>
 
   </root>
