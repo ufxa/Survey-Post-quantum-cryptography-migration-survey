@@ -823,10 +823,10 @@ $\text{SS} = \text{KDF}(\text{SS}_{\text{classical}} \| \text{SS}_{\text{PQC}})$
 This provides security if either component is unbroken. Fig.~\ref{fig:tls_sequence}
 shows the hybrid TLS~1.3~+ PQC handshake sequence.
 
-\begin{figure*}[!t]
+\begin{figure}[!t]
 \centering
-\resizebox{0.82\linewidth}{!}{%
-\begin{tikzpicture}[x=1cm, y=0.85cm]
+\resizebox{\columnwidth}{!}{%
+\begin{tikzpicture}[x=1cm, y=0.7cm]
 
 \definecolor{cblue}{HTML}{003f87}
 \definecolor{cred}{HTML}{c0392b}
@@ -836,136 +836,106 @@ shows the hybrid TLS~1.3~+ PQC handshake sequence.
 
 % ── Actor labels ─────────────────────────────────────────────────────────────
 \node[font=\small\bfseries, color=cblue] at (0,  1.0) {Client};
-\node[font=\small\bfseries, color=cred]  at (8,  1.0) {Server};
-\node[font=\tiny, color=cgray]           at (4, 0.65) {\textit{(Network)}};
+\node[font=\small\bfseries, color=cred]  at (6,  1.0) {Server};
+\node[font=\tiny, color=cgray]           at (3, 0.65) {\textit{(Network)}};
 
 % ── Lifelines ────────────────────────────────────────────────────────────────
 \draw[thick, color=cblue] (0, 0) -- (0,-18);
-\draw[thick, color=cred]  (8, 0) -- (8,-18);
+\draw[thick, color=cred]  (6, 0) -- (6,-18);
 
 % ── Phase labels (left margin) ───────────────────────────────────────────────
-\node[font=\footnotesize\bfseries\itshape, color=cblue,   left=0.1cm] at (0, -0.5)  {Classical Phase};
-\node[font=\footnotesize\bfseries\itshape, color=cgreen,  left=0.1cm] at (0, -7.5)  {PQC Phase};
-\node[font=\footnotesize\bfseries\itshape, color=corange, left=0.1cm] at (0,-12.5)  {Key Derivation};
-\node[font=\footnotesize\bfseries\itshape, color=cgray,   left=0.1cm] at (0,-15.5)  {Auth Phase};
+\node[font=\tiny\bfseries\itshape, color=cblue,   left=0.05cm] at (0, -0.5)  {Classical};
+\node[font=\tiny\bfseries\itshape, color=cgreen,  left=0.05cm] at (0, -7.0)  {PQC};
+\node[font=\tiny\bfseries\itshape, color=corange, left=0.05cm] at (0,-12.0)  {Key Deriv.};
+\node[font=\tiny\bfseries\itshape, color=cgray,   left=0.05cm] at (0,-15.0)  {Auth};
 
 % ── Classical Phase ──────────────────────────────────────────────────────────
-\draw[-{Latex[length=2.5mm]}, thick, color=cblue]
-  (0,-1.0) -- (8,-1.0)
+\draw[-{Latex[length=2mm]}, thick, color=cblue]
+  (0,-1.0) -- (6,-1.0)
   node[midway, above, font=\tiny, color=cblue]
   {ClientHello [TLSv1.3 + X25519 key\_share]};
-\node[font=\tiny, color=cgray, right=0.1cm] at (8,-1.0) {recv};
 
-\draw[-{Latex[length=2.5mm]}, thick, color=cblue]
-  (8,-2.5) -- (0,-2.5)
+\draw[-{Latex[length=2mm]}, thick, color=cblue]
+  (6,-2.5) -- (0,-2.5)
   node[midway, above, font=\tiny, color=cblue]
   {ServerHello [X25519 key\_share]};
-\node[font=\tiny, color=cgray, left=0.1cm] at (0,-2.5) {recv};
 
 \node[rectangle, fill=white, draw=cblue!40, font=\tiny,
-      text width=2.5cm, align=center, rounded corners=2pt] at (0,-3.8)
+      text width=1.8cm, align=center, rounded corners=2pt] at (0,-3.6)
   {Compute ECDH:\\$\mathit{SS}_\text{ECDH}$};
 \node[rectangle, fill=white, draw=cblue!40, font=\tiny,
-      text width=2.5cm, align=center, rounded corners=2pt] at (8,-3.8)
+      text width=1.8cm, align=center, rounded corners=2pt] at (6,-3.6)
   {Compute ECDH:\\$\mathit{SS}_\text{ECDH}$};
 
 % ── PQC Phase ────────────────────────────────────────────────────────────────
-\draw[-{Latex[length=2.5mm]}, thick, color=cgreen]
-  (0,-5.5) -- (8,-5.5)
+\draw[-{Latex[length=2mm]}, thick, color=cgreen]
+  (0,-5.2) -- (6,-5.2)
   node[midway, above, font=\tiny, color=cgreen]
-  {PQC Extension: ML-KEM-768 $pk_\text{client}$};
+  {PQC Ext.: ML-KEM-768 $pk_\text{client}$};
 
 \node[rectangle, fill=white, draw=cgreen!40, font=\tiny,
-      text width=2.8cm, align=center, rounded corners=2pt] at (8,-6.5)
-  {Encapsulate:\\$(\mathit{ct},\,\mathit{SS}_\text{ML-KEM}) \leftarrow$\\
-   $\mathtt{KEM.Encap}(pk_\text{client})$};
+      text width=2.0cm, align=center, rounded corners=2pt] at (6,-6.2)
+  {Encapsulate:\\$(ct,\,\mathit{SS}_\text{mlkem}) \leftarrow$\\
+   $\mathtt{KEM.Encap}(pk)$};
 
-\draw[-{Latex[length=2.5mm]}, thick, color=cgreen]
-  (8,-8.0) -- (0,-8.0)
+\draw[-{Latex[length=2mm]}, thick, color=cgreen]
+  (6,-7.6) -- (0,-7.6)
   node[midway, above, font=\tiny, color=cgreen]
-  {PQC Extension: ML-KEM-768 ciphertext $ct$};
+  {PQC Ext.: ML-KEM-768 ciphertext $ct$};
 
 \node[rectangle, fill=white, draw=cgreen!40, font=\tiny,
-      text width=2.8cm, align=center, rounded corners=2pt] at (0,-9.2)
-  {Decapsulate:\\$\mathit{SS}_\text{ML-KEM} \leftarrow$\\
+      text width=2.0cm, align=center, rounded corners=2pt] at (0,-8.7)
+  {Decapsulate:\\$\mathit{SS}_\text{mlkem} \leftarrow$\\
    $\mathtt{KEM.Decap}(sk,\,ct)$};
 
 % ── Key Derivation ───────────────────────────────────────────────────────────
-\draw[dashed, thick, color=corange] (-1.5,-11.0) -- (9.5,-11.0);
+\draw[dashed, thick, color=corange] (-1.2,-10.2) -- (7.2,-10.2);
 
 \node[rectangle, fill=white, draw=corange, font=\tiny,
-      text width=3.5cm, align=center, rounded corners=3pt] at (0,-12.5)
-  {\textbf{Combine Shared Secrets:}\\
-   $\mathit{SS} = \mathtt{KDF}(\mathit{SS}_\text{ECDH} \| \mathit{SS}_\text{ML-KEM})$\\[2pt]
-   TLS 1.3 Key Schedule:\\
-   $\rightarrow$ handshake\_traffic\_secret\\
-   $\rightarrow$ application\_traffic\_secret};
+      text width=2.4cm, align=center, rounded corners=3pt] at (0,-11.6)
+  {$\mathit{SS}{=}\mathtt{KDF}(\mathit{SS}_\text{ECDH}\|\mathit{SS}_\text{mlkem})$\\[1pt]
+   $\rightarrow$ hs\_traffic\_secret\\
+   $\rightarrow$ app\_traffic\_secret};
 
 \node[rectangle, fill=white, draw=corange, font=\tiny,
-      text width=3.5cm, align=center, rounded corners=3pt] at (8,-12.5)
-  {\textbf{Combine Shared Secrets:}\\
-   $\mathit{SS} = \mathtt{KDF}(\mathit{SS}_\text{ECDH} \| \mathit{SS}_\text{ML-KEM})$\\[2pt]
-   TLS 1.3 Key Schedule:\\
-   $\rightarrow$ handshake\_traffic\_secret\\
-   $\rightarrow$ application\_traffic\_secret};
+      text width=2.4cm, align=center, rounded corners=3pt] at (6,-11.6)
+  {$\mathit{SS}{=}\mathtt{KDF}(\mathit{SS}_\text{ECDH}\|\mathit{SS}_\text{mlkem})$\\[1pt]
+   $\rightarrow$ hs\_traffic\_secret\\
+   $\rightarrow$ app\_traffic\_secret};
 
 % ── Auth Phase ───────────────────────────────────────────────────────────────
-\draw[dashed, thick, color=cgray] (-1.5,-14.5) -- (9.5,-14.5);
+\draw[dashed, thick, color=cgray] (-1.2,-13.5) -- (7.2,-13.5);
 
-\draw[-{Latex[length=2.5mm]}, thick, color=cgray]
-  (8,-15.0) -- (0,-15.0)
+\draw[-{Latex[length=2mm]}, thick, color=cgray]
+  (6,-14.1) -- (0,-14.1)
   node[midway, above, font=\tiny, color=cgray]
-  {Certificate [X.509 + ML-DSA-65 pubkey]};
+  {Certificate [X.509 + ML-DSA-65]};
 
-\draw[-{Latex[length=2.5mm]}, thick, color=cgray]
-  (8,-16.2) -- (0,-16.2)
+\draw[-{Latex[length=2mm]}, thick, color=cgray]
+  (6,-15.3) -- (0,-15.3)
   node[midway, above, font=\tiny, color=cgray]
-  {CertificateVerify [ML-DSA-65 sig + ECDSA-256 sig]};
+  {CertVerify [ML-DSA-65 + ECDSA-256]};
 
-\draw[-{Latex[length=2.5mm]}, thick, color=cgray]
-  (8,-17.2) -- (0,-17.2)
+\draw[-{Latex[length=2mm]}, thick, color=cgray]
+  (6,-16.4) -- (0,-16.4)
   node[midway, above, font=\tiny, color=cgray]
   {Finished [HMAC-SHA256]};
 
-\draw[-{Latex[length=2.5mm]}, thick, color=cblue]
-  (0,-18.0) -- (8,-18.0)
+\draw[-{Latex[length=2mm]}, thick, color=cblue]
+  (0,-17.4) -- (6,-17.4)
   node[midway, above, font=\tiny, color=cblue]
   {Finished [HMAC-SHA256]};
-
-% ── Security brace annotations (right margin) ────────────────────────────────
-\draw[decorate, decoration={brace,amplitude=4pt}, color=cblue!60]
-  (9.8,-1.0) -- (9.8,-4.5)
-  node[midway, right=5pt, font=\tiny, color=cblue, text width=2cm]
-  {Classical security\\(X25519 / ECDH)};
-
-\draw[decorate, decoration={brace,amplitude=4pt}, color=cgreen!60]
-  (9.8,-5.5) -- (9.8,-10.5)
-  node[midway, right=5pt, font=\tiny, color=cgreen, text width=2cm]
-  {Post-quantum\\security (ML-KEM)};
-
-\draw[decorate, decoration={brace,amplitude=4pt}, color=corange!70]
-  (9.8,-11.0) -- (9.8,-13.8)
-  node[midway, right=5pt, font=\tiny, color=corange, text width=2cm]
-  {Hybrid key\\schedule (KDF)};
-
-% ── Security guarantee note ──────────────────────────────────────────────────
-\node[rectangle, fill=white, draw=yellow!60, font=\tiny,
-      text width=8cm, align=center, rounded corners=3pt] at (4,-19.4)
-  {\textbf{Security guarantee (HNDL resistance):}
-   Confidentiality holds if either X25519 \textbf{or} ML-KEM-768 is secure.\\
-   Authentication uses composite signatures (ML-DSA-65 + ECDSA-256) per FIPS~204.};
 
 \end{tikzpicture}%
 }%
 \caption{Hybrid TLS~1.3 handshake combining X25519 and ML-KEM-768~\cite{zheng2024mlkemtls}
-  for key establishment (PQC extension) and composite ML-DSA-65 + ECDSA-256
-  for authentication (FIPS~204~\cite{nistfips204}). Classical and PQC key exchanges
-  execute independently; the combined shared secret
-  $\mathit{SS} = \mathtt{KDF}(\mathit{SS}_{\textit{ECDH}} \| \mathit{SS}_{\textit{ML-KEM}})$
-  feeds the TLS~1.3 key schedule.
-  Security holds as long as \emph{either} X25519 or ML-KEM-768 remains unbroken.}
+  (PQC extension) with composite ML-DSA-65 + ECDSA-256 authentication
+  (FIPS~204~\cite{nistfips204}). The hybrid secret
+  $\mathit{SS}{=}\mathtt{KDF}(\mathit{SS}_{\textit{ECDH}}\|\mathit{SS}_{\textit{mlkem}})$
+  provides HNDL resistance: confidentiality holds if \emph{either} primitive
+  remains unbroken.}
 \label{fig:tls_sequence}
-\end{figure*}
+\end{figure}
 
 \subsubsection{Performance Analysis}
 
