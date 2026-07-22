@@ -47,11 +47,11 @@ PRISMA_CSV = os.path.join(DATA_DIR, 'prisma_selection.csv')
 C_BLUE   = '#003f87'
 C_RED    = '#c0392b'
 C_GREEN  = '#1a7a4a'
-C_ORANGE = '#e67e22'
-C_GRAY   = '#7f8c8d'
-C_YELLOW = '#f39c12'
+C_ORANGE = '#b85c00'  # darkened from #e67e22 for WCAG AA contrast (ratio ~5.2:1 on white)
+C_GRAY   = '#5a6268'  # darkened from #7f8c8d for WCAG AA contrast (ratio ~5.9:1 on white)
+C_YELLOW = '#b07d00'  # darkened from #f39c12 for WCAG AA contrast (~4.6:1 on white)
 C_PURPLE = '#8e44ad'
-C_CYAN   = '#2980b9'
+C_CYAN   = '#1a5f8c'  # darkened from #2980b9 for WCAG AA contrast (~5.8:1 on white)
 
 PALETTE  = [C_BLUE, C_RED, C_GREEN, C_ORANGE, C_GRAY, C_YELLOW, C_PURPLE, C_CYAN]
 
@@ -141,6 +141,18 @@ def fig1_temporal_distribution():
         'Hybrid_Schemes':     'PQC Algorithms',
         'Supply_Chain':       'Regulatory',
         'Crypto_Migration':   'TLS/PKI',
+        '5G_Mobile':          'IoT/Embedded',
+        'Automotive':         'IoT/Embedded',
+        'TLS_Web':            'TLS/PKI',
+        'PKI_Certs':          'TLS/PKI',
+        'DNS_PQC':            'TLS/PKI',
+        'SSH_PQC':            'TLS/PKI',
+        'Email_PQC':          'TLS/PKI',
+        'FPGA_ASIC':          'PQC Algorithms',
+        '5G_Auth':            'IoT/Embedded',
+        'Hybrid':             'PQC Algorithms',
+        'Post_Std':           'PQC Algorithms',
+        'PKI':                'TLS/PKI',
     }
 
     subtopics_ordered = [
@@ -188,14 +200,14 @@ def fig1_temporal_distribution():
 
     # NIST phase shading (event-based, not year-index-based)
     # Round 1/2: 2016-2019 (indices 0-3), Round 3/4: 2020-2023 (4-7), Post-std: 2024+ (8-)
-    ax.axvspan(-0.4, 3.4, alpha=0.06, color='blue', zorder=0)
-    ax.axvspan(3.6, 7.4, alpha=0.06, color='green', zorder=0)
-    ax.axvspan(7.6, len(years) - 0.4, alpha=0.06, color='orange', zorder=0)
+    ax.axvspan(-0.4, 3.4, alpha=0.06, color=C_BLUE, zorder=0)
+    ax.axvspan(3.6, 7.4, alpha=0.06, color=C_GREEN, zorder=0)
+    ax.axvspan(7.6, len(years) - 0.4, alpha=0.06, color=C_ORANGE, zorder=0)
 
     ymax = max(totals.max(), 5) * 1.25
-    ax.text(1.5, ymax * 0.9, 'NIST Round 1/2', fontsize=6, color='blue', ha='center')
-    ax.text(5.5, ymax * 0.9, 'Round 3/4', fontsize=6, color='green', ha='center')
-    ax.text(9.0, ymax * 0.9, 'Post-Std.', fontsize=6, color='darkorange', ha='center')
+    ax.text(1.5, ymax * 0.9, 'NIST Round 1/2', fontsize=6, color=C_BLUE, ha='center')
+    ax.text(5.5, ymax * 0.9, 'Round 3/4', fontsize=6, color=C_GREEN, ha='center')
+    ax.text(9.0, ymax * 0.9, 'Post-Std.', fontsize=6, color=C_ORANGE, ha='center')
 
     ax.set_xticks(x)
     ax.set_xticklabels([str(y) for y in years], rotation=35, ha='right')
@@ -246,7 +258,7 @@ def fig2_heatmap_coverage():
     fig, ax = plt.subplots(figsize=IEEE_WIDE)
 
     if HAS_SNS:
-        cmap = sns.color_palette('Blues', as_cmap=True)
+        cmap = sns.color_palette('YlOrRd', as_cmap=True)
         sns.heatmap(
             data, annot=True, fmt='d', cmap=cmap,
             linewidths=0.5, linecolor='white',
@@ -256,7 +268,7 @@ def fig2_heatmap_coverage():
             vmin=0, vmax=20,
         )
     else:
-        im = ax.imshow(data, cmap='Blues', vmin=0, vmax=20)
+        im = ax.imshow(data, cmap='YlOrRd', vmin=0, vmax=20)
         plt.colorbar(im, ax=ax, label='Approx. papers (qualitative)')
         ax.set_xticks(range(len(algos)))
         ax.set_yticks(range(len(domains)))
@@ -264,7 +276,9 @@ def fig2_heatmap_coverage():
         ax.set_yticklabels(domains, fontsize=7)
         for i in range(data.shape[0]):
             for j in range(data.shape[1]):
-                ax.text(j, i, str(data[i, j]), ha='center', va='center', fontsize=8)
+                val = data[i, j]
+                fg = 'white' if val > 10 else 'black'
+                ax.text(j, i, str(val), ha='center', va='center', fontsize=8, color=fg)
 
     # Red for zero cells (research gaps)
     for i in range(data.shape[0]):

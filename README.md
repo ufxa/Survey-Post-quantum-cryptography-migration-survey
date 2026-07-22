@@ -178,7 +178,16 @@ Search strings and protocol: `data/search_protocol.md`
 
 ## How to Compile
 
-### Docker (recommended)
+### Tectonic (recommended — single command, auto-downloads packages)
+
+```bash
+# Install: https://tectonic-typesetting.github.io/
+tectonic pqc_survey_main.tex
+```
+
+Tectonic handles multiple passes and BibTeX automatically.
+
+### Docker (TeX Live)
 
 ```bash
 docker run --rm -v "$(pwd)":/workspace -w /workspace texlive/texlive:latest bash -c \
@@ -197,7 +206,7 @@ pdflatex pqc_survey_main.tex
 pdflatex pqc_survey_main.tex
 ```
 
-Required packages: `IEEEtran`, `hyperref`, `booktabs`, `mdframed`, `enumitem`, `tikz`, `pgfplots`.  
+Required packages: `IEEEtran`, `hyperref`, `booktabs`, `mdframed`, `enumitem`, `tikz`, `pgfplots`, `placeins`, `algorithm`, `algorithmicx`.  
 See `docs/COMPILE_INSTRUCTIONS.md` for full details.
 
 ---

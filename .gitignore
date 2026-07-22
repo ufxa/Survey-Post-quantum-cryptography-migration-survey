@@ -41,3 +41,13 @@ __pycache__/
 
 # macOS extended attributes
 .DS_Store
+
+# LaTeX tectonic intermediates
+*.upa
+*.upb
+
+# draw.io backup files
+*.drawio.bkp
+
+# Scripts output directory (generated, not source)
+scripts/output/

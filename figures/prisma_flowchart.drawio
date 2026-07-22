@@ -1,0 +1,183 @@
+<mxfile host="Electron">
+  <diagram id="1" name="PRISMA Flowchart">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="820" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- TITLE -->
+        <mxCell id="2" parent="1" vertex="1"
+          style="text;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;strokeColor=none;fillColor=none;"
+          value="PRISMA 2020 Flow Diagram">
+          <mxGeometry x="100" y="10" width="300" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════
+             MAIN BOXES (x=100, w=220)
+             Box6  y=50   h=80  center=90   bottom=130
+             Box7  y=190  h=50  center=215  bottom=240
+             Box8  y=300  h=50  center=325  bottom=350
+             Box9  y=410  h=60  center=440  bottom=470
+             Box10 y=530  h=60  center=560  bottom=590
+             ══════════════════════════ -->
+
+        <!-- Box6: Records identified -->
+        <mxCell id="3" parent="1" vertex="1"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#1F3864;fontSize=9;align=center;"
+          value="Records identified through database searching&#xa;IEEE Xplore (n=724)  ACM DL (n=381)&#xa;Springer (n=498)  arXiv (n=244)&#xa;Total (n = 1,847)">
+          <mxGeometry x="100" y="50" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Box7: After dedup -->
+        <mxCell id="4" parent="1" vertex="1"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#1F3864;fontSize=9;align=center;fontStyle=1;"
+          value="Records after duplicates removed&#xa;(n = 1,506)">
+          <mxGeometry x="100" y="190" width="220" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Box8: Records screened -->
+        <mxCell id="5" parent="1" vertex="1"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#1F3864;fontSize=9;align=center;fontStyle=1;"
+          value="Records screened&#xa;(n = 1,506)">
+          <mxGeometry x="100" y="300" width="220" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Box9: Full-text assessed -->
+        <mxCell id="6" parent="1" vertex="1"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#1F3864;fontSize=9;align=center;fontStyle=1;"
+          value="Full-text articles assessed&#xa;for eligibility&#xa;(n = 258)">
+          <mxGeometry x="100" y="410" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Box10: Studies included (GREEN) -->
+        <mxCell id="7" parent="1" vertex="1"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#1F3864;fontSize=10;align=center;fontStyle=1;strokeWidth=2;"
+          value="Studies included in synthesis&#xa;(n = 120)">
+          <mxGeometry x="100" y="530" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════
+             EXCLUSION BOXES (x=390, w=200)
+             Aligned vertically with source box centers
+             Box11 center=215 → y=192  h=46
+             Box12 center=325 → y=302  h=46
+             Box13 center=440 → y=405  h=70
+             ══════════════════════════ -->
+
+        <!-- Box11: Duplicates removed (aligned with Box7 center=215) -->
+        <mxCell id="8" parent="1" vertex="1"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D6B656;fontSize=9;align=left;spacingLeft=8;"
+          value="Duplicates removed&#xa;(n = 341)">
+          <mxGeometry x="390" y="192" width="200" height="46" as="geometry" />
+        </mxCell>
+
+        <!-- Box12: Records excluded (aligned with Box8 center=325) -->
+        <mxCell id="9" parent="1" vertex="1"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D6B656;fontSize=9;align=left;spacingLeft=8;"
+          value="Records excluded (n = 1,248)&#xa;- Off-topic / not PQC-related">
+          <mxGeometry x="390" y="302" width="200" height="46" as="geometry" />
+        </mxCell>
+
+        <!-- Box13: Full-text excluded (aligned with Box9 center=440) -->
+        <mxCell id="10" parent="1" vertex="1"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D6B656;fontSize=9;align=left;spacingLeft=8;"
+          value="Full-text excluded (n = 138)&#xa;- No migration strategy (n = 62)&#xa;- Pre-standardization only (n = 41)&#xa;- No empirical analysis (n = 35)">
+          <mxGeometry x="390" y="405" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════
+             PHASE LABELS (rotation=-90)
+             cx=75 for all (just left of x=100 boxes)
+             visual_width=30, geometry.height=30
+
+             IDENTIFICATION: y=50..240, cy=145, vw=190
+               geometry: x=75-95=-20, y=145-15=130, w=190, h=30
+
+             SCREENING: y=300..350, cy=325, vw=50
+               geometry: x=75-25=50, y=325-15=310, w=50, h=30
+
+             ELIGIBILITY: y=410..470, cy=440, vw=60
+               geometry: x=75-30=45, y=440-15=425, w=60, h=30
+
+             INCLUSION: y=530..590, cy=560, vw=60
+               geometry: x=75-30=45, y=560-15=545, w=60, h=30
+             ══════════════════════════ -->
+
+        <mxCell id="11" parent="1" vertex="1"
+          style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontStyle=1;rotation=-90;fillColor=#1F3864;fontColor=#FFFFFF;rounded=1;strokeColor=#1F3864;"
+          value="IDENTIFICATION">
+          <mxGeometry x="-20" y="130" width="190" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="12" parent="1" vertex="1"
+          style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontStyle=1;rotation=-90;fillColor=#1F3864;fontColor=#FFFFFF;rounded=1;strokeColor=#1F3864;"
+          value="SCREENING">
+          <mxGeometry x="50" y="310" width="50" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="13" parent="1" vertex="1"
+          style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontStyle=1;rotation=-90;fillColor=#1F3864;fontColor=#FFFFFF;rounded=1;strokeColor=#1F3864;"
+          value="ELIGIBILITY">
+          <mxGeometry x="45" y="425" width="60" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="14" parent="1" vertex="1"
+          style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontStyle=1;rotation=-90;fillColor=#1F3864;fontColor=#FFFFFF;rounded=1;strokeColor=#1F3864;"
+          value="INCLUSION">
+          <mxGeometry x="45" y="545" width="60" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════
+             VERTICAL ARROWS (main flow)
+             ══════════════════════════ -->
+
+        <!-- Box6 -> Box7 -->
+        <mxCell id="15" edge="1" parent="1" source="3" target="4"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#1F3864;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Box7 -> Box8 -->
+        <mxCell id="16" edge="1" parent="1" source="4" target="5"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#1F3864;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Box8 -> Box9 -->
+        <mxCell id="17" edge="1" parent="1" source="5" target="6"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#1F3864;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Box9 -> Box10 -->
+        <mxCell id="18" edge="1" parent="1" source="6" target="7"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#1F3864;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════
+             HORIZONTAL ARROWS (exclusions)
+             ══════════════════════════ -->
+
+        <!-- Box7 -> Box11 (duplicates) -->
+        <mxCell id="19" edge="1" parent="1" source="4" target="8"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#D6B656;strokeWidth=1.2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Box8 -> Box12 (excluded screening) -->
+        <mxCell id="20" edge="1" parent="1" source="5" target="9"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#D6B656;strokeWidth=1.2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Box9 -> Box13 (full-text excluded) -->
+        <mxCell id="21" edge="1" parent="1" source="6" target="10"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#D6B656;strokeWidth=1.2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

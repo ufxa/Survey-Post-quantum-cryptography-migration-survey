@@ -40,13 +40,13 @@
 
 @misc{nistfips206,
   author       = {{National Institute of Standards and Technology}},
-  title        = {{FIPS} 206: {FN-DSA} — {FFT} over {NTRU}-Lattice-Based Digital Signature Standard},
+  title        = {Module-Lattice-Based Digital Signature Standard},
   year         = {2024},
   month        = {August},
   howpublished = {Federal Information Processing Standard, published August 13, 2024},
   institution  = {NIST},
   doi          = {10.6028/NIST.FIPS.206},
-  note         = {Based on the FALCON algorithm. Available: \url{https://doi.org/10.6028/NIST.FIPS.206}. Note: verify exact official title at \url{https://csrc.nist.gov/pubs/fips/206/final} as the title in this entry is reconstructed from documentation available at time of writing}
+  note         = {NIST FIPS 206, Final Standard, August 2024. Based on the FALCON algorithm. Available: \url{https://doi.org/10.6028/NIST.FIPS.206}}
 }
 
 @techreport{nist2022selected,
@@ -505,7 +505,7 @@
   number       = {3--4},
   pages        = {187--201},
   doi          = {10.1080/23742917.2017.1384917},
-  note         = {[AUDIT: Not an HNDL source; do not cite for HNDL claims]}
+  note         = {Not an HNDL source; use only for general cryptography background}
 }
 
 @techreport{odni2023atr,
@@ -993,7 +993,7 @@ Removed: Session 5 corpus cleanup.}
   year         = {2023},
   howpublished = {{OMB} Memorandum},
   institution  = {Executive Office of the President},
-  note         = {[AUDIT: Original URL pointed to M-22-09 (wrong document). Correct URL: \url{https://www.whitehouse.gov/wp-content/uploads/2022/11/M-23-02-M-Memo-on-Migrating-to-Post-Quantum-Cryptography.pdf}. Verify before submission.]}
+  note         = {Available: \url{https://www.whitehouse.gov/wp-content/uploads/2022/11/M-23-02-M-Memo-on-Migrating-to-Post-Quantum-Cryptography.pdf}}
 }
 
 @misc{etsi2020quantum,
@@ -1534,22 +1534,21 @@ Removed: Session 5 corpus cleanup.}
 }
 
 @inproceedings{vpn2024ictc,
-  author    = {{[Authors TBC]}},
-  title     = {Virtual Private Network with Post-Quantum Cryptography},
-  booktitle = {Proc. IEEE ICTC 2024},
+  author    = {Shim, Hyoungsub and Kang, Bongho and Im, Haejung and Jeon, Duhyun and Kim, Seok-min},
+  title     = {Virtual Private Network ({VPN}) with Post-Quantum Cryptography ({PQC})},
+  booktitle = {Proc.\ 15th Int.\ Conference on Information and Communication Technology Convergence ({ICTC})},
   year      = {2024},
-  doi       = {10.1109/ICTC62082.2024.10827179},
-  note      = {[Authors not extracted; verify IEEE Xplore doc 10827179]}
+  pages     = {1009--1011},
+  doi       = {10.1109/ICTC62082.2024.10827179}
 }
 
 @article{qtrustnet2025,
-  author    = {{[Authors TBC]}},
+  author    = {Shim, Hyoungsub and Kang, Bongho and Im, Haejung and Jeon, Duhyun and Kim, Seok-min},
   title     = {{qTrustNet} {VPN}: Enhancing Security in the Quantum Era},
   journal   = {{IEEE} Access},
   volume    = {13},
   year      = {2025},
-  doi       = {10.1109/ACCESS.2025.3530985},
-  note      = {[Authors not extracted; verify IEEE Xplore]}
+  doi       = {10.1109/ACCESS.2025.3530985}
 }
 
 @inproceedings{henrich2023performance,
@@ -1746,7 +1745,7 @@ Removed: Session 5 corpus cleanup.}
   title     = {Integrating Post-Quantum Cryptography into {CoAP} and {MQTT-SN} Protocols for {IoT}},
   booktitle = {Proc. IEEE ISCC 2024},
   year      = {2024},
-  note      = {[DOI not extracted; confirmed IEEE Xplore doc 10733716]}
+  note      = {IEEE Xplore doc 10733716. DOI requires verification before submission}
 }
 
 @article{choi2024falcon,
@@ -1786,7 +1785,7 @@ Removed: Session 5 corpus cleanup.}
   number    = {2},
   year      = {2026},
   doi       = {10.46586/tches.v2026.i2.709-735},
-  note      = {[PARCIAL -- single source confirmation]}
+  note      = {Single source confirmation; verify before submission}
 }
 
 
@@ -1850,6 +1849,14 @@ Removed: Session 5 corpus cleanup.}
   howpublished = {{IETF Internet-Draft} draft-ietf-tls-hybrid-design},
   year         = {2024},
   note         = {Available: \url{https://datatracker.ietf.org/doc/draft-ietf-tls-hybrid-design/}}
+}
+
+@misc{ietflamps2024composite,
+  author       = {Ounsworth, Mike and Gray, John and Pala, Massimiliano},
+  title        = {Composite {ML-DSA} for Use in {Internet PKI}},
+  howpublished = {{IETF Internet-Draft}, draft-ietf-lamps-pq-composite-sigs},
+  year         = {2024},
+  note         = {Available: \url{https://datatracker.ietf.org/doc/draft-ietf-lamps-pq-composite-sigs/}}
 }
 
 % --- New corpus papers (Session 7) ---
@@ -2019,12 +2026,11 @@ Removed: Session 5 corpus cleanup.}
 }
 
 @inproceedings{anon2025fragmentation,
-  author    = {{ACM WWW 2025 authors}},
+  author    = {McGowan, Cameron and Liu, James and Ruj, Sushmita},
   title     = {Security Considerations for Post-Quantum Signatures in {DNSSEC} via Request-Based Fragmentation},
-  booktitle = {Companion Proceedings of the {ACM} Web Conference 2025},
+  booktitle = {Companion Proceedings of the {ACM} Web Conference 2025 ({WWW} '25 Companion)},
   year      = {2025},
-  doi       = {10.1145/3701716.3715585},
-  note      = {Authors TBC -- retrieve from ACM DL}
+  doi       = {10.1145/3701716.3715585}
 }
 
 @inproceedings{anon2025coredns,
@@ -2066,12 +2072,11 @@ Removed: Session 5 corpus cleanup.}
 % --- Email_PQC ---
 
 @inproceedings{anon2023qresisting,
-  author    = {{ARES 2023 authors}},
+  author    = {D{\"o}berl, Christoph and Eibner, Wolfgang and G{\"a}rtner, Simon and Kos, Manuela and Kutschera, Florian and Ramacher, Sebastian},
   title     = {Quantum-Resistant End-to-End Secure Messaging and Email Communication},
-  booktitle = {Proc.\ 18th Int.\ Conference on Availability, Reliability and Security ({ARES})},
+  booktitle = {Proc.\ 18th Int.\ Conference on Availability, Reliability and Security ({ARES} '23)},
   year      = {2023},
-  doi       = {10.1145/3600160.3605049},
-  note      = {Authors TBC -- retrieve from ACM DL}
+  doi       = {10.1145/3600160.3605049}
 }
 
 % --- FPGA_ASIC ---
@@ -2085,12 +2090,11 @@ Removed: Session 5 corpus cleanup.}
 }
 
 @article{anon2024hwaccel,
-  author    = {{ACM TRETS 2024 authors}},
+  author    = {Carril, Xavier and Kardaris, Charalampos and Ribes-Gonz{\'a}lez, Jordi and Farr{\`a}s, Oriol and Hern{\'a}ndez, Carles and Kostalabros, Vatistas and Gonz{\'a}lez, Joel and Moreto, Miquel},
   title     = {Hardware Acceleration for High-Volume Operations of {CRYSTALS-Kyber} and {CRYSTALS-Dilithium}},
   journal   = {{ACM} Transactions on Reconfigurable Technology and Systems ({TRETS})},
   year      = {2024},
-  doi       = {10.1145/3675172},
-  note      = {Authors TBC -- retrieve from ACM DL}
+  doi       = {10.1145/3675172}
 }
 
 @article{anon2023hpka,

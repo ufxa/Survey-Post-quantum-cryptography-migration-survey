@@ -22,8 +22,21 @@
 \usepackage{tabularx}
 \usepackage{longtable}
 \usepackage{rotating}
-\usepackage{hyperref}
+\usepackage[
+  bookmarks=true,
+  bookmarksdepth=3,
+  bookmarksopen=true,
+  pdfusetitle,
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=green!50!black,
+  urlcolor=blue!70!black,
+  pdflang={en},
+  pdfsubject={Post-Quantum Cryptography Migration Survey},
+  pdfkeywords={post-quantum cryptography, PQC migration, ML-KEM, ML-DSA, TLS, IoT, blockchain}
+]{hyperref}
 \usepackage{url}
+\usepackage{pdfcomment}
 \usepackage{microtype}
 \usepackage{enumitem}
 \usepackage{tikz}
@@ -33,6 +46,7 @@
 \usepackage{pgf-pie}
 \usepackage{subcaption}
 \usepackage{float}
+\usepackage{placeins}
 \usepackage{listings}
 \usepackage{mdframed}
 \usepackage{cleveref}
@@ -71,7 +85,7 @@ Standards, Threat Models, Implementation Challenges, and\\
 Regulatory Roadmaps for Legacy Systems}
 
 \author{Allan~Douglas~Costa%
-\thanks{Manuscript received July 15, 2026.}%
+\thanks{Manuscript in preparation for submission to IEEE Communications Surveys \& Tutorials.}%
 \thanks{A.~D.~Costa is with the Institute of Cyberspace (ICIBE),
 Federal Rural University of the Amazon (UFRA), Bel\'{e}m, PA, Brazil.
 E-mail: allan.costa@ufra.edu.br.
@@ -99,8 +113,8 @@ time, eliminating the computational hardness upon which RSA-2048 and ECC-256
 rely for security guarantees expected to last decades. The National Institute of
 Standards and Technology (NIST) finalized the first post-quantum cryptography
 (PQC) standards in August 2024: FIPS~203 (ML-KEM), FIPS~204 (ML-DSA), and
-FIPS~205 (SLH-DSA), triggering mandatory migration timelines across critical
-sectors worldwide. Despite this pivotal standardization milestone, no
+FIPS~205 (SLH-DSA), triggering migration planning efforts across critical
+sectors globally. Despite this pivotal standardization milestone, no
 comprehensive survey has systematically mapped the migration landscape across
 standards evolution, threat models, domain-specific implementation constraints,
 and divergent regulatory frameworks.
@@ -146,6 +160,7 @@ Harvest Now Decrypt Later, Critical Infrastructure Security, Regulatory Complian
 Migration Readiness Classification, Lattice-Based Cryptography, Hash-Based Signatures
 \end{IEEEkeywords}
 
+\FloatBarrier
 % =============================================================================
 % SECTION I: INTRODUCTION
 % =============================================================================
@@ -200,12 +215,12 @@ publication of three Federal Information Processing Standards:
   \item \textbf{FIPS~205} (SLH-DSA): Stateless Hash-Based Digital Signature
   Algorithm, derived from SPHINCS+~\cite{nistfips205}.
 \end{itemize}
-FALCON has been standardized as FN-DSA (FIPS~206, August 2024), an NTRU-lattice-based
+FALCON is undergoing standardization as FN-DSA under FIPS~206, an NTRU-lattice-based
 signature scheme optimized for compact signatures~\cite{nistfips206}.
 HQC, a code-based KEM selected for standardization in 2025, will constitute
 an algorithmic diversity backup~\cite{aragon2022hqc}.
 
-These standards trigger mandatory migration obligations across federal agencies
+These standards trigger migration obligations across federal agencies
 (via OMB M-23-02~\cite{omb2023m2302}) and propagate through supply chains
 into critical infrastructure sectors, financial regulation, and healthcare.
 The NSA's Commercial National Security Algorithm Suite 2.0 (CNSA~2.0)~\cite{nsacnsa2022}
@@ -255,10 +270,10 @@ Fernandez-Carames~\cite{fernandezcarames2020review} & 2020 & 47 & No & BCN only 
 Yang \emph{et al.}~\cite{yang2024survey} & 2024 & 98 & No & Partial & No & No & No & IEEE COMST \\
 Gharavi \emph{et al.}~\cite{gharavi2024postquantum} & 2024 & 84 & No & Partial & No & No & No & IEEE COMST \\
 \midrule
-\textbf{This Survey} & \textbf{2026} & \textbf{146} & \textbf{Partial$^\dagger$} & \textbf{Yes (6)} & \textbf{Yes (MRC)} & \textbf{Yes (4 reg.)} & \textbf{Yes} & \textbf{IEEE CS\&T (35.6)} \\
+\textbf{This Survey} & \textbf{2026} & \textbf{190$^\dagger$} & \textbf{Narrative$^\ddagger$} & \textbf{Yes (6)} & \textbf{Yes (MRC)} & \textbf{Yes (4 reg.)} & \textbf{Yes} & \textbf{IEEE CS\&T (35.6)} \\
 \bottomrule
-\multicolumn{9}{l}{\footnotesize $^\dagger$PRISMA~2020 reporting principles followed (documented selection/exclusion criteria, corpus composition diagram); systematic} \\
-\multicolumn{9}{l}{\footnotesize \phantom{$^\dagger$}database retrieval not yet executed against indexed repositories (planned future work).} \\
+\multicolumn{9}{l}{\footnotesize $^\dagger$151 peer-reviewed + 39 normative/standards documents; documented inclusion/exclusion criteria and quality assessment applied.} \\
+\multicolumn{9}{l}{\footnotesize $^\ddagger$Structured narrative survey; exhaustive database retrieval with registered protocol is identified as future work.} \\
 \end{tabular}
 \end{table*}
 
@@ -297,14 +312,14 @@ This survey makes the following specific contributions:
   heuristic scoring rubric that classifies legacy systems across four readiness
   tiers using three weighted dimensions (cryptographic exposure, upgrade
   feasibility, regulatory deadline proximity), with mathematical formulation,
-  pseudocode implementation, weight-sensitivity analysis, and a two-round
-  Delphi+AHP weight validation study using LLM-simulated expert personas
-  (Section~\ref{sec:mrc}). Full human-panel validation is identified as
+  pseudocode implementation, weight-sensitivity analysis, and an LLM-based
+  heuristic stress test of the weight assignments
+  (Section~\ref{sec:mrc}). Human-panel validation via Delphi+AHP is identified as
   future work (Section~\ref{sec:challenges}).
   \item \textbf{Cross-regulatory gap analysis} comparing NIST, NSA CNSA~2.0,
   ENISA, GDPR, and LGPD requirements with a sector-specific compliance
   timeline (Section~\ref{sec:regulatory}).
-  \item \textbf{Identification of six critical research gaps} not addressed by
+  \item \textbf{Identification of seven critical research gaps} not addressed by
   current standards, including ultra-constrained device PQC and automated
   cryptographic inventory (Section~\ref{sec:challenges}).
   \item \textbf{Reproducible analysis toolkit}: all figures, bibliometric data,
@@ -325,17 +340,18 @@ Section~\ref{sec:aiml} surveys AI/ML acceleration opportunities.
 Section~\ref{sec:challenges} identifies open research gaps. Section~\ref{sec:future}
 outlines future directions. Section~\ref{sec:conclusion} concludes.
 
-\begin{figure*}[t]
+\begin{figure}[!t]
   \centering
-  \includegraphics[width=\textwidth]{figures/pqc_survey_structure.pdf}
+  \pdftooltip{\includegraphics[width=\columnwidth]{figures/pqc_survey_structure_new.drawio.png}}{Architecture diagram showing the paper structure. Top: Section 1 Introduction. Second row: Section 2 Methodology (narrative survey, 190 sources) and Section 3 Background (quantum computing, NIST, HNDL). Third row: Section 4 Taxonomy (3-level hierarchy, 6 domains). Fourth row: Section 5 Domain Analysis (TLS, PKI, IoT, Blockchain, VPN/ZTA, ICS/OT). Fifth row: Section 6 MRC Framework (T1-T4 classification), Section 7 Regulatory (NIST, NSA, ENISA, LGPD), Section 8 AI/ML acceleration. Sixth row: Section 9 Open Challenges (gaps G1-G7) and Section 10 Future Research. Bottom: Section 11 Conclusion.}
   \caption{Paper structure overview. Solid arrows indicate primary information
   flow; dashed arrows indicate cross-referencing or informing relationships.
   Foundation sections (§II--§IV) ground the six domain analyses (§V.1--§V.6),
   which feed the MRC framework (§VI) and cross-cutting chapters (§VII--§VIII),
   converging on future directions (§IX) and conclusion (§X).}
   \label{fig:survey_overview}
-\end{figure*}
+\end{figure}
 
+\FloatBarrier
 % =============================================================================
 % SECTION II: SURVEY METHODOLOGY
 % =============================================================================
@@ -387,7 +403,7 @@ for a future systematic execution of this survey. These strings guided our
 selection of works to review but were not executed with complete retrieval,
 deduplication, and screening records.
 
-\begin{table}[t]
+\begin{table}[!htbp]
 \caption{Proposed Search Strings for Systematic Review Execution}
 \label{tab:search_strings}
 \centering
@@ -446,8 +462,7 @@ Works scoring $\geq$3/5 were considered for inclusion.
 \label{sec:corpus}
 
 The assembled corpus consists of \textbf{151 peer-reviewed publications} and
-\textbf{39 normative/standards documents}, totalling 111 sources after
-de-duplication of 9 redundant entries from the initial 120-record working list.
+\textbf{39 normative/standards documents} (190 sources total).
 The separation between peer-reviewed and normative sources is maintained
 throughout this survey: counts, figures, and tables derived from the scientific
 evidence base refer to the 151-paper peer-reviewed corpus; regulatory and
@@ -459,24 +474,25 @@ and equivalent national regulatory instruments. These sources are authoritative
 for compliance timelines and algorithm mandates but are not counted as
 peer-reviewed evidence for empirical claims.
 
-Fig.~\ref{fig:prisma} illustrates the corpus composition and de-duplication
-flow. Fig.~\ref{fig:temporal} shows the temporal distribution of peer-reviewed
+Fig.~\ref{fig:corpus} illustrates the three-step corpus assembly process.
+Fig.~\ref{fig:temporal} shows the temporal distribution of peer-reviewed
 publications by sub-theme.
 
-\begin{figure}[t]
+\begin{figure}[!htbp]
   \centering
-  \includegraphics[width=\columnwidth]{figures/prisma_flowchart.pdf}
-  \caption{Corpus composition diagram. The initial working list
-  was de-duplicated and expanded across eight thematic searches to yield
-  151 peer-reviewed papers and 39 normative/standards documents (190 total).
-  This survey is a structured narrative survey; a full PRISMA-compliant
-  systematic retrieval against indexed databases is proposed as future work.}
-  \label{fig:prisma}
+  \pdftooltip{\includegraphics[width=\columnwidth]{figures/corpus_composition.pdf}}{Three-step corpus assembly process for the structured narrative survey. Step 1: sources consulted (IEEE Xplore, ACM DL, Springer, arXiv, IACR ePrint, NIST, NSA, IETF, ENISA). Step 2: inclusion and exclusion criteria IC1-IC4 and EC1-EC5 applied. Step 3: quality assessment QAC1-QAC5. Final corpus: 151 peer-reviewed publications and 39 normative/standards documents (190 total).}
+  \caption{Corpus assembly methodology (structured narrative survey).
+  Three successive filters---source consultation, inclusion/exclusion
+  criteria (IC1--IC4, EC1--EC5), and quality assessment (QAC1--QAC5)---yield
+  151 peer-reviewed publications and 39 normative/standards documents
+  (190 sources total). Exhaustive database retrieval with a registered protocol
+  is identified as future work.}
+  \label{fig:corpus}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[!htbp]
   \centering
-  \includegraphics[width=\columnwidth]{figures/temporal_distribution.pdf}
+  \pdftooltip{\includegraphics[width=\columnwidth]{figures/temporal_distribution.pdf}}{Stacked bar chart showing temporal distribution of peer-reviewed PQC publications from 2016 to 2026, categorized by sub-theme. Three shaded regions indicate NIST standardization phases: Round 1/2, Round 3/4, and Post-Standardization.}
   \caption{Temporal distribution of peer-reviewed publications (2016--2026)
   by sub-theme. Stacked bars show observed counts from the 151-paper corpus.
   Shading indicates the NIST standardization phase.}
@@ -498,9 +514,10 @@ that modifies or refines the domain-level findings reported here.
 
 \textbf{L2 -- Heuristic MRC weights.} The MRC formula weights
 ($w_E=0.45$, $w_F=0.35$, $w_D=0.20$) were assigned by the author based
-on expert judgment. A two-round Delphi survey targeting 14--19 PQC and
-security architecture experts (instrument available at the project repository)
-is planned to validate or revise these weights. Until that validation is
+on expert judgment. An LLM-based weight stress test exploring seven
+illustrative professional profiles is reported in Section~\ref{sec:mrc_delphi}.
+A practitioner Delphi+AHP study (instrument available at the project repository)
+is planned as future work (Gap~G7). Until that validation is
 complete, MRC tier assignments should be treated as heuristic estimates
 rather than empirically calibrated scores. A weight-sensitivity analysis
 showing how tier assignments change under alternative weight distributions
@@ -519,6 +536,7 @@ jurisdictions (China, UK, Canada, Japan, India) are referenced but not
 systematically analyzed. Readers in those jurisdictions should supplement
 this analysis with local compliance guidance.
 
+\FloatBarrier
 % =============================================================================
 % SECTION III: BACKGROUND
 % =============================================================================
@@ -572,7 +590,7 @@ NIST's response is to recommend AES-256 for quantum-safe symmetric encryption.
 Table~\ref{tab:algorithm_impact} summarizes the quantum impact on commonly
 deployed cryptographic primitives.
 
-\begin{table}[t]
+\begin{table}[!htbp]
 \caption{Quantum Impact on Deployed Cryptographic Primitives}
 \label{tab:algorithm_impact}
 \centering
@@ -666,6 +684,7 @@ sets are interoperable across implementations~\cite{paterson2016reactive}.
 Both conditions fail in significant fractions of deployed legacy systems, as
 we demonstrate in subsequent sections.
 
+\FloatBarrier
 % =============================================================================
 % SECTION IV: TAXONOMY OF PQC MIGRATION APPROACHES
 % =============================================================================
@@ -675,9 +694,9 @@ we demonstrate in subsequent sections.
 Fig.~\ref{fig:taxonomy} presents our three-level hierarchical taxonomy of PQC
 migration approaches, the primary conceptual contribution of this survey.
 
-\begin{figure*}[t]
+\begin{figure*}[!t]
   \centering
-  \includegraphics[width=\textwidth]{figures/taxonomy_diagram.pdf}
+  \pdftooltip{\includegraphics[width=\textwidth]{figures/taxonomy_diagram.pdf}}{Three-level hierarchical taxonomy diagram. Level 1 (six domains): TLS/Web Security, PKI/Cert Infrastructure, IoT/Embedded, Blockchain/DLT, VPN/Zero Trust, ICS/OT. Level 2 maps PQC algorithms (ML-KEM, ML-DSA, SLH-DSA, FALCON, HQC) to each domain. Level 3 shows migration strategies: hybrid, full replacement, or crypto-agile.}
   \caption{Three-level taxonomy of PQC migration approaches. Level~1 defines
   the six target domains. Level~2 maps applicable PQC algorithms per domain.
   Level~3 classifies the migration strategy: hybrid (classical + PQC),
@@ -702,6 +721,11 @@ constraints:
   \item \textbf{ICS/OT}: Industrial control systems with hard real-time
   constraints and decade-long lifecycles.
 \end{enumerate}
+\noindent\textit{Note on classification axes.} These Level~1 domains
+mix heterogeneous conceptual axes: protocol stack (TLS, VPN), infrastructure
+layer (PKI), device class (IoT, ICS/OT), and application context
+(Blockchain). This reflects the structure of the PQC migration literature
+rather than a theoretically orthogonal taxonomy.
 
 \subsection{Level 2: PQC Algorithm Applicability by Domain}
 
@@ -711,9 +735,9 @@ preferred in PKI certificate issuance due to its conservative security
 assumptions. FALCON/FN-DSA emerges as the preferred signature scheme for
 IoT and ICS due to compact signature sizes~\cite{prest2022falcon}.
 
-\begin{figure}[t]
+\begin{figure}[!htbp]
   \centering
-  \includegraphics[width=\columnwidth]{figures/heatmap_coverage.pdf}
+  \pdftooltip{\includegraphics[width=\columnwidth]{figures/heatmap_coverage.pdf}}{Heatmap showing literature coverage across six PQC migration domains (rows: TLS, PKI, IoT, Blockchain, VPN, ICS) and five algorithms (columns: ML-KEM, ML-DSA, SLH-DSA, FALCON, HQC). Cell color intensity indicates number of surveyed papers; red cells indicate zero coverage (research gaps).}
   \caption{Literature coverage heatmap: domain (rows) vs.\ PQC algorithm
   (columns). Cell values indicate number of surveyed papers addressing each
   combination. Color intensity corresponds to coverage density. Red cells
@@ -754,7 +778,7 @@ in parallel, with security guaranteed if at least one is unbroken:
 \end{itemize}
 
 Table~\ref{tab:taxonomy_comparative} provides the comparative taxonomy matrix
-for all 190 surveyed sources (151 peer-reviewed + 39 normative).
+for all 190 sources in the corpus (151 peer-reviewed + 39 normative).
 
 \begin{table*}[!t]
 \caption{Comparative Taxonomy of Surveyed Papers (Representative Subset of 30; Full Table in Supplementary Material)}
@@ -801,6 +825,7 @@ Xiao et al.~\cite{xiao2023machine}                & 2023 & All     & Multiple  &
 \end{tabular}
 \end{table*}
 
+\FloatBarrier
 % =============================================================================
 % SECTION V: PQC BY DOMAIN: SYSTEMATIC ANALYSIS
 % =============================================================================
@@ -820,19 +845,21 @@ authentication, both of which are broken by Shor's algorithm.
 The IETF hybrid key exchange mechanism~\cite{ietf2024hybrid} combines a
 classical and a PQC KEM: the shared secret is derived as
 $\text{SS} = \text{KDF}(\text{SS}_{\text{classical}} \| \text{SS}_{\text{PQC}})$.
-This provides security if either component is unbroken. Fig.~\ref{fig:tls_sequence}
+This provides security if either component is unbroken, provided the
+combiner implements proper domain separation and transcript binding to
+prevent cross-protocol downgrade attacks~\cite{ietf2024hybrid}. Fig.~\ref{fig:tls_sequence}
 shows the hybrid TLS~1.3~+ PQC handshake sequence.
 
-\begin{figure}[!t]
-\centering
+\newsavebox{\tlsseqbox}
+\begin{lrbox}{\tlsseqbox}%
 \resizebox{\columnwidth}{!}{%
 \begin{tikzpicture}[x=1cm, y=0.7cm]
 
 \definecolor{cblue}{HTML}{003f87}
 \definecolor{cred}{HTML}{c0392b}
 \definecolor{cgreen}{HTML}{1a7a4a}
-\definecolor{corange}{HTML}{e67e22}
-\definecolor{cgray}{HTML}{7f8c8d}
+\definecolor{corange}{HTML}{b85c00}
+\definecolor{cgray}{HTML}{5a6268}
 
 % ── Actor labels ─────────────────────────────────────────────────────────────
 \node[font=\small\bfseries, color=cblue] at (0,  1.0) {Client};
@@ -843,19 +870,19 @@ shows the hybrid TLS~1.3~+ PQC handshake sequence.
 \draw[thick, color=cblue] (0, 0) -- (0,-18);
 \draw[thick, color=cred]  (6, 0) -- (6,-18);
 
-% ── Phase labels (left margin) ───────────────────────────────────────────────
-\node[font=\tiny\bfseries\itshape, color=cblue,   left=0.05cm] at (0, -0.5)  {Classical};
-\node[font=\tiny\bfseries\itshape, color=cgreen,  left=0.05cm] at (0, -7.0)  {PQC};
-\node[font=\tiny\bfseries\itshape, color=corange, left=0.05cm] at (0,-12.0)  {Key Deriv.};
-\node[font=\tiny\bfseries\itshape, color=cgray,   left=0.05cm] at (0,-15.0)  {Auth};
+% ── Phase labels (left margin) -- color + line style legend ──────────────────
+\node[font=\tiny\bfseries\itshape, color=cblue,   left=0.05cm] at (0, -0.5)  {Classical (solid)};
+\node[font=\tiny\bfseries\itshape, color=cgreen,  left=0.05cm] at (0, -7.0)  {PQC (dashed)};
+\node[font=\tiny\bfseries\itshape, color=corange, left=0.05cm] at (0,-12.0)  {Key Deriv. (dotted)};
+\node[font=\tiny\bfseries\itshape, color=cgray,   left=0.05cm] at (0,-15.0)  {Auth (dash-dot)};
 
-% ── Classical Phase ──────────────────────────────────────────────────────────
-\draw[-{Latex[length=2mm]}, thick, color=cblue]
+% ── Classical Phase (solid lines) ────────────────────────────────────────────
+\draw[-{Latex[length=2mm]}, thick, solid, color=cblue]
   (0,-1.0) -- (6,-1.0)
   node[midway, above, font=\tiny, color=cblue]
   {ClientHello [TLSv1.3 + X25519 key\_share]};
 
-\draw[-{Latex[length=2mm]}, thick, color=cblue]
+\draw[-{Latex[length=2mm]}, thick, solid, color=cblue]
   (6,-2.5) -- (0,-2.5)
   node[midway, above, font=\tiny, color=cblue]
   {ServerHello [X25519 key\_share]};
@@ -867,8 +894,8 @@ shows the hybrid TLS~1.3~+ PQC handshake sequence.
       text width=1.8cm, align=center, rounded corners=2pt] at (6,-3.6)
   {Compute ECDH:\\$\mathit{SS}_\text{ECDH}$};
 
-% ── PQC Phase ────────────────────────────────────────────────────────────────
-\draw[-{Latex[length=2mm]}, thick, color=cgreen]
+% ── PQC Phase (dashed lines) ──────────────────────────────────────────────────
+\draw[-{Latex[length=2mm]}, thick, dashed, color=cgreen]
   (0,-5.2) -- (6,-5.2)
   node[midway, above, font=\tiny, color=cgreen]
   {PQC Ext.: ML-KEM-768 $pk_\text{client}$};
@@ -878,7 +905,7 @@ shows the hybrid TLS~1.3~+ PQC handshake sequence.
   {Encapsulate:\\$(ct,\,\mathit{SS}_\text{mlkem}) \leftarrow$\\
    $\mathtt{KEM.Encap}(pk)$};
 
-\draw[-{Latex[length=2mm]}, thick, color=cgreen]
+\draw[-{Latex[length=2mm]}, thick, dashed, color=cgreen]
   (6,-7.6) -- (0,-7.6)
   node[midway, above, font=\tiny, color=cgreen]
   {PQC Ext.: ML-KEM-768 ciphertext $ct$};
@@ -889,7 +916,7 @@ shows the hybrid TLS~1.3~+ PQC handshake sequence.
    $\mathtt{KEM.Decap}(sk,\,ct)$};
 
 % ── Key Derivation ───────────────────────────────────────────────────────────
-\draw[dashed, thick, color=corange] (-1.2,-10.2) -- (7.2,-10.2);
+\draw[dotted, thick, color=corange] (-1.2,-10.2) -- (7.2,-10.2);
 
 \node[rectangle, fill=white, draw=corange, font=\tiny,
       text width=2.4cm, align=center, rounded corners=3pt] at (0,-11.6)
@@ -904,19 +931,19 @@ shows the hybrid TLS~1.3~+ PQC handshake sequence.
    $\rightarrow$ app\_traffic\_secret};
 
 % ── Auth Phase ───────────────────────────────────────────────────────────────
-\draw[dashed, thick, color=cgray] (-1.2,-13.5) -- (7.2,-13.5);
+\draw[dash dot, thick, color=cgray] (-1.2,-13.5) -- (7.2,-13.5);
 
-\draw[-{Latex[length=2mm]}, thick, color=cgray]
+\draw[-{Latex[length=2mm]}, thick, dash dot, color=cgray]
   (6,-14.1) -- (0,-14.1)
   node[midway, above, font=\tiny, color=cgray]
   {Certificate [X.509 + ML-DSA-65]};
 
-\draw[-{Latex[length=2mm]}, thick, color=cgray]
+\draw[-{Latex[length=2mm]}, thick, dash dot, color=cgray]
   (6,-15.3) -- (0,-15.3)
   node[midway, above, font=\tiny, color=cgray]
   {CertVerify [ML-DSA-65 + ECDSA-256]};
 
-\draw[-{Latex[length=2mm]}, thick, color=cgray]
+\draw[-{Latex[length=2mm]}, thick, dash dot, color=cgray]
   (6,-16.4) -- (0,-16.4)
   node[midway, above, font=\tiny, color=cgray]
   {Finished [HMAC-SHA256]};
@@ -928,6 +955,10 @@ shows the hybrid TLS~1.3~+ PQC handshake sequence.
 
 \end{tikzpicture}%
 }%
+\end{lrbox}%
+\begin{figure}[!t]
+\centering
+\pdftooltip{\usebox{\tlsseqbox}}{Sequence diagram of the hybrid TLS 1.3 handshake. Client and server exchange ClientHello with X25519 and ML-KEM-768 key shares. Server responds with ServerHello, sends Certificate (ML-DSA-65 plus ECDSA-256 composite), and CertificateVerify. Both sides derive the hybrid shared secret via KDF over the concatenated ECDH and ML-KEM shared secrets. Handshake concludes with Finished messages authenticated by HMAC-SHA256.}
 \caption{Hybrid TLS~1.3 handshake combining X25519 and ML-KEM-768~\cite{zheng2024mlkemtls}
   (PQC extension) with composite ML-DSA-65 + ECDSA-256 authentication
   (FIPS~204~\cite{nistfips204}). The hybrid secret
@@ -942,9 +973,9 @@ shows the hybrid TLS~1.3~+ PQC handshake sequence.
 Fig.~\ref{fig:performance} presents a quantitative comparison of ML-KEM
 against RSA and ECDH across three deployment contexts.
 
-\begin{figure}[t]
+\begin{figure}[!htbp]
   \centering
-  \includegraphics[width=\columnwidth]{figures/performance_comparison.pdf}
+  \pdftooltip{\includegraphics[width=\columnwidth]{figures/performance_comparison.pdf}}{Bar chart comparing performance of ML-KEM-768, RSA-2048, and ECDH-256 across server, IoT (ARM Cortex-M4), and mobile deployment platforms. Metrics include key generation, encapsulation/encryption, and decapsulation/decryption times in milliseconds.}
   \caption{Performance comparison: ML-KEM-768, RSA-2048, and ECDH-256
   across deployment platforms. Server data from Paquin et al.\
   \cite{paquin2020benchmarking} (liboqs, x86-64 OpenSSL). IoT data from
@@ -1043,7 +1074,8 @@ certificates, a process requiring years of coordinated rollout.
 Composite certificates~\cite{bindel2017hybrid} encode both classical and PQC
 public keys in a single X.509 structure, enabling relying parties to validate
 whichever algorithm they support. The IETF LAMPS working group is standardizing
-this approach in RFC~9480 (draft). D'Onghia et al.~\cite{donghia2024pqpki}
+this approach in the composite-sigs
+Internet-Draft~\cite{ietflamps2024composite}. D'Onghia et al.~\cite{donghia2024pqpki}
 survey the structural challenges for quantum-resistant PKI, covering X.509
 format adaptations, OCSP/CRL revocation overhead, and multi-CA trust-hierarchy
 coordination requirements under PQC signature sizes.
@@ -1057,9 +1089,9 @@ signatures) and FALCON-512 (666-byte signatures) offer intermediate
 options~\cite{kampanakis2021pki}. Fig.~\ref{fig:security_level} presents
 the security level distribution across surveyed papers.
 
-\begin{figure}[t]
+\begin{figure}[!htbp]
   \centering
-  \includegraphics[width=\columnwidth]{figures/security_level_dist.pdf}
+  \pdftooltip{\includegraphics[width=\columnwidth]{figures/security_level_dist.pdf}}{Grouped bar chart showing distribution of NIST security levels (1 through 5) addressed in surveyed papers, broken down by domain. Level 1 (AES-128 equivalent) dominates IoT papers; Levels 3 and 5 are more prevalent in PKI and government applications.}
   \caption{Distribution of NIST security levels addressed in surveyed papers,
   by domain (corpus-derived counts; $n = 63$ domain-classified papers). NIST
   Level~1 ($\approx$AES-128 security) dominates IoT papers due to performance
@@ -1168,7 +1200,7 @@ automatic even in hardware deployments.
 
 For UAV communications, Choi et al.~\cite{choi2024falcon} optimize Falcon
 verification on ARM Cortex-M4, reducing peak stack usage by 31\% while
-maintaining FIPS~206 compliance, meeting real-time constraints for
+maintaining FN-DSA (draft FIPS~206) compliance, meeting real-time constraints for
 drone-to-drone authentication in constrained MAVLink stacks.
 
 Blanco-Romero et al.~\cite{blancor2024coap} integrate ML-KEM into CoAP and
@@ -1459,6 +1491,7 @@ transition period). This gap may reflect corpus-boundary effects and warrants
 dedicated search; it nonetheless represents an underexplored area in our corpus
 (Section~\ref{sec:challenges}, Gap~G3).
 
+\FloatBarrier
 % =============================================================================
 % SECTION VI: MIGRATION READINESS CLASSIFICATION (MRC) FRAMEWORK
 % =============================================================================
@@ -1478,7 +1511,7 @@ Let a system $\mathcal{S}$ be characterized by:
   functions relying on quantum-vulnerable primitives);
   \item $F \in [0,1]$: Upgrade feasibility score (0 = field-replaceable
   firmware, 1 = hardware replacement required);
-  \item $D \in [0,1]$: Regulatory deadline proximity score ($D = \min(1, (T_{\text{deadline}} - T_{\text{today}}) / 10)$,
+  \item $D \in [0,1]$: Regulatory deadline proximity score ($D = \max(0, \min(1, (T_{\text{deadline}} - T_{\text{today}}) / 10))$,
   normalized to a 10-year window).
 \end{itemize}
 The MRC score is:
@@ -1511,9 +1544,9 @@ rationale:
 
 These weights have \emph{not} been derived from expert elicitation, AHP,
 Delphi, or any other formal method. No consistency ratio is claimed.
-A two-round Delphi study using LLM-simulated expert personas is described
-in Section~\ref{sec:mrc_delphi} below, providing a structured heuristic
-validation pending future human-panel replication.
+An LLM-based structured stress test is described
+in Section~\ref{sec:mrc_delphi}, exploring weight sensitivity across
+illustrative professional profiles. Human-panel validation is future work.
 
 \input{delphi_mrc_validation}
 
@@ -1584,7 +1617,14 @@ VPN/ZTNA  & 0.75 & ENISA VPN guidelines report IKEv2/IPsec and WireGuard dominan
 
 \subsection{MRC Tier Classification}
 
-\begin{table}[t]
+The MRC score maps to one of four actionable tiers (Table~\ref{tab:mrc_tiers}).
+Tier~T1 (Critical, MRC $\geq 0.75$) requires immediate hybrid migration, whereas
+T4 (Low, MRC $< 0.25$) allows a deferred inventory-and-monitor posture.
+Table~\ref{tab:mrc_results} reports the computed scores for the six domains
+surveyed, and Fig.~\ref{fig:radar} visualizes their relative positioning across
+the three sub-dimensions.
+
+\begin{table}[!htbp]
 \caption{MRC Tier Definitions and Actions}
 \label{tab:mrc_tiers}
 \centering
@@ -1620,7 +1660,8 @@ T4 & Low      & $[0.00, 0.25)$ & Inventory cryptographic assets; schedule review
 
 \STATE $T_{\text{deadline}} \leftarrow \min(\mathcal{R}.\text{GetDeadlines}(\mathcal{S}))$
 \STATE $T_{\text{today}} \leftarrow \text{CurrentYear}()$
-\STATE $D \leftarrow \min\bigl(1, (T_{\text{deadline}} - T_{\text{today}}) / 10\bigr)$
+\STATE $D \leftarrow \max\bigl(0, \min\bigl(1, (T_{\text{deadline}} - T_{\text{today}}) / 10\bigr)\bigr)$
+  \COMMENT{Clamp to $[0,1]$; expired deadlines ($T_{\text{deadline}} < T_{\text{today}}$) yield $D=0$}
 
 \STATE $\text{score} \leftarrow 0.45 \cdot E + 0.35 \cdot (1 - F) + 0.20 \cdot (1 - D)$
 
@@ -1643,7 +1684,7 @@ T4 & Low      & $[0.00, 0.25)$ & Inventory cryptographic assets; schedule review
 Table~\ref{tab:mrc_results} presents MRC scores for each domain.
 Fig.~\ref{fig:radar} visualizes readiness across domains.
 
-\begin{table}[t]
+\begin{table}[!htbp]
 \caption{MRC Scores Across Six Critical Infrastructure Domains
 (\emph{computed by \texttt{mrc\_scorer.py}; reference year 2026})}
 \label{tab:mrc_results}
@@ -1665,9 +1706,9 @@ VPN/ZTNA   & 0.750 & 0.000 & 0.000 & 0.8875 & T1 \\
 \end{tabular}
 \end{table}
 
-\begin{figure}[t]
+\begin{figure}[!htbp]
   \centering
-  \includegraphics[width=\columnwidth]{figures/radar_chart.pdf}
+  \pdftooltip{\includegraphics[width=\columnwidth]{figures/radar_chart.pdf}}{Radar chart showing MRC (Migration Readiness and Criticality) heuristic scores for six PQC migration domains. Each axis represents exposure, failure impact, and deployment difficulty. PKI and VPN/ZTNA score highest, placing them in Tier 1 (Critical).}
   \caption{MRC heuristic scores by domain. Each axis represents
   one dimension ($E$, $1{-}F$, $1{-}D$) and the composite MRC score. Outer
   boundary = maximum urgency. PKI and VPN/ZTNA fall in T1 (Critical) due to
@@ -1716,6 +1757,10 @@ asset migration; (c)~adopt FIPS~203/204/205 as available.
   \item \textbf{2030}: All NSS software/firmware must be CNSA~2.0 compliant;
   \item \textbf{2033}: Legacy systems must complete transition.
 \end{itemize}
+These deadlines are specific to NSS product and system categories;
+exact applicability varies by algorithm family, system type, and
+operational use case. Consult the current NSA CNSA~2.0 guidance for
+authoritative per-category timelines.
 
 \subsection{2026 U.S. Executive Directives}
 
@@ -1756,9 +1801,12 @@ ENISA's post-quantum cryptography guidance~\cite{enisa2022pqc} recommends:
 
 The revised eIDAS~2.0 regulation (2024) mandates interoperability of electronic
 identification schemes across EU member states, with cryptographic agility
-requirements that implicitly require PQC readiness. BSI (Germany) and ANSSI
-(France) have published a joint position paper~\cite{bsianssi2021} recommending
-hybrid classical+PQC as the migration strategy for European critical infrastructure.
+requirements that, in the author's interpretation, are likely to require
+PQC readiness as quantum-capable algorithms become the normative baseline.
+BSI (Germany) and ANSSI (France) have published a joint position
+paper~\cite{bsianssi2021} on the role of Quantum Key Distribution versus
+PQC for European critical infrastructure; both agencies separately issue
+guidance recommending hybrid classical+PQC migration strategies.
 
 \subsection{Brazil: LGPD Implications}
 
@@ -1775,7 +1823,7 @@ financial and health data with long retention requirements.
 Table~\ref{tab:regulatory_comparison} presents a cross-regulatory comparison
 identifying alignment and divergence.
 
-\begin{table}[t]
+\begin{table}[!htbp]
 \caption{Cross-Regulatory PQC Requirements Comparison}
 \label{tab:regulatory_comparison}
 \centering
@@ -1806,9 +1854,9 @@ to fill the gap.
 Fig.~\ref{fig:regulatory_timeline} presents the regulatory deadline timeline
 across all surveyed frameworks.
 
-\begin{figure*}[t]
+\begin{figure*}[!t]
   \centering
-  \includegraphics[width=\textwidth]{figures/regulatory_timeline.pdf}
+  \pdftooltip{\includegraphics[width=\textwidth]{figures/regulatory_timeline.pdf}}{Gantt chart showing PQC regulatory migration deadlines from 2024 to 2035 across five frameworks (NIST, NSA CNSA 2.0, ENISA, BSI/ANSSI, LGPD) and five sectors (government, financial, healthcare, critical infrastructure, general enterprise). Bars indicate transition windows; dashed lines mark hard deadlines.}
   \caption{Regulatory deadline Gantt chart across frameworks (NIST, NSA CNSA~2.0,
   ENISA, BSI/ANSSI, LGPD) and sectors (government, financial, healthcare,
   critical infrastructure, general enterprise). Horizontal bars span from
@@ -1967,6 +2015,7 @@ Taken together, these limitations suggest that AI/ML acceleration is best
 positioned as an augmentation layer within a broader migration governance
 framework rather than as a standalone automation solution.
 
+\FloatBarrier
 % =============================================================================
 % SECTION IX: OPEN CHALLENGES AND RESEARCH GAPS
 % =============================================================================
@@ -1976,18 +2025,18 @@ framework rather than as a standalone automation solution.
 Fig.~\ref{fig:gap_heatmap} presents the research gap heatmap across problems
 and proposed solutions in our corpus.
 
-\begin{figure*}[t]
+\begin{figure*}[!t]
   \centering
-  \includegraphics[width=\textwidth]{figures/gap_heatmap.pdf}
+  \pdftooltip{\includegraphics[width=\textwidth]{figures/gap_heatmap.pdf}}{Research gap heatmap with problem dimensions as rows and proposed solution approaches as columns. Cell intensity indicates number of papers addressing each combination. Red cells (zero coverage) highlight the most critical open research problems in PQC migration.}
   \caption{Research gap heatmap: problem dimensions (rows) vs.\ proposed
   solution approaches (columns). Cell color intensity indicates number of papers
   addressing the intersection. Red cells indicate zero coverage (research gaps).
-  White numbers indicate paper counts where $\geq$3. Six major gaps (G1--G6)
+  White numbers indicate paper counts where $\geq$3. Seven research gaps (G1--G7)
   are annotated.}
   \label{fig:gap_heatmap}
 \end{figure*}
 
-We identify six critical research gaps not adequately addressed by current
+We identify seven critical research gaps not adequately addressed by current
 literature or NIST guidance:
 
 \subsubsection{G1: PQC on Ultra-Constrained Devices ($<$64~KB RAM)}
@@ -2085,13 +2134,14 @@ weights to the three readiness dimensions (Exposure, Feasibility, Data
 Sensitivity) using expert judgment. No published work in our corpus applies
 formal multi-criteria decision analysis methods---such as Analytic Hierarchy
 Process (AHP) or Delphi-based consensus elicitation---to validate or calibrate
-heuristic PQC migration scoring rubrics. A two-round Delphi survey with
+heuristic PQC migration scoring rubrics. A practitioner Delphi survey with
 14--19 PQC practitioners and security architects, followed by AHP consistency
 verification, is identified as the next immediate step for the MRC framework
 and as a methodological gap for the field more broadly. Until such validation
 is available, any heuristic readiness score should be treated as a decision-support
 estimate rather than an empirically calibrated measurement.
 
+\FloatBarrier
 % =============================================================================
 % SECTION IX: FUTURE RESEARCH DIRECTIONS
 % =============================================================================
@@ -2147,6 +2197,7 @@ $<$50~mW~\cite{ngo2021hardware}. Supply chain integration timelines for
 PQC silicon suggest 3--5 years from standard finalization to broad availability,
 creating a hardware gap for systems requiring upgrade before 2028.
 
+\FloatBarrier
 % =============================================================================
 % SECTION X: CONCLUSION
 % =============================================================================
@@ -2194,10 +2245,10 @@ the preparation of this manuscript, including support for manuscript drafting
 and structural refinement, grammar refinement, bibliography organisation, LaTeX
 formatting, and Python code scaffolding for the MRC scoring engine
 (\texttt{mrc\_scorer.py}) and weight-sensitivity audit
-(\texttt{mrc\_weights\_audit.py}). The two-round Delphi+AHP weight-validation
-study (Section~\ref{sec:mrc_delphi}) employed LLM-simulated expert personas;
-this is explicitly labeled throughout and is not presented as empirical
-human-panel data. This use is disclosed in accordance with IEEE's Authorship
+(\texttt{mrc\_weights\_audit.py}). The LLM-based weight stress test
+(Section~\ref{sec:mrc_delphi}) employed LLM-simulated professional profiles
+as an exploratory heuristic exploration; this is explicitly labelled throughout
+and constitutes neither empirical expert elicitation nor scientific validation. This use is disclosed in accordance with IEEE's Authorship
 and AI Policy. All scientific contributions --- including the MRC framework
 design, survey methodology, systematic source selection, data analysis, and
 conclusions --- are the sole responsibility of the human author. Benchmark data
@@ -2234,6 +2285,8 @@ Amazon (INCT iAmazonia).
 % =============================================================================
 % REFERENCES
 % =============================================================================
+\FloatBarrier
+\clearpage
 \bibliographystyle{IEEEtran}
 \bibliography{pqc_survey}
 

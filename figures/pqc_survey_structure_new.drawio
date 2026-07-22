@@ -1,0 +1,186 @@
+<mxfile host="app.diagrams.net" version="24.7.5">
+  <diagram id="pqc-paper-structure" name="Paper Structure">
+    <mxGraphModel dx="1200" dy="900" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ══════════════════════════════════════════════════════════
+             ROW 0 — §1 Introduction
+        ══════════════════════════════════════════════════════════ -->
+        <mxCell id="intro" value="&lt;b&gt;§1  Introduction&lt;/b&gt;&lt;br/&gt;&lt;font color=&#39;#555555&#39; style=&#39;font-size:9px&#39;&gt;Quantum threat · scope · contributions&lt;/font&gt;"
+          style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#003366;fontSize=11;align=center;verticalAlign=middle;spacingTop=0;"
+          vertex="1" parent="1">
+          <mxGeometry x="210" y="80" width="380" height="52" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════════════════════════
+             ROW 1 — §2 Methodology  |  §3 Background
+        ══════════════════════════════════════════════════════════ -->
+        <mxCell id="method" value="&lt;b&gt;§2  Methodology&lt;/b&gt;&lt;br/&gt;&lt;font color=&#39;#555555&#39; style=&#39;font-size:9px&#39;&gt;Narrative survey · 190 sources&lt;/font&gt;"
+          style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#665500;fontSize=11;align=center;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="70" y="188" width="195" height="48" as="geometry" />
+        </mxCell>
+
+        <mxCell id="background" value="&lt;b&gt;§3  Background&lt;/b&gt;&lt;br/&gt;&lt;font color=&#39;#555555&#39; style=&#39;font-size:9px&#39;&gt;Quantum · NIST · HNDL threat model&lt;/font&gt;"
+          style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#665500;fontSize=11;align=center;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="535" y="188" width="195" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════════════════════════
+             ROW 2 — §4 Taxonomy
+        ══════════════════════════════════════════════════════════ -->
+        <mxCell id="taxonomy" value="&lt;b&gt;§4  Taxonomy&lt;/b&gt;&lt;br/&gt;&lt;font color=&#39;#555555&#39; style=&#39;font-size:9px&#39;&gt;3-level hierarchy · 6 domains · migration strategies&lt;/font&gt;"
+          style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#2e0052;fontSize=11;align=center;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="210" y="292" width="380" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════════════════════════
+             ROW 3 — §5 Domain Analysis (merged)
+        ══════════════════════════════════════════════════════════ -->
+        <mxCell id="domains" value="&lt;b&gt;§5  Domain Analysis&lt;/b&gt;&lt;br/&gt;&lt;font color=&#39;#444444&#39; style=&#39;font-size:9px&#39;&gt;TLS/Web · PKI · IoT/Embedded · Blockchain/DLT · VPN/ZTA · ICS/OT&lt;/font&gt;"
+          style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#555555;fontColor=#222222;fontSize=11;align=center;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="210" y="396" width="380" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════════════════════════
+             ROW 4 — §6 MRC  |  §7 Regulatory  |  §8 AI/ML
+        ══════════════════════════════════════════════════════════ -->
+        <mxCell id="mrc" value="&lt;b&gt;§6  MRC Framework&lt;/b&gt;&lt;br/&gt;&lt;font color=&#39;#555555&#39; style=&#39;font-size:9px&#39;&gt;T1–T4 classification · weight sensitivity&lt;/font&gt;"
+          style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#6f0000;fontSize=11;align=center;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="50" y="500" width="215" height="48" as="geometry" />
+        </mxCell>
+
+        <mxCell id="regulatory" value="&lt;b&gt;§7  Regulatory&lt;/b&gt;&lt;br/&gt;&lt;font color=&#39;#555555&#39; style=&#39;font-size:9px&#39;&gt;NIST · NSA CNSA 2.0 · ENISA · LGPD&lt;/font&gt;"
+          style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#2e0052;fontSize=11;align=center;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="292" y="500" width="215" height="48" as="geometry" />
+        </mxCell>
+
+        <mxCell id="aiml" value="&lt;b&gt;§8  AI / ML&lt;/b&gt;&lt;br/&gt;&lt;font color=&#39;#555555&#39; style=&#39;font-size:9px&#39;&gt;Crypto discovery · algorithm selection&lt;/font&gt;"
+          style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#663300;fontSize=11;align=center;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="535" y="500" width="195" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════════════════════════
+             ROW 5 — §9 Challenges  |  §10 Future
+        ══════════════════════════════════════════════════════════ -->
+        <mxCell id="challenges" value="&lt;b&gt;§9  Open Challenges&lt;/b&gt;&lt;br/&gt;&lt;font color=&#39;#555555&#39; style=&#39;font-size:9px&#39;&gt;Research gaps G1–G7&lt;/font&gt;"
+          style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#003366;fontSize=11;align=center;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="115" y="604" width="255" height="48" as="geometry" />
+        </mxCell>
+
+        <mxCell id="future" value="&lt;b&gt;§10  Future Research&lt;/b&gt;&lt;br/&gt;&lt;font color=&#39;#555555&#39; style=&#39;font-size:9px&#39;&gt;Research agenda 2025–2033&lt;/font&gt;"
+          style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#2e0052;fontSize=11;align=center;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="430" y="604" width="255" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════════════════════════
+             ROW 6 — §11 Conclusion
+        ══════════════════════════════════════════════════════════ -->
+        <mxCell id="conclusion" value="&lt;b&gt;§11  Conclusion&lt;/b&gt;&lt;br/&gt;&lt;font color=&#39;#555555&#39; style=&#39;font-size:9px&#39;&gt;Migration roadmap · call to action&lt;/font&gt;"
+          style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#1a3d1a;fontSize=11;align=center;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="210" y="708" width="380" height="52" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════════════════════════════
+             CONNECTIONS — emphasis (thick) + default (thin)
+        ══════════════════════════════════════════════════════════ -->
+
+        <!-- intro → method (emphasis) -->
+        <mxCell id="e01" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#003f87;endArrow=block;endFill=1;"
+          edge="1" source="intro" target="method" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- intro → background (emphasis) -->
+        <mxCell id="e02" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#003f87;endArrow=block;endFill=1;"
+          edge="1" source="intro" target="background" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- method → taxonomy -->
+        <mxCell id="e03" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=1.5;strokeColor=#666666;endArrow=open;endFill=0;"
+          edge="1" source="method" target="taxonomy" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- background → taxonomy -->
+        <mxCell id="e04" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=1.5;strokeColor=#666666;endArrow=open;endFill=0;"
+          edge="1" source="background" target="taxonomy" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- taxonomy → domains (emphasis) -->
+        <mxCell id="e05" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#003f87;endArrow=block;endFill=1;"
+          edge="1" source="taxonomy" target="domains" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- domains → mrc (emphasis) -->
+        <mxCell id="e06" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.2;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#b85450;endArrow=block;endFill=1;"
+          edge="1" source="domains" target="mrc" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- domains → regulatory -->
+        <mxCell id="e07" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=1.5;strokeColor=#666666;endArrow=open;endFill=0;"
+          edge="1" source="domains" target="regulatory" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- domains → aiml -->
+        <mxCell id="e08" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.8;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=1.5;strokeColor=#d79b00;endArrow=open;endFill=0;"
+          edge="1" source="domains" target="aiml" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- mrc → challenges (emphasis) -->
+        <mxCell id="e09" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#b85450;endArrow=block;endFill=1;"
+          edge="1" source="mrc" target="challenges" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- regulatory → challenges -->
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=1.5;strokeColor=#666666;endArrow=open;endFill=0;"
+          edge="1" source="regulatory" target="challenges" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- regulatory → future -->
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=1.5;strokeColor=#666666;endArrow=open;endFill=0;"
+          edge="1" source="regulatory" target="future" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- aiml → future -->
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=1.5;strokeColor=#d79b00;endArrow=open;endFill=0;"
+          edge="1" source="aiml" target="future" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- challenges → conclusion (emphasis) -->
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#003f87;endArrow=block;endFill=1;"
+          edge="1" source="challenges" target="conclusion" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- future → conclusion -->
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;strokeWidth=1.5;strokeColor=#666666;endArrow=open;endFill=0;"
+          edge="1" source="future" target="conclusion" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
